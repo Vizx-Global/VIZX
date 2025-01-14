@@ -16,7 +16,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       </main>
       <footer>
         {/* Add your footer content here */}
-        <p>© 2023 VIZX. All rights reserved.</p>
+        <p>© 2025 VIZX. All rights reserved.</p>
       </footer>
     </div>
   );
