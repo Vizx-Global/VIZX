@@ -1,6 +1,4 @@
-# VIZX
-
-# VIZX Project
+# VIZX WEBSITE
 
 A full-stack application built with React (Frontend) and Node.js/Express (Backend).
 
