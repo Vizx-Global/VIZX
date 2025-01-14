@@ -18,6 +18,7 @@ A full-stack application built with React (Frontend) and Node.js/Express (Backen
 - Express
 - MongoDB
 - Mongoose
+- MongoAtlas
 
 ## Getting Started
 

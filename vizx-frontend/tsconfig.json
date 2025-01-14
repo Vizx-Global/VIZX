@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "esModuleInterop": true,
+      "jsx": "react",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "target": "es5",
+      "baseUrl": "./src",  // Add this line
+      "paths": {
+        "layout/*": ["layout/*"]  // Add this line
+      }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+  }
+  
