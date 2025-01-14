@@ -43,9 +43,14 @@ A full-stack application built with React (Frontend) and Node.js/Express (Backen
 
 ## Next Steps
 - [Add your planned features]
-- [Add your TODO items]
+- [Add the TODO items]
 
 ## Contributing
+
+Developed by:
+- [Mwaumba Mwafuga]
+- [Derrick Mukabwa]
+
 [Add contribution guidelines if applicable]
 
 ## License
