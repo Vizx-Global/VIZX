@@ -8,25 +8,25 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h3>Learn More</h3>
           <ul>
-            <li><a href="#">Our Solutions</a></li>
-            <li><a href="#">Industries</a></li>
-            <li><a href="#">Vizx HI</a></li>
+            <li><a href="solutions">Our Solutions</a></li>
+            <li><a href="industries">Industries</a></li>
+            <li><a href="vizx-hi">Vizx HI</a></li>
           </ul>
         </div>
         <div className="footer-section">
           <h3>Vizx Community</h3>
           <ul>
-            <li><a href="#">Why Kenya</a></li>
-            <li><a href="#">The Portal</a></li>
-            <li><a href="#">Live events</a></li>
+            <li><a href="why-kenya">Why Kenya</a></li>
+            <li><a href="vizx-portal">The Portal</a></li>
+            <li><a href="resources">Resources</a></li>
           </ul>
         </div>
         <div className="footer-section">
           <h3>Company</h3>
           <ul>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">The Team</a></li>
+            <li><a href="about">About us</a></li>
+            <li><a href="contact">Contact us</a></li>
+            <li><a href="team">The Team</a></li>
           </ul>
         </div>
         <div className="footer-section footer-buttons">

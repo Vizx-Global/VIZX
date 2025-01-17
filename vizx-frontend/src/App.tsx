@@ -11,6 +11,8 @@ import Profile from './pages/Profile';
 import Register from './pages/Register';
 import Resources from './pages/Resources';
 import Solutions from './pages/Solutions';
+import VizxHI from './pages/VizxHI';
+
 import MainLayout from './components/layout/MainLayout';
 import './App.css';
 
@@ -30,6 +32,7 @@ const App: React.FC = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/vizx-hi" element={<VizxHI />} />
         </Routes>
       </MainLayout>
     </Router>
