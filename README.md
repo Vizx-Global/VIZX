@@ -48,7 +48,7 @@ A full-stack application built with React (Frontend) and Node.js/Express (Backen
 
 Developed by:
 - [Mwaumba Mwafuga]
-- [Derrick Mukabwa]
+
 
 [Add contribution guidelines if applicable]
 

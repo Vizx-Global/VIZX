@@ -38,10 +38,10 @@ const Footer: React.FC = () => {
         <p>© 2025 VIZX Global. All rights reserved.</p>
         <div className="social-media">
           <span>Follow us:</span>
-          <a href="#"><i className="fab fa-facebook-f"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#"><i className="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/VIZXInternational/"><i className="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/VIZXKe/"><i className="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/vizxinternational/?hl=en"><i className="fab fa-instagram"></i></a>
+          <a href="https://ke.linkedin.com/company/vizx-international"><i className="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </footer>
