@@ -1,105 +1,135 @@
 .footer {
-    background-color: #333; /* Dark background for the footer */
-    color: white;
-    padding: 20px;
-    text-align: left;
-  }
-  
+  background-color: #333; /* Dark background for the footer */
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px; /* Better spacing between sections */
+}
+
+.footer-section {
+  flex: 1 1 200px; /* Ensure sections stack better */
+  margin: 10px 15px;
+}
+
+.footer-section h3 {
+  margin-bottom: 8px; /* Reduced margin for compact look */
+  font-size: 16px; /* Slightly smaller font */
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px; /* Consistent spacing */
+  font-size: 14px; /* Unified font size */
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: orange; /* Change text color on hover */
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px; /* Extra spacing from other sections */
+}
+
+.footer-buttons button {
+  width: 100%; /* Ensure buttons align with the container */
+  max-width: 200px; /* Prevent buttons from becoming too wide */
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.footer-buttons .register-button {
+  background-color: orange;
+  color: white;
+}
+
+.footer-buttons .login-button {
+  background-color: transparent;
+  color: orange;
+  border: 2px solid orange;
+  padding: 8px 18px;
+}
+
+.footer-buttons .register-button:hover,
+.footer-buttons .login-button:hover {
+  background-color: darkorange;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Ensures items wrap on small screens */
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #555;
+  text-align: center; /* Center align for smaller screens */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 13px; /* Smaller text for bottom section */
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Prevent overlapping */
+}
+
+.social-media span {
+  margin-right: 10px;
+}
+
+.social-media a {
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: orange; /* Change icon color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+      flex-direction: column; /* Stack sections vertically */
+      text-align: center; /* Center-align text */
   }
-  
-  .footer-section {
-    flex: 1;
-    margin: 10px;
-  }
-  
-  .footer-section h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-  
-  .footer-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-section ul li a:hover {
-    color: orange; /* Change text color on hover */
-  }
-  
+
   .footer-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+      align-items: center; /* Center buttons */
   }
-  
-  .footer-buttons .register-button {
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .footer-buttons .login-button {
-    background-color: transparent;
-    color: orange;
-    border: 2px solid orange;
-    padding: 8px 18px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .footer-buttons .register-button:hover,
-  .footer-buttons .login-button:hover {
-    background-color: darkorange;
-  }
-  
+
   .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    border-top: 1px solid #555;
-    padding-top: 10px;
+      flex-direction: column; /* Stack items vertically */
   }
-  
-  .footer-bottom p {
-    margin: 0;
-  }
-  
+
   .social-media {
-    display: flex;
-    align-items: center;
+      justify-content: center; /* Center-align social media links */
   }
-  
-  .social-media span {
-    margin-right: 10px;
-  }
-  
-  .social-media a {
-    color: white;
-    margin-right: 10px;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .social-media a:hover {
-    color: orange; /* Change icon color on hover */
-  }
-  
+}

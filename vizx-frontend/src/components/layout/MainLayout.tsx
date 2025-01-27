@@ -2,6 +2,7 @@ import React, { useState, ReactNode } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Footer from './Footer'; // Import the Footer component
+import { FaBars, FaTimes } from 'react-icons/fa'; // Import icons for sidebar toggle
 import './Header.css';
 import '../../App.css'; // Ensure you have this CSS file
 
@@ -33,12 +34,12 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       </header>
       <div className="layout-body">
         <button className="toggle-button" onClick={toggleSidebar}>
-          {sidebarVisible ? '←' : '→'}
+          {sidebarVisible ? <FaTimes size={24} /> : <FaBars size={24} />} {/* Sidebar toggle icons */}
         </button>
         <div className={`sidebar ${sidebarVisible ? 'show' : ''}`}>
           <Sidebar />
         </div>
-        <main>
+        <main className="center-content">
           <Outlet /> {/* This renders the current route */}
           {children}
         </main>

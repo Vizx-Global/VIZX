@@ -1,3 +1,12 @@
+/* App.css */
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /* General Styling */
 body {
   margin: 0;
@@ -144,6 +153,25 @@ footer {
   background-color: white;
 }
 
+/* Added to ensure sufficient spacing between header and footer */
+.home-page {
+  padding-top: 60px; /* Increase the distance from the header */
+  padding-bottom: 60px; /* Increase the distance from the footer */
+}
+
+
+/* Ensure footer sticks to the bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1; /* Makes sure the main content area grows to fill available space */
+}
+
 h1, h2, h3 {
   margin: 0;
 }
@@ -197,7 +225,7 @@ a:hover {
 .toggle-button {
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   background-color: orange;
   border: none;
