@@ -37,9 +37,24 @@ const Home: React.FC = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="hero bg-gray-100 text-center py-20 relative">
-        <div className="container mx-auto">
-          <div className="flex flex-col items-center">
+      <section className="hero bg-gray-100 text-center relative">
+        {/* Background Video */}
+        <div className="video-container">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hero-video"
+          >
+            <source src="/images/globe.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Hero Content */}
+        <div className="hero-content">
+          <div className="container mx-auto flex flex-col items-center relative z-10">
             <button
               className="play-button bg-orange-500 rounded-full w-16 h-16 flex items-center justify-center"
               onClick={handlePlayVideo}
@@ -54,6 +69,8 @@ const Home: React.FC = () => {
             </Link>
           </div>
         </div>
+
+        {/* Click-to-Play Video */}
         {isVideoPlaying && (
           <div className="video-overlay fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
             <div className="video-container relative w-11/12 max-w-4xl">
@@ -64,7 +81,7 @@ const Home: React.FC = () => {
                 ✖
               </button>
               <video controls autoPlay className="w-full h-auto rounded-md">
-                <source src="/path-to-your-video.mp4" type="video/mp4" />
+                <source src="/images/aivid.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -86,12 +103,12 @@ const Home: React.FC = () => {
                 hover:bg-gray-800 hover:shadow-lg transition-all"
               >
                 <img
-                  src={`/images/industry${index + 1}.png`}
+                  src={`/images/industy${index + 1}.png`}
                   alt={`Industry ${index + 1}`}
                   className="w-16 h-16 mr-4"
                 />
                 <span className="text-white text-lg">Industry {index + 1}</span>
-                <FaArrowRight className="text-white text-lg" /> {/* Right arrow icon */}
+                <FaArrowRight className="text-white text-lg" />
               </a>
             ))}
           </div>
@@ -111,7 +128,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Clients Section with black background */}
+      {/* Clients Section */}
       <section className="clients bg-black py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-white mb-8">Our Clients</h2>

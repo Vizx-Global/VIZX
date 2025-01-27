@@ -1,6 +1,6 @@
 /* Header Styles */
 .header {
-  background-color: #555; /* Dark gray background */
+  background-color: black; /* Dark gray background */
   color: white;
   display: flex; /* Flexbox for alignment */
   align-items: center; /* Vertically align content */

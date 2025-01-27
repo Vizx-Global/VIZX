@@ -116,10 +116,10 @@ footer {
   top: 0;
   left: 0;
   flex: 0 0 275px; /* Fixed sidebar width */
-  background-color: #555; /* Sidebar color */
+  background-color: black; /* Sidebar color */
   padding: 1rem;
   color: white;
-  min-height: calc(100vh - 195px); /* Ensure the sidebar covers full height */
+  min-height: calc(100vh - 205px); /* Ensure the sidebar covers full height */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   transform: translateX(-100%); /* Sidebar hidden by default */
