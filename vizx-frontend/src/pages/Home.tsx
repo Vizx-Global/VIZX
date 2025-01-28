@@ -115,18 +115,34 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Vizx Section */}
-      <section className="why-vizx bg-gray-50 py-20">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold">Why Vizx</h2>
-          <p className="mt-4 text-lg text-gray-700">
-            At Vizx, we offer unparalleled solutions tailored to meet industry needs. Our focus is on delivering quality, efficiency, and customer satisfaction across diverse domains.
-          </p>
-          <div className="flex justify-center mt-8">
-            <div className="bg-gray-200 w-3/4 h-64 rounded-lg"></div>
-          </div>
-        </div>
-      </section>
+     {/* Why Vizx Section */}
+<section className="why-vizx bg-gray-50 relative py-20">
+  {/* Background Video */}
+  <div className="video-container">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="section-video"
+    >
+      <source src="/images/whyvizx.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  {/* Content Overlay */}
+  <div className="content-overlay container mx-auto text-center relative z-10">
+    <h2 className="text-3xl font-bold text-white">Why Vizx</h2>
+    <p className="mt-4 text-lg text-white">
+      At Vizx, we offer unparalleled solutions tailored to meet industry needs. Our focus is on delivering quality, efficiency, and customer satisfaction across diverse domains.
+    </p>
+    <div className="flex justify-center mt-8">
+      <div className="bg-gray-200 w-3/4 h-64 rounded-lg"></div>
+    </div>
+  </div>
+</section>
+
 
       {/* Clients Section */}
       <section className="clients bg-black py-16">
@@ -137,7 +153,7 @@ const Home: React.FC = () => {
               <div key={index} className="p-4">
                 <div className="client-logo-container bg-gray-300 w-full h-40 flex items-center justify-center rounded-md">
                   <img
-                    src={`/images/client${index + 1}.jpg`}
+                    src={`/images/client${index + 1}.png`}
                     alt={`Client ${index + 1}`}
                     className="w-full h-auto rounded-md"
                   />
@@ -148,21 +164,25 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="partners bg-gray-50 py-16">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Partners we work with</h2>
-          <Slider {...sliderSettings}>
-            {[...Array(6)].map((_, index) => (
-              <div key={index} className="p-4">
-                <div className="bg-gray-300 w-full h-40 flex items-center justify-center rounded-md">
-                  <span>Partner {index + 1}</span>
-                </div>
-              </div>
-            ))}
-          </Slider>
+     {/* Partners Section */}
+<section className="partners bg-gray-50 py-16">
+  <div className="container mx-auto">
+    <h2 className="text-3xl font-bold text-center mb-8">Partners we work with</h2>
+    <Slider {...sliderSettings}>
+      {[...Array(6)].map((_, index) => (
+        <div key={index} className="p-4">
+          <div className="bg-gray-300 w-full h-40 flex items-center justify-center rounded-md">
+            <img
+              src={`/images/Partner${index + 1}.png`}
+              alt={`Partner ${index + 1}`}
+              className="w-full h-auto rounded-md"
+            />
+          </div>
         </div>
-      </section>
+      ))}
+    </Slider>
+  </div>
+</section>
     </div>
   );
 };

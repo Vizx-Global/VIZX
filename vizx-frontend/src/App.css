@@ -11,7 +11,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: black; /* Black header */
+  color: white;
 }
 
 header {
@@ -99,10 +100,12 @@ footer {
 .layout-body {
   display: flex;
   flex: 1;
-  min-height: calc(100vh + 1500px); /* Adjust header/footer spacing */
+  min-height: calc(100vh + 1700px); /* Adjust header/footer spacing */
   overflow: hidden;
   position: relative; /* Add relative positioning for toggle button positioning */
   justify-content: center; /* Centers content horizontally */
+  background-color: black; /* Black header */
+  color: rgb(0, 0, 0);
 }
 /* For smaller screens (below 768px width), adjust the layout */
 @media (max-width: 768px) {
@@ -238,7 +241,7 @@ a:hover {
 .toggle-button {
   position: absolute;
   left: 0;
-  top: 15%;
+  top: 20%;
   transform: translateY(-50%);
   background-color: orange;
   border: none;
