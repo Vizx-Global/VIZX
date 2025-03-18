@@ -10,7 +10,7 @@
 }
 
 .logo img {
-  width: 80px; /* Logo size */
+  width: 95px; /* Logo size */
   height: auto;
   margin-right: 10px;
 }
@@ -58,7 +58,7 @@
 
 /* Contact Button */
 .contact-button {
-  background-color: orange;
+  background-color: #FB8C00;
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
@@ -78,7 +78,7 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: orange;
+  background-color: #FB8C00;
   border: none;
   padding: 10px;
   cursor: pointer;

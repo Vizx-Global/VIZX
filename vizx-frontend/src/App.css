@@ -94,14 +94,14 @@ footer {
 .main-layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh
 }
 
 .layout-body {
   display: flex;
   flex: 1;
   min-height: calc(100vh + 1700px); /* Adjust header/footer spacing */
-  overflow: hidden;
+  overflow-y: auto;
   position: relative; /* Add relative positioning for toggle button positioning */
   justify-content: center; /* Centers content horizontally */
   background-color: black; /* Black header */

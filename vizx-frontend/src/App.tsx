@@ -12,6 +12,7 @@ import Register from './pages/Register';
 import Resources from './pages/Resources';
 import Solutions from './pages/Solutions';
 import VizxHI from './pages/VizxHI';
+import WhyKenya from './pages/WhyKenya';
 
 import MainLayout from './components/layout/MainLayout';
 import './App.css';
@@ -33,6 +34,8 @@ const App: React.FC = () => {
           <Route path="/resources" element={<Resources />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/vizx-hi" element={<VizxHI />} />
+          <Route path="/why-kenya" element={<WhyKenya />} />
+
         </Routes>
       </MainLayout>
     </Router>
