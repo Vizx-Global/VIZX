@@ -41,7 +41,7 @@ const Home: React.FC = () => {
   return (
     <div className="home-page">
       {/* Hero Section with Fullscreen Background Video */}
-      <section className="relative w-screen h-[50vh] overflow-hidden">
+      <section className="relative w-screen h-[110vh] overflow-hidden">
         {/* Background Video */}
         <video
           autoPlay
@@ -77,6 +77,7 @@ const Home: React.FC = () => {
               <button
                 className="absolute top-2 right-2 bg-red-500 text-white text-lg font-bold rounded-full px-3 py-1"
                 onClick={handleCloseVideo}
+                style={{ zIndex: 1000 }}  // Ensure the button stays on top
               >
                 ✖
               </button>
