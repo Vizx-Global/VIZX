@@ -1,46 +1,59 @@
+/* 1) Global reset + clamp overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* General Page Styles */
 .home-page {
-    padding: 20px;
-    background-color: black;
-  }
+  padding: 20px;
+  background-color: black;
+  overflow-x: hidden; /* prevent any child from spilling out */
+}
 
- 
-  
-  /* Industries Section */
-  .industries {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-  }
-  
-  .industry-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-    
-  }
-  
-  .industry-card {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    max-width: 300px; /* Added max constraints */
-    max-height: 70px;
-    margin-left: 8px;
-  }
-  
-  .industry-card:hover {
-    background-color: #333;
-    transform: scale(1.05);
-  }
-  
- /* Why Vizx Section */
+/* Industries Section */
+.industries {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.industry-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.industry-card {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  max-width: 300px; /* Added max constraints */
+  max-height: 70px;
+  margin-left: 8px;
+}
+
+.industry-card:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* Why Vizx Section */
 .why-vizx {
   position: relative;
   height: 100vh; /* Full height */
@@ -78,57 +91,90 @@
   text-align: center; /* Keep it readable */
 }
 
-
-  
-  .feature-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .feature-icon {
-    font-size: 24px;
-    color: orange;
-    margin-right: 10px;
-  }
-  
-  /* Clients Section */
-  .clients {
-    background-color: rgb(255, 255, 255);
-    color: black;
-    text-align: center;
-    padding: 20px 10px;
-  }
-  
-  .client-logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(0, 0, 0);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .client-logo-container img {
-    width: 200px; /* Adjust as needed */
-    height: auto; /* Maintains aspect ratio */
-    max-width: 150px; /* Prevents it from getting too large */
-    max-height: 75px;
-    object-fit: contain;
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-  
-  .client-logo-container:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Partners Section */
-  .partners {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
+.feature-icon {
+  font-size: 24px;
+  color: orange;
+  margin-right: 10px;
+}
 
-  }
-   
+/* 2) Slick carousel clamp */
+.slick-list {
+  overflow: hidden !important;
+}
+
+.slick-track {
+  display: flex !important;
+  margin: 0 !important;        /* remove stray margins */
+  width: auto !important;      /* don’t expand beyond container */
+}
+
+.slick-slide {
+  flex: 0 0 auto !important;   /* prevent slides stretching */
+}
+
+/* Clients Section */
+.clients {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.client-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.client-logo-container img {
+  max-height: 75px;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.client-logo-container:hover {
+  transform: scale(1.05);
+}
+
+/* Partners Section */
+.partners {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.partners-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.partners-logo-container img {
+  max-height: 75px;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.partners-logo-container:hover {
+  transform: scale(1.05);
+}

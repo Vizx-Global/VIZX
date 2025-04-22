@@ -10,9 +10,17 @@ import OurImpact from './pages/OurImpact';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
 import Resources from './pages/Resources';
+import ResourceDetail from './pages/ResourceDetail';
 import Solutions from './pages/Solutions';
 import VizxHI from './pages/VizxHI';
+import RPO from './pages/RPO';
+import CCaaS from './pages/CCaaS';
 import WhyKenya from './pages/WhyKenya';
+import EmployeeWelfare from './pages/EmployeeWelfare';
+import CommunityFund from './pages/CommunityFund';
+import VizxAI from './pages/VizxAI';
+import IndustryRouter from './pages/IndustryRouter'; // Import the dynamic router
+
 
 import MainLayout from './components/layout/MainLayout';
 import './App.css';
@@ -32,10 +40,17 @@ const App: React.FC = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/:id" element={<ResourceDetail />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/vizx-hi" element={<VizxHI />} />
+          <Route path="/contact-center" element={<CCaaS />} />
           <Route path="/why-kenya" element={<WhyKenya />} />
-
+          <Route path="/community-fund" element={<CommunityFund />} />
+          <Route path="/rpo" element={<RPO />} />
+          <Route path="/employee-welfare" element={<EmployeeWelfare />} />
+          <Route path="/vizx-ai" element={<VizxAI />} />
+          {/* Dynamic route for industry pages */}
+          <Route path="/industry/:slug" element={<IndustryRouter />} />
         </Routes>
       </MainLayout>
     </Router>

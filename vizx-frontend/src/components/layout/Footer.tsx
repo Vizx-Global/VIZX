@@ -11,14 +11,16 @@ const Footer: React.FC = () => {
             <li><a href="solutions">Our Solutions</a></li>
             <li><a href="industries">Industries</a></li>
             <li><a href="vizx-hi">Vizx HI</a></li>
+            <li><a href="why-kenya">Why Kenya</a></li>
           </ul>
         </div>
         <div className="footer-section">
           <h3>Vizx Community</h3>
           <ul>
-            <li><a href="why-kenya">Why Kenya</a></li>
-            <li><a href="vizx-portal">The Portal</a></li>
-            <li><a href="resources">Resources</a></li>
+            <li><a href="employee-welfare">Employee Welfare</a></li>
+            <li><a href="our-impact">Our Impact</a></li>
+            <li><a href="community-fund">Vizx Community Fund</a></li>
+            <li><a href="https://vizxglobal.bamboohr.com/careers">Careers</a></li>
           </ul>
         </div>
         <div className="footer-section">
@@ -26,7 +28,9 @@ const Footer: React.FC = () => {
           <ul>
             <li><a href="about">About us</a></li>
             <li><a href="contact">Contact us</a></li>
-            <li><a href="team">The Team</a></li>
+            <li><a href="resources">Resources</a></li>
+            <li><a href="vizx-ai">Vizx AI</a></li>
+
           </ul>
         </div>
         <div className="footer-section footer-buttons">

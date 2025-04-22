@@ -24,6 +24,13 @@ const HI: React.FC = () => {
     { q: 'Why does human intelligence matter if AI can automate so much?', a: 'While AI excels at routine tasks and data analysis, human agents bring empathy, critical thinking, and emotional intelligence—qualities essential for high-value interactions.' },
     { q: 'How do you ensure consistency across AI and human interactions?', a: 'Our proprietary AI tools provide real-time guidance to agents, ensuring consistent messaging, accurate information, and adherence to brand voice.' },
     { q: 'Can the HI model scale for peak seasons?', a: 'Absolutely—our blended AI-human staffing model dynamically scales, with AI handling high-volume basics and humans managing complex or sensitive cases.' },
+    { q: 'What industries benefit most from Vizx HI?', a: 'Industries with complex customer journeys—like healthcare, finance, and technology—see the greatest impact from our HI approach.' },
+    { q: 'How long does implementation take?', a: 'Typical deployment of our HI framework takes 6–8 weeks, including training, integration, and testing phases.' },
+    { q: 'Is my data secure when using human agents?', a: 'Yes—our agents follow strict data privacy protocols and we employ secure, compliant systems for all customer data handling.' },
+    { q: 'How do you measure performance?', a: 'We track KPIs like CSAT, first-contact resolution, and average handle time, correlating them to both AI-driven metrics and human interaction quality.' },
+    { q: 'Can I customize the level of AI assistance?', a: 'Vizx offers flexible AI configurations, allowing you to adjust the balance between automation and human touch based on your objectives.' },
+    { q: 'What kind of training do agents receive?', a: 'Agents undergo continuous training in emotional intelligence, AI tool usage, and brand-specific guidelines to deliver high-quality service.' },
+    { q: 'How is success measured in HI engagements?', a: 'Success is measured by combined metrics: cost savings, productivity gains, customer satisfaction, and repeat business rates.' },
   ];
 
   return (
@@ -61,24 +68,9 @@ const HI: React.FC = () => {
         {/* AI vs HI */}
         <section data-aos="fade-up">
           <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">AI vs. HI: The Best of Both Worlds</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-white mb-2">AI Strengths</h3>
-              <ul className="list-disc list-inside text-gray-200 space-y-1">
-                <li>Automates repetitive tasks at scale</li>
-                <li>Analyzes vast datasets in seconds</li>
-                <li>Ensures 24/7 availability</li>
-              </ul>
-            </div>
-            <div className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-white mb-2">Human Intelligence Strengths</h3>
-              <ul className="list-disc list-inside text-gray-200 space-y-1">
-                <li>Delivers empathy and emotional insight</li>
-                <li>Handles nuanced, complex issues</li>
-                <li>Adapts and learns from unique contexts</li>
-              </ul>
-            </div>
-          </div>
+          <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6">
+            While AI excels at automating repetitive tasks, analyzing vast datasets, and providing round-the-clock availability, it lacks the human touch that builds emotional connections and trust. Human Intelligence (HI), on the other hand, shines at empathy, critical thinking, and handling complex or nuanced situations. At Vizx, we combine the strengths of both: AI empowers our agents with deep insights and rapid data processing, and our human experts deliver personalized care, creativity, and ethical judgment that machines alone cannot replicate.
+          </p>
         </section>
 
         {/* Framework */}

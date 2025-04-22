@@ -82,7 +82,7 @@ const Solutions: React.FC = () => {
         </div>
 
         <div className="solution dark-bg" data-aos="fade-up">
-          <Link to="/real-estate-management">
+          <Link to="/industry/real-estate">
             <h2>Real Estate Management</h2>
           </Link>
           <p>
@@ -92,7 +92,7 @@ const Solutions: React.FC = () => {
         </div>
 
         <div className="solution bg-orange-400" data-aos="fade-up">
-          <Link to="/back-office-support">
+          <Link to="/rpo">
             <h2>Back Office Support</h2>
           </Link>
           <p>
