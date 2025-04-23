@@ -2,132 +2,134 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const HI: React.FC = () => {
+const AI: React.FC = () => {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-  const framework = [
-    { icon: '/images/empathy-icon.svg', title: 'Empathy-Driven Service', desc: 'Our human teams listen, understand, and respond with genuine care—building trust and loyalty.' },
-    { icon: '/images/context-icon.svg', title: 'Contextual Intelligence', desc: 'We combine customer history and real-time AI insights to deliver highly personalized interactions.' },
-    { icon: '/images/adaptability-icon.svg', title: 'Adaptive Expertise', desc: 'Continuous training empowers our agents to adapt to evolving customer needs and complex queries.' },
-    { icon: '/images/trust-icon.svg', title: 'Ethical & Transparent', desc: 'We uphold the highest standards of data privacy and human oversight in every engagement.' },
-  ];
-
-  const testimonials = [
-    { quote: '“Vizx’s human-first approach transformed our support experience—combining AI speed with genuine care.”', author: 'Sarah L., VP Customer Success' },
-    { quote: '“Our satisfaction scores jumped 35% when Vizx integrated human agents empowered by AI insights.”', author: 'Mark T., Operations Director' },
-    { quote: '“The balance of cutting-edge AI and human empathy is what sets Vizx apart from any BPO we’ve tried.”', author: 'Priya K., Global Program Manager' },
-  ];
-
-  const faqs = [
-    { q: 'Why does human intelligence matter if AI can automate so much?', a: 'While AI excels at routine tasks and data analysis, human agents bring empathy, critical thinking, and emotional intelligence—qualities essential for high-value interactions.' },
-    { q: 'How do you ensure consistency across AI and human interactions?', a: 'Our proprietary AI tools provide real-time guidance to agents, ensuring consistent messaging, accurate information, and adherence to brand voice.' },
-    { q: 'Can the HI model scale for peak seasons?', a: 'Absolutely—our blended AI-human staffing model dynamically scales, with AI handling high-volume basics and humans managing complex or sensitive cases.' },
-    { q: 'What industries benefit most from Vizx HI?', a: 'Industries with complex customer journeys—like healthcare, finance, and technology—see the greatest impact from our HI approach.' },
-    { q: 'How long does implementation take?', a: 'Typical deployment of our HI framework takes 6–8 weeks, including training, integration, and testing phases.' },
-    { q: 'Is my data secure when using human agents?', a: 'Yes—our agents follow strict data privacy protocols and we employ secure, compliant systems for all customer data handling.' },
-    { q: 'How do you measure performance?', a: 'We track KPIs like CSAT, first-contact resolution, and average handle time, correlating them to both AI-driven metrics and human interaction quality.' },
-    { q: 'Can I customize the level of AI assistance?', a: 'Vizx offers flexible AI configurations, allowing you to adjust the balance between automation and human touch based on your objectives.' },
-    { q: 'What kind of training do agents receive?', a: 'Agents undergo continuous training in emotional intelligence, AI tool usage, and brand-specific guidelines to deliver high-quality service.' },
-    { q: 'How is success measured in HI engagements?', a: 'Success is measured by combined metrics: cost savings, productivity gains, customer satisfaction, and repeat business rates.' },
+  const features = [
+    { title: 'State of AI in BPO', stats: [
+        { value: '164.8', label: 'BPO market (2023, $B)' },
+        { value: '8.35%', label: 'CAGR (2023–2032)' },
+        { value: '34%+', label: 'AI segment CAGR' },
+    ]},
+    { title: 'Conversational AI', stats: [
+        { value: '70%', label: 'Automated interactions' },
+        { value: '40%', label: 'Avg. handle time ↓' },
+        { value: '25%', label: 'FCR ↑' },
+    ]},
+    { title: 'Generative AI in Recruitment', stats: [
+        { value: '40%', label: 'Time-to-fill ↓' },
+        { value: '30%', label: 'Candidate engagement ↑' },
+        { value: '71%', label: 'Cost-per-hire ↓' },
+    ]},
+    { title: 'Workflow Automation & RPA', stats: [
+        { value: '60%', label: 'Manual tasks eliminated' },
+        { value: '35%', label: 'SLA compliance ↑' },
+        { value: 'Real-time', label: 'Actionable reports' },
+    ]},
   ];
 
   return (
     <div className="bg-black text-white w-full min-h-screen font-sans">
-      <main className="px-8 py-16 space-y-24">
-
-        {/* Hero */}
-        <section className="relative h-[60vh] flex items-center justify-center bg-cover bg-center rounded-lg overflow-hidden" style={{ backgroundImage: "url('/images/hi-hero.jpg')" }}>
-          <div className="absolute inset-0 bg-black opacity-70"></div>
-          <div className="relative text-center px-4" data-aos="zoom-in">
-            <h1 className="text-6xl font-bold text-orange-500 mb-4">Vizx HI: Unleashing Human Intelligence</h1>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">Empowered by AI and rooted in empathy, our human experts deliver experiences that machines alone cannot match.</p>
-          </div>
+      <main className="px-8 py-12 space-y-16">
+        {/* Hero Section */}
+        <section className="relative h-[50vh] flex items-center justify-center bg-cover bg-center rounded-lg overflow-hidden" style={{ backgroundImage: "url('/images/ai-hero.jpg')" }}>
+          <div className="absolute inset-0 bg-black opacity-60"></div>
+          <h1 className="relative text-5xl md:text-6xl font-bold text-orange-500 text-center">AI in BPO: Driving the Future of Outsourcing</h1>
         </section>
 
-        {/* Why HI Matters */}
+        {/* Features Grid */}
         <section data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">Why Human Intelligence Matters</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="p-6 bg-[#0d0d0d] rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-white mb-2">Authentic Connections</h3>
-              <p className="text-gray-200 leading-relaxed">82% of customers still prefer talking to a human when their issue is complex or emotionally charged.</p>
-            </div>
-            <div className="p-6 bg-[#0d0d0d] rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-white mb-2">Trust & Satisfaction</h3>
-              <p className="text-gray-200 leading-relaxed">Businesses that blend AI efficiency with human empathy see a 35% higher CSAT score on average.</p>
-            </div>
-            <div className="p-6 bg-[#0d0d0d] rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-white mb-2">Flexibility & Judgment</h3>
-              <p className="text-gray-200 leading-relaxed">Humans excel at nuanced decisions, creative problem-solving, and handling exceptions that AI cannot predict.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* AI vs HI */}
-        <section data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">AI vs. HI: The Best of Both Worlds</h2>
-          <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto mb-6">
-            While AI excels at automating repetitive tasks, analyzing vast datasets, and providing round-the-clock availability, it lacks the human touch that builds emotional connections and trust. Human Intelligence (HI), on the other hand, shines at empathy, critical thinking, and handling complex or nuanced situations. At Vizx, we combine the strengths of both: AI empowers our agents with deep insights and rapid data processing, and our human experts deliver personalized care, creativity, and ethical judgment that machines alone cannot replicate.
-          </p>
-        </section>
-
-        {/* Framework */}
-        <section data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">Our HI Framework</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {framework.map(item => (
-              <div key={item.title} className="bg-[#0d0d0d] p-6 rounded-xl shadow-lg flex flex-col items-center text-center" data-aos="fade-up">
-                <img src={item.icon} alt={item.title} className="w-12 h-12 mb-4" />
-                <h3 className="text-xl font-semibold text-orange-500 mb-2">{item.title}</h3>
-                <p className="text-gray-200">{item.desc}</p>
+            {features.map(f => (
+              <div key={f.title} className="bg-[#0d0d0d] p-6 rounded-xl shadow-lg flex flex-col items-center">
+                <h3 className="text-2xl font-semibold text-orange-500 mb-4 text-center">{f.title}</h3>
+                <ul className="space-y-2">
+                  {f.stats.map(({ value, label }) => (
+                    <li key={label} className="flex flex-col items-center">
+                      <span className="text-4xl font-bold text-white">{value}</span>
+                      <span className="text-sm text-gray-400">{label}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Testimonials Pyramid */}
+        {/* Impact & Future CTA */}
+        <section data-aos="fade-up" className="text-center space-y-6">
+          <h2 className="text-4xl font-bold text-orange-500">The Impact & Future</h2>
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12">
+            <div className="bg-[#0d0d0d] p-6 rounded-lg w-full md:w-1/3">
+              <span className="text-3xl font-bold text-white">30%</span>
+              <p className="mt-2 text-gray-200">Cost savings</p>
+            </div>
+            <div className="bg-[#0d0d0d] p-6 rounded-lg w-full md:w-1/3">
+              <span className="text-3xl font-bold text-white">25%</span>
+              <p className="mt-2 text-gray-200">Workforce productivity ↑</p>
+            </div>
+            <div className="bg-[#0d0d0d] p-6 rounded-lg w-full md:w-1/3">
+              <span className="text-3xl font-bold text-white">90%+</span>
+              <p className="mt-2 text-gray-200">Growth in AI investment</p>
+            </div>
+          </div>
+          <a href="/contact" className="inline-block mt-6 px-8 py-3 bg-orange-500 text-black font-semibold rounded-full transition-colors hover:bg-orange-600">Talk to our AI Experts</a>
+        </section>
+
+        {/* Vizx Implementation */}
         <section data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">What Our Clients Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start max-w-4xl mx-auto">
-            <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg md:col-start-2 md:row-start-1">
-              <p className="italic text-gray-200">{testimonials[0].quote}</p>
-              <cite className="block mt-4 text-orange-500 font-semibold">{testimonials[0].author}</cite>
-            </blockquote>
-            <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg md:col-start-1 md:row-start-2">
-              <p className="italic text-gray-200">{testimonials[1].quote}</p>
-              <cite className="block mt-4 text-orange-500 font-semibold">{testimonials[1].author}</cite>
-            </blockquote>
-            <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg md:col-start-3 md:row-start-2">
-              <p className="italic text-gray-200">{testimonials[2].quote}</p>
-              <cite className="block mt-4 text-orange-500 font-semibold">{testimonials[2].author}</cite>
-            </blockquote>
+          <h2 className="text-4xl font-bold text-orange-500 mb-4">Vizx's AI & Automation in Action</h2>
+          <p className="text-xl text-gray-200 leading-relaxed">
+            We have integrated AI chatbots that autonomously handle Tier‑1 customer inquiries 24/7, reducing live agent ticket volume by 50%. Our RPA bots execute payroll, invoicing, and compliance reporting workflows, cutting manual errors by 60% and accelerating cycle times. Meanwhile, our AI‑driven recruitment engine automates candidate sourcing, resume screening, and interview scheduling—boosting recruiter efficiency by 45%. Finally, our predictive analytics dashboards provide real‑time insights into performance metrics, enabling proactive SLA management and strategic capacity planning.
+          </p>
+        </section>
+
+        {/* Leadership Vision */}
+        <section data-aos="fade-up">
+          <h2 className="text-4xl font-bold text-orange-500 mb-4">Leading the AI-Powered BPO Revolution</h2>
+          <p className="text-xl text-gray-200 leading-relaxed">
+            We envision a future where hyperautomation orchestrates processes end‑to‑end, delivering zero‑touch operations at scale. Our adaptive learning models continuously retrain on live interactions for ever‑improving accuracy and personalization. By unifying AI insights across voice, chat, email, and social channels, we enable seamless omnichannel customer experiences. With proprietary integrations and early partnerships, Vizx offers exclusive AI capabilities that keep us steps ahead of the competition.
+          </p>
+        </section>
+
+        {/* FAQ Section */}
+        <section data-aos="fade-up">
+          <h2 className="text-4xl font-bold text-orange-500 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-2xl font-semibold text-white mb-2">How soon can we integrate AI into our BPO workflows?</h3>
+              <p className="text-gray-200 leading-relaxed">
+                Depending on the complexity, Vizx can deploy core AI chatbots and RPA automations within 4–6 weeks, with continuous enhancement thereafter.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-white mb-2">What kinds of ROI can we expect?</h3>
+              <p className="text-gray-200 leading-relaxed">
+                Clients typically see 20–30% cost savings and a 15–25% increase in agent productivity within the first year of AI adoption.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-white mb-2">Is Vizx’s AI customizable?</h3>
+              <p className="text-gray-200 leading-relaxed">
+                Absolutely. We tailor models to your industry, language requirements, and existing systems for seamless integration.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* FAQs as Accordion */}
-        <section data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqs.map((f, idx) => (
-              <details key={idx} className="bg-[#0d0d0d] p-4 rounded-lg">
-                <summary className="cursor-pointer text-xl font-semibold text-white">{f.q}</summary>
-                <p className="mt-2 text-gray-200 leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        {/* CTA */}
+        {/* Get Started CTA */}
         <section data-aos="fade-up" className="text-center py-12">
-          <h2 className="text-4xl font-bold text-orange-500 mb-4">Ready for the HI Advantage?</h2>
-          <p className="text-xl text-gray-200 leading-relaxed mb-6">Discover how Vizx HI can elevate your customer experiences—combining AI intelligence with the irreplaceable human touch.</p>
-          <a href="/contact" className="inline-block px-10 py-4 bg-orange-500 text-black font-semibold rounded-full transition-colors hover:bg-orange-600">Connect with Our HI Team</a>
+          <h2 className="text-4xl font-bold text-orange-500 mb-4">Ready to Elevate Your BPO with AI?</h2>
+          <p className="text-xl text-gray-200 leading-relaxed mb-6">
+            Connect with our AI experts today to schedule a demo and discover how Vizx can transform your outsourcing operations.
+          </p>
+          <a href="/contact" className="inline-block px-10 py-4 bg-orange-500 text-black font-semibold rounded-full transition-colors hover:bg-orange-600">Get Started Now</a>
         </section>
       </main>
     </div>
   );
 };
 
-export default HI;
+export default AI;

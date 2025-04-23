@@ -24,6 +24,13 @@ const HI: React.FC = () => {
     { q: 'Why does human intelligence matter if AI can automate so much?', a: 'While AI excels at routine tasks and data analysis, human agents bring empathy, critical thinking, and emotional intelligence—qualities essential for high-value interactions.' },
     { q: 'How do you ensure consistency across AI and human interactions?', a: 'Our proprietary AI tools provide real-time guidance to agents, ensuring consistent messaging, accurate information, and adherence to brand voice.' },
     { q: 'Can the HI model scale for peak seasons?', a: 'Absolutely—our blended AI-human staffing model dynamically scales, with AI handling high-volume basics and humans managing complex or sensitive cases.' },
+    { q: 'What industries benefit most from Vizx HI?', a: 'Industries with complex customer journeys—like healthcare, finance, and technology—see the greatest impact from our HI approach.' },
+    { q: 'How long does implementation take?', a: 'Typical deployment of our HI framework takes 6–8 weeks, including training, integration, and testing phases.' },
+    { q: 'Is my data secure when using human agents?', a: 'Yes—our agents follow strict data privacy protocols and we employ secure, compliant systems for all customer data handling.' },
+    { q: 'How do you measure performance?', a: 'We track KPIs like CSAT, first-contact resolution, and average handle time, correlating them to both AI-driven metrics and human interaction quality.' },
+    { q: 'Can I customize the level of AI assistance?', a: 'Vizx offers flexible AI configurations, allowing you to adjust the balance between automation and human touch based on your objectives.' },
+    { q: 'What kind of training do agents receive?', a: 'Agents undergo continuous training in emotional intelligence, AI tool usage, and brand-specific guidelines to deliver high-quality service.' },
+    { q: 'How is success measured in HI engagements?', a: 'Success is measured by combined metrics: cost savings, productivity gains, customer satisfaction, and repeat business rates.' },
   ];
 
   return (
@@ -58,30 +65,50 @@ const HI: React.FC = () => {
           </div>
         </section>
 
-        {/* AI vs HI */}
+        {/* AI vs HI: Comparison Table */}
         <section data-aos="fade-up">
           <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">AI vs. HI: The Best of Both Worlds</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-white mb-2">AI Strengths</h3>
-              <ul className="list-disc list-inside text-gray-200 space-y-1">
-                <li>Automates repetitive tasks at scale</li>
-                <li>Analyzes vast datasets in seconds</li>
-                <li>Ensures 24/7 availability</li>
-              </ul>
-            </div>
-            <div className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold text-white mb-2">Human Intelligence Strengths</h3>
-              <ul className="list-disc list-inside text-gray-200 space-y-1">
-                <li>Delivers empathy and emotional insight</li>
-                <li>Handles nuanced, complex issues</li>
-                <li>Adapts and learns from unique contexts</li>
-              </ul>
-            </div>
+          <div className="overflow-x-auto px-4">
+            <table className="min-w-full bg-[#0d0d0d] rounded-lg shadow-lg">
+              <thead>
+                <tr className="border-b border-gray-700">
+                  <th className="px-6 py-4 text-left text-white">Aspect</th>
+                  <th className="px-6 py-4 text-left text-white">Artificial Intelligence</th>
+                  <th className="px-6 py-4 text-left text-white">Human Intelligence</th>
+                  <th className="px-6 py-4 text-left text-white">Overlap</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-800">
+                  <td className="px-6 py-4">Availability</td>
+                  <td className="px-6 py-4">24/7 automated support</td>
+                  <td className="px-6 py-4">Scheduled human shifts</td>
+                  <td className="px-6 py-4">Hybrid coverage models</td>
+                </tr>
+                <tr className="border-b border-gray-800">
+                  <td className="px-6 py-4">Data Handling</td>
+                  <td className="px-6 py-4">Processes large datasets instantly</td>
+                  <td className="px-6 py-4">Interprets nuanced context</td>
+                  <td className="px-6 py-4">Insight-driven guidance</td>
+                </tr>
+                <tr className="border-b border-gray-800">
+                  <td className="px-6 py-4">Empathy</td>
+                  <td className="px-6 py-4">Lacks emotional understanding</td>
+                  <td className="px-6 py-4">Genuine human empathy</td>
+                  <td className="px-6 py-4">Emotion-informed automation</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4">Adaptability</td>
+                  <td className="px-6 py-4">Updates via retraining</td>
+                  <td className="px-6 py-4">Real-time judgment calls</td>
+                  <td className="px-6 py-4">Continuous improvement loops</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
-        {/* Framework */}
+        {/* Framework *//* Framework */}
         <section data-aos="fade-up">
           <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">Our HI Framework</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -116,12 +143,12 @@ const HI: React.FC = () => {
 
         {/* FAQs as Accordion */}
         <section data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <h2 className="text-3xl font-bold text-orange-500 mb-4 text-center">Frequently Asked Questions</h2>
+          <div className="w-full space-y-2 px-4">
             {faqs.map((f, idx) => (
-              <details key={idx} className="bg-[#0d0d0d] p-4 rounded-lg">
-                <summary className="cursor-pointer text-xl font-semibold text-white">{f.q}</summary>
-                <p className="mt-2 text-gray-200 leading-relaxed">{f.a}</p>
+              <details key={idx} className="bg-[#0d0d0d] p-2 rounded-lg w-full">
+                <summary className="cursor-pointer text-lg font-semibold text-white">{f.q}</summary>
+                <p className="mt-1 text-gray-200 text-sm">{f.a}</p>
               </details>
             ))}
           </div>

@@ -175,6 +175,11 @@ const Header: React.FC = () => {
             </Link>
           </li>
           <li>
+            <Link to="/vizx-hi" className="hover:text-orange-500 transition">
+              Vizx HI
+            </Link>
+          </li>
+          <li>
             <Link
               to="/contact"
               className="bg-orange-500 text-black hover:bg-orange-600 px-4 py-2 rounded-md transition"
