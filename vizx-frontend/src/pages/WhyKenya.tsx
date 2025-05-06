@@ -264,15 +264,7 @@ const WhyKenya: React.FC = () => {
           </div>
         </section>
 
-        {/* FOOTER NOTE (OPTIONAL) */}
-        <section className="px-8" data-aos="fade-up">
-          <div className="max-w-5xl mx-auto text-center text-gray-400 text-sm">
-            <p>
-              VIZY International Staffing Solutions is a division of VIZX Global Solutions Inc.,
-              specializing in RPO Services.
-            </p>
-          </div>
-        </section>
+       
       </main>
 
       {/* BASIC FOOTER (Remove if using a shared/global Footer) */}

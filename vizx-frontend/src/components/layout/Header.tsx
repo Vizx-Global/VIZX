@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         <ul className="flex items-center space-x-6">
           {/* SOLUTIONS DROPDOWN */}
           <li className="relative group">
-            <Link to="/solutions" className="hover:text-orange-500 transition">
+            <Link to="/solutions" className="text-gray-300 hover:text-orange-500 transition">
               Solutions
               <svg
                 className="w-4 h-4 ml-1 inline-block text-gray-400 group-hover:text-orange-500 transition"
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
 
           {/* INDUSTRIES DROPDOWN */}
           <li className="relative group">
-            <Link to="/industries" className="hover:text-orange-500 transition">
+            <Link to="/industries" className="text-gray-300 hover:text-orange-500 transition">
               Industries
               <svg
                 className="w-4 h-4 ml-1 inline-block text-gray-400 group-hover:text-orange-500 transition"
@@ -160,22 +160,22 @@ const Header: React.FC = () => {
 
           {/* Normal links */}
           <li>
-            <Link to="/about" className="hover:text-orange-500 transition">
+            <Link to="/about" className="text-gray-300 hover:text-orange-500 transition">
               About Us
             </Link>
           </li>
           <li>
-            <Link to="/why-kenya" className="hover:text-orange-500 transition">
+            <Link to="/why-kenya" className="text-gray-300 hover:text-orange-500 transition">
               Why Kenya
             </Link>
           </li>
           <li>
-            <Link to="/our-impact" className="hover:text-orange-500 transition">
+            <Link to="/our-impact" className="text-gray-300 hover:text-orange-500 transition">
               Our Impact
             </Link>
           </li>
           <li>
-            <Link to="/vizx-hi" className="hover:text-orange-500 transition">
+            <Link to="/vizx-hi" className="text-gray-300 hover:text-orange-500 transition">
               Vizx HI
             </Link>
           </li>

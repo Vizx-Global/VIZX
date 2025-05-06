@@ -41,7 +41,7 @@ const HI: React.FC = () => {
         <section className="relative h-[60vh] flex items-center justify-center bg-cover bg-center rounded-lg overflow-hidden" style={{ backgroundImage: "url('/images/hi-hero.jpg')" }}>
           <div className="absolute inset-0 bg-black opacity-70"></div>
           <div className="relative text-center px-4" data-aos="zoom-in">
-            <h1 className="text-6xl font-bold text-orange-500 mb-4">Vizx HI: Unleashing Human Intelligence</h1>
+            <h1 className="text-6xl font-bold text-orange-500 mb-4">VIZX HI: Unleashing Human Intelligence</h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">Empowered by AI and rooted in empathy, our human experts deliver experiences that machines alone cannot match.</p>
           </div>
         </section>
@@ -75,7 +75,7 @@ const HI: React.FC = () => {
                   <th className="px-6 py-4 text-left text-white">Aspect</th>
                   <th className="px-6 py-4 text-left text-white">Artificial Intelligence</th>
                   <th className="px-6 py-4 text-left text-white">Human Intelligence</th>
-                  <th className="px-6 py-4 text-left text-white">Overlap</th>
+                  <th className="px-6 py-4 text-left text-white">VIZX HI</th>
                 </tr>
               </thead>
               <tbody>
@@ -147,7 +147,7 @@ const HI: React.FC = () => {
           <div className="w-full space-y-2 px-4">
             {faqs.map((f, idx) => (
               <details key={idx} className="bg-[#0d0d0d] p-2 rounded-lg w-full">
-                <summary className="cursor-pointer text-lg font-semibold text-white">{f.q}</summary>
+                <summary className="cursor-pointer text-lg font-semibold text-white ">{f.q}</summary>
                 <p className="mt-1 text-gray-200 text-sm">{f.a}</p>
               </details>
             ))}

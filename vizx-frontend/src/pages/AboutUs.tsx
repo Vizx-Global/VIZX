@@ -206,7 +206,7 @@ const AboutUs: React.FC = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-2xl md:text-3xl text-gray-200 mt-8 max-w-4xl leading-relaxed"
           >
-            With VizX Global as your partner, you can rest assured that your
+            With VIZX Global as your partner, you can rest assured that your
             business will benefit from our comprehensive suite of solutions.
           </motion.p>
         </div>
