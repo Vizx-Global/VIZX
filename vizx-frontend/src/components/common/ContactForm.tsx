@@ -66,7 +66,7 @@ const ContactForm = () => {
                     <div>
                         <label className="flex items-center text-gray-400">
                             <input type="checkbox" className="mr-2" />
-                            By checking this box, you consent to receive SMS communications from VIZX Global regarding updates, promotions, and important notifications. Standard messaging rates may apply.
+                            By checking this box, you consent to receive email and SMS communications from VIZX Global regarding updates, promotions, and important notifications. Standard messaging rates may apply.
                         </label>
                     </div>
 

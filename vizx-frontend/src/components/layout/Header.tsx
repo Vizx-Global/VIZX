@@ -49,7 +49,7 @@ const Header: React.FC = () => {
                   to="/rpo"
                   className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
                 >
-                  RPO
+                  Recruitment Process Outsourcing
                 </Link>
               </li>
               <li>
@@ -57,23 +57,23 @@ const Header: React.FC = () => {
                   to="/data-entry"
                   className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
                 >
-                  Data Entry
+                  CCaaS
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/digital-marketing"
+                  to="/contact-center"
                   className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
                 >
-                  Digital Marketing
+                  Real Estate Management
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/customer-support"
+                  to="/real-estate"
                   className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
                 >
-                  Customer Support
+                  Back Office Support
                 </Link>
               </li>
               <li>
@@ -160,8 +160,8 @@ const Header: React.FC = () => {
 
           {/* Normal links */}
           <li>
-            <Link to="/about" className="text-gray-300 hover:text-orange-500 transition">
-              About Us
+            <Link to="/vizx-hi" className="text-gray-300 hover:text-orange-500 transition">
+              Vizx HI
             </Link>
           </li>
           <li>
@@ -175,8 +175,8 @@ const Header: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link to="/vizx-hi" className="text-gray-300 hover:text-orange-500 transition">
-              Vizx HI
+            <Link to="/about" className="text-gray-300 hover:text-orange-500 transition">
+              About Us
             </Link>
           </li>
           <li>

@@ -347,7 +347,7 @@ const RPO: React.FC = () => {
                   <td className="px-4 py-2 text-gray-300">Benefits</td>
                   <td className="px-4 py-2 text-gray-300">$15,000</td>
                   <td className="px-4 py-2 text-gray-300">$9,000</td>
-                  <td className="px-4 py-2 text-gray-300">See note</td>
+                  <td className="px-4 py-2 text-gray-300">T & C Apply</td>
                 </tr>
                 <tr className="border-b border-gray-700">
                   <td className="px-4 py-2 text-gray-300">

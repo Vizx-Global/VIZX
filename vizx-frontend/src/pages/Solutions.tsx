@@ -71,7 +71,7 @@ const Solutions: React.FC = () => {
           </p>
         </div>
 
-        <div className="solution bg-orange-400" data-aos="fade-up">
+        <div className="solution bg-orange-500" data-aos="fade-up">
           <Link to="/contact-center">
             <h2>Contact Center as a Service (CCaaS)</h2>
           </Link>
@@ -91,7 +91,7 @@ const Solutions: React.FC = () => {
           </p>
         </div>
 
-        <div className="solution bg-orange-400" data-aos="fade-up">
+        <div className="solution bg-orange-500" data-aos="fade-up">
           <Link to="/rpo">
             <h2>Back Office Support</h2>
           </Link>

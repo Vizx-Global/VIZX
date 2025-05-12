@@ -164,14 +164,7 @@ const EmployeeWelfare: React.FC = () => {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-12">
-              <a
-                href="/alumni-directory"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-8 rounded-lg"
-              >
-                View Full Directory
-              </a>
-            </div>
+            
           </div>
         </section>
       </main>

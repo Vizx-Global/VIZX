@@ -23,7 +23,7 @@ const PrivacyAndSecurity: React.FC = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="text-6xl md:text-7xl font-bold text-orange-500 leading-tight mb-4"
           >
-            U.S. Data Privacy & Security
+           Data Privacy & Security
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -72,7 +72,7 @@ const PrivacyAndSecurity: React.FC = () => {
             For privacy-related inquiries, opt-out requests, or to report any issues:
           </p>
           <a
-            href="mailto:privacy@vizxdesigns.com"
+            href="mailto:derrick@vizxglobal.com"
             className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
           >
             Contact Our Data Protection Officer
@@ -80,7 +80,7 @@ const PrivacyAndSecurity: React.FC = () => {
         </section>
 
         <section data-aos="fade-up" className="max-w-5xl mx-auto">
-  <h2 className="text-5xl font-bold text-orange-500 mb-6">Download Our Privacy Policy</h2>
+  <h2 className="text-5xl font-bold text-orange-500 mb-6">View Our Data Processor Certification</h2>
   <a
     href="/docs/privacy-policy.pdf"
     target="_blank"

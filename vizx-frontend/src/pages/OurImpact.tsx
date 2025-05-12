@@ -14,7 +14,7 @@ const OurImpact: React.FC = () => {
       description:
         'We partner with local schools in Kenya and underserved communities to host tech workshops, career mentorship, and digital literacy programs. These initiatives equip youth with in-demand skills, bridging the opportunity gap and preparing them for a tech-driven future.',
       quote:
-        '"Before Vizx’s training, I had never touched a computer. Today, I’m coding basic websites and applying for internships!" — Brenda, student from Nairobi'
+        '"I had never touched a computer. Today, I’m coding basic websites and applying for internships after Vizx’s training, !" — Brenda, student from Nairobi'
     },
     {
       title: 'Job Creation & Economic Inclusion',
@@ -22,15 +22,7 @@ const OurImpact: React.FC = () => {
       description:
         'By expanding our BPO operations in Kenya, we’ve created hundreds of stable, well-paying jobs—particularly for young adults and women. Through fair hiring practices and upskilling, we ensure that our team thrives in a global workforce.',
       quote:
-        '"Vizx gave me my first formal job. I’ve since moved into a team lead position, and I’m saving to open a business." — George, Data Analyst'
-    },
-    {
-      title: 'Sustainability in Action',
-      sdg: 'SDG 13: Climate Action',
-      description:
-        'We’re actively reducing our carbon footprint by running paperless offices, using solar-powered hubs, and supporting eco-conscious partners. Our internal Green Office Program rewards staff-led sustainability initiatives that reduce waste and promote environmental awareness.',
-      quote:
-        '"My team replaced single-use packaging with reusable containers—we now save over 5,000 plastic pieces a year." — Faith, Office Admin'
+        '"I got my first formal job at Vizx. I’ve since moved into a team lead position, and I’m saving to open a business." — George, Data Analyst'
     },
     {
       title: 'Inclusive Growth for Entrepreneurs',
@@ -38,15 +30,7 @@ const OurImpact: React.FC = () => {
       description:
         'We mentor and support local SMEs through accelerator workshops and business process optimization. From tech startups to artisan cooperatives, our teams provide pro-bono consulting to help ventures scale sustainably.',
       quote:
-        '"Through Vizx’s mentorship, I improved my pricing model and landed my first international client." — Patrick, Founder of SmartKiosk'
-    },
-    {
-      title: 'Community Wellness & Healthcare Access',
-      sdg: 'SDG 3: Good Health and Well-being',
-      description:
-        'In partnership with our healthcare staffing units, we’ve helped run free community wellness days, offering services like basic screenings and mental health awareness workshops.',
-      quote:
-        '"We screened over 200 people in a single weekend, some of whom had never seen a healthcare provider." — Nurse Michelle, CSR Volunteer'
+        '"I improved my pricing model and landed my first international client through Vizx’s mentorship." — Patrick, Founder of SmartKiosk'
     },
     {
       title: 'Employee-Led Giving & Volunteering',

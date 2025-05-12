@@ -8,10 +8,10 @@ const HI: React.FC = () => {
   }, []);
 
   const framework = [
-    { icon: '/images/empathy-icon.svg', title: 'Empathy-Driven Service', desc: 'Our human teams listen, understand, and respond with genuine care—building trust and loyalty.' },
-    { icon: '/images/context-icon.svg', title: 'Contextual Intelligence', desc: 'We combine customer history and real-time AI insights to deliver highly personalized interactions.' },
-    { icon: '/images/adaptability-icon.svg', title: 'Adaptive Expertise', desc: 'Continuous training empowers our agents to adapt to evolving customer needs and complex queries.' },
-    { icon: '/images/trust-icon.svg', title: 'Ethical & Transparent', desc: 'We uphold the highest standards of data privacy and human oversight in every engagement.' },
+    { icon: '/images/empathy-icon.jpg', title: 'Empathy-Driven Service', desc: 'Our human teams listen, understand, and respond with genuine care—building trust and loyalty.' },
+    { icon: '/images/context-icon.jpg', title: 'Contextual Intelligence', desc: 'We combine customer history and real-time AI insights to deliver highly personalized interactions.' },
+    { icon: '/images/adaptability-icon.jpeg', title: 'Adaptive Expertise', desc: 'Continuous training empowers our agents to adapt to evolving customer needs and complex queries.' },
+    { icon: '/images/trust-icon.jpg', title: 'Ethical & Transparent', desc: 'We uphold the highest standards of data privacy and human oversight in every engagement.' },
   ];
 
   const testimonials = [
@@ -114,7 +114,7 @@ const HI: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {framework.map(item => (
               <div key={item.title} className="bg-[#0d0d0d] p-6 rounded-xl shadow-lg flex flex-col items-center text-center" data-aos="fade-up">
-                <img src={item.icon} alt={item.title} className="w-12 h-12 mb-4" />
+                <img src={item.icon} alt={item.title} className="w-21 h-21 mb-4" />
                 <h3 className="text-xl font-semibold text-orange-500 mb-2">{item.title}</h3>
                 <p className="text-gray-200">{item.desc}</p>
               </div>
@@ -143,22 +143,39 @@ const HI: React.FC = () => {
 
         {/* FAQs as Accordion */}
         <section data-aos="fade-up">
-          <h2 className="text-3xl font-bold text-orange-500 mb-4 text-center">Frequently Asked Questions</h2>
-          <div className="w-full space-y-2 px-4">
-            {faqs.map((f, idx) => (
-              <details key={idx} className="bg-[#0d0d0d] p-2 rounded-lg w-full">
-                <summary className="cursor-pointer text-lg font-semibold text-white ">{f.q}</summary>
-                <p className="mt-1 text-gray-200 text-sm">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
+  <h2 className="text-4xl font-bold text-orange-500 mb-8 text-left px-4">FAQs</h2>
+  <div className="w-full max-w-3xl mx-auto space-y-4 px-4">
+    {faqs.map((f, idx) => (
+      <details
+        key={idx}
+        className="group bg-[#0d0d0d] rounded-md transition-all duration-300 border border-[#1a1a1a] open:bg-[#151515] open:border-orange-500"
+      >
+        <summary className="cursor-pointer flex justify-between items-center p-5 text-white text-lg font-medium marker:content-none">
+          {f.q}
+          <svg
+            className="ml-4 h-6 w-6 text-gray-400 transition-transform duration-300 group-open:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div className="px-5 pb-5 text-gray-300 text-sm leading-relaxed">
+          {f.a}
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
 
         {/* CTA */}
         <section data-aos="fade-up" className="text-center py-12">
           <h2 className="text-4xl font-bold text-orange-500 mb-4">Ready for the HI Advantage?</h2>
           <p className="text-xl text-gray-200 leading-relaxed mb-6">Discover how Vizx HI can elevate your customer experiences—combining AI intelligence with the irreplaceable human touch.</p>
-          <a href="/contact" className="inline-block px-10 py-4 bg-orange-500 text-black font-semibold rounded-full transition-colors hover:bg-orange-600">Connect with Our HI Team</a>
+          <a href="/contact" className="inline-block px-10 py-4 bg-orange-500 text-black font-semibold rounded-full transition-colors hover:bg-gray-300">Connect with Our HI Team</a>
         </section>
       </main>
     </div>

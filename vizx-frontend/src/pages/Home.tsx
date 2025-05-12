@@ -54,7 +54,7 @@ const Home: React.FC = () => {
             <FaPlay className="text-white text-2xl font-bold" />
           </button>
           <h1 className="text-4xl font-bold mt-6">
-            Explore Our Top-Tier Solutions
+          Africa’s leading BPO Powerhouse 
           </h1>
           <Link to="/solutions">
             <button className="mt-4 px-6 py-2 bg-orange-500 text-white rounded-md shadow-lg">
@@ -85,39 +85,37 @@ const Home: React.FC = () => {
       {/* ------------------------ END HERO SECTION ------------------------ */}
 
       {/* ============= ABOUT & WHY VIZX SECTION ============= */}
-      <section className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* About VizX */}
-            <div>
-              <h2 className="text-3xl font-bold mb-4">
-                <span className="text-white">About</span>{' '}
-                <span className="text-gray-500">Us</span>
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                We are a leading provider of innovative outsourcing solutions across industries, empowering businesses to achieve their goals efficiently. Headquartered in Nairobi, Kenya, our global team is dedicated to delivering world-class results and strategic partnerships that foster long-term success.
-              </p>
-              <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-                With decades of combined experience, our leadership has built a culture of excellence and integrity, providing services that span customer management, data processing, and more.
-              </p>
-            </div>
+<section className="bg-black text-white py-16">
+<div className="container mx-auto px-4">
+<div className="grid md:grid-cols-2 gap-12 items-start">
+<div className="space-y-6 text-left w-full">
+<h2 className="text-3xl font-bold">
+<span className="text-white">About</span>{' '}
+<span className="text-orange-500">Us</span>
+</h2>
+<p className="text-lg text-gray-300 leading-relaxed">
+We are a leading provider of innovative outsourcing solutions across industries, empowering businesses to achieve their goals efficiently. Headquartered in Nairobi, Kenya, our global team is dedicated to delivering world-class results and strategic partnerships that foster long-term success.
+</p>
+<p className="text-lg text-gray-300 leading-relaxed">
+With decades of combined experience, our leadership has built a culture of excellence and integrity, providing services that span customer management, data processing, and more.
+</p>
+</div>
+<div className="space-y-6 text-left w-full">
+<h2 className="text-3xl font-bold">
+<span className="text-white">Why</span>{' '}
+<span className="text-orange-500">VIZX?</span>
+</h2>
+<p className="text-lg text-gray-300 leading-relaxed">
+We strive to deliver personalized solutions that drive measurable results for our clients. Our approach is grounded in a deep understanding of each client’s unique challenges and a commitment to innovation, efficiency, and collaboration.
+</p>
+<p className="text-lg text-gray-300 leading-relaxed">
+From our strategic presence in Kenya and the US to our investment in cutting-edge technology, every aspect of our operations is designed to help you stay ahead in a dynamic market.
+</p>
+</div>
+</div>
+</div>
+</section>
 
-            {/* Why VizX? */}
-            <div>
-              <h2 className="text-3xl font-bold mb-4">
-                <span className="text-white">Why</span>{' '}
-                <span className="text-gray-500">VIZX?</span>
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                We strive to deliver personalized solutions that drive measurable results for our clients. Our approach is grounded in a deep understanding of each client’s unique challenges and a commitment to innovation, efficiency, and collaboration.
-              </p>
-              <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-                From our strategic presence in Kenya and the US to our investment in cutting-edge technology, every aspect of our operations is designed to help you stay ahead in a dynamic market.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ============= LOCATIONS SECTION (Black Background) ============= */}
       <section className="bg-black text-white py-16">
@@ -127,7 +125,7 @@ const Home: React.FC = () => {
             {/* Nairobi */}
             <div className="border p-6 rounded-md shadow-md">
               <img
-                src="/images/nairobi-office.jpg"
+                src="/images/nairobi-office1.jpg"
                 alt="Nairobi"
                 className="w-full h-48 object-cover mb-4 rounded-md"
               />
@@ -158,7 +156,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-white mb-8">Our Clients</h2>
           <Slider {...sliderSettings}>
-            {[...Array(6)].map((_, index) => (
+            {[...Array(4)].map((_, index) => (
               <div key={index} className="p-4">
                 <div className="bg-black w-full h-24 flex items-center justify-center rounded-md">
                   <img

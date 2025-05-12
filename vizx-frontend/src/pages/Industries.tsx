@@ -86,25 +86,15 @@ const Industries: React.FC = () => {
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="relative z-10 text-center px-4">
           <h1 className="text-7xl md:text-8xl font-bold text-orange-500 leading-tight mb-4">
-            Industries
+          Our Expertise
           </h1>
           <p className="text-2xl md:text-3xl text-gray-200">
-            Tailored Solutions Across Diverse Sectors
+          At VIZX Global, we leverage years of industry experience to deliver tailored solutions across multiple sectors.
+            
           </p>
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-16 px-8" data-aos="fade-up">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-5xl font-bold text-orange-500 mb-6">Our Expertise</h2>
-          <p className="text-xl text-gray-300 leading-relaxed">
-            At VIZX Global, we leverage years of industry experience to deliver tailored solutions across multiple sectors.
-            From healthcare and finance to technology and creative industries, our team ensures that each solution is 
-            as unique as the challenges you face.
-          </p>
-        </div>
-      </section>
 
       {/* Industries Grid */}
       <section className="py-16 px-8" data-aos="fade-up">

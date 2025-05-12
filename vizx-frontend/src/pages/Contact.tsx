@@ -20,9 +20,9 @@ const Contact: React.FC = () => {
     <div className="bg-black text-white">
       {/* HERO SECTION */}
       <section
-        className="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
+        className="relative h-[65vh] flex items-center justify-center bg-cover bg-center"
         /* Update the image path below to match your file */
-        style={{ backgroundImage: "url('/images/IMG_0007.jpg')" }}
+        style={{ backgroundImage: "url('/images/IMG_0017.jpg')" }}
       >
         {/* Dark overlay on the background */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -40,66 +40,60 @@ const Contact: React.FC = () => {
 
       {/* OFFICE INFO SECTION */}
       <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center md:space-x-16 space-y-8 md:space-y-0">
-          {/* US OFFICE */}
-          <div className="text-center space-y-4" data-aos="fade-up">
-            <h2 className="text-2xl font-bold mb-4">US OFFICE</h2>
+  <div className="max-w-6xl mx-auto flex items-center justify-center md:space-x-16 space-y-8 md:space-y-0">
+    {/* US OFFICE */}
+    <div className="text-center space-y-4" data-aos="fade-up">
+      <h2 className="text-2xl font-bold mb-4">US OFFICE</h2>
+      <div className="flex items-center justify-center space-x-2">
+        <FaPhone className="text-orange-500" />
+        <span>+1 310-694-3280</span>
+      </div>
+      <div className="flex items-center justify-center space-x-2">
+        <FaEnvelope className="text-orange-500" />
+        <span>info@vizxglobal.com</span>
+      </div>
+      <div className="flex items-center justify-center space-x-2 text-center">
+        <MdLocationOn className="text-orange-500" />
+        <span>
+          360 North Pacific Coast Highway
+          <br />
+          Suite #2000, El Segundo, CA 90245
+        </span>
+      </div>
+    </div>
 
-            {/* Phone */}
-            <div className="flex items-center justify-center space-x-2">
-              <FaPhone className="text-orange-500" />
-              <span>+1 310-694-3280</span>
-            </div>
+    {/* Vertical Divider */}
+    <div className="hidden md:block w-px bg-orange-500 self-stretch"></div>
 
-            {/* Email */}
-            <div className="flex items-center justify-center space-x-2">
-              <FaEnvelope className="text-orange-500" />
-              <span>info@vizxglobal.com</span>
-            </div>
+    {/* KENYA OFFICE */}
+    <div className="text-center space-y-4" data-aos="fade-up" data-aos-delay="200">
+      <h2 className="text-2xl font-bold mb-4">KENYA OFFICE</h2>
+      <div className="flex items-center justify-center space-x-2">
+        <FaPhone className="text-orange-500" />
+        <span>+254 769-360-360</span>
+      </div>
+      <div className="flex items-center justify-center space-x-2">
+        <FaEnvelope className="text-orange-500" />
+        <span>info@vizxglobal.com</span>
+      </div>
+      <div className="flex items-center justify-center space-x-2 text-center">
+        <MdLocationOn className="text-orange-500" />
+        <span>
+          Britam Tower, Hospital Rd, Upperhill
+          <br />
+          Suite #2500 &amp; #1500, Nairobi, Kenya
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
 
-            {/* Address */}
-            <div className="flex items-center justify-center space-x-2 text-center">
-              <MdLocationOn className="text-orange-500" />
-              <span>
-                360 North Pacific Coast Highway
-                <br />
-                Suite #2000, El Segundo, CA 90245
-              </span>
-            </div>
-          </div>
 
-          {/* KENYA OFFICE */}
-          <div className="text-center space-y-4" data-aos="fade-up" data-aos-delay="200">
-            <h2 className="text-2xl font-bold mb-4">KENYA OFFICE</h2>
 
-            {/* Phone */}
-            <div className="flex items-center justify-center space-x-2">
-              <FaPhone className="text-orange-500" />
-              <span>+254 759-300-360</span>
-            </div>
-
-            {/* Email */}
-            <div className="flex items-center justify-center space-x-2">
-              <FaEnvelope className="text-orange-500" />
-              <span>info@vizxglobal.com</span>
-            </div>
-
-            {/* Address */}
-            <div className="flex items-center justify-center space-x-2 text-center">
-              <MdLocationOn className="text-orange-500" />
-              <span>
-                Britam Tower, Hospital Rd, Upperhill
-                <br />
-                Suite #2506 &amp; #1500, Nairobi, Kenya
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CONTACT FORM SECTION */}
       <section className="pb-16 px-8">
-        <div className="max-w-4xl mx-auto bg-white text-black p-8 rounded-lg shadow-lg" data-aos="fade-up">
+        <div className="max-w-4xl mx-auto bg-black text-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
           <motion.form
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +113,7 @@ const Contact: React.FC = () => {
                 name="name"
                 placeholder="Your Name"
                 required
-                className="w-full border border-gray-300 p-3 rounded-md"
+                className="w-full border border-gray-300 p-3 rounded-md text-white bg-black"
               />
             </div>
 
@@ -133,7 +127,7 @@ const Contact: React.FC = () => {
                 name="email"
                 placeholder="you@example.com"
                 required
-                className="w-full border border-gray-300 p-3 rounded-md"
+                className="w-full border border-gray-300 p-3 rounded-md text-white bg-black"
               />
             </div>
 
@@ -146,7 +140,7 @@ const Contact: React.FC = () => {
                 id="company"
                 name="company"
                 placeholder="Your Company"
-                className="w-full border border-gray-300 p-3 rounded-md"
+                className="w-full border border-gray-300 p-3 rounded-md text-white bg-black"
               />
             </div>
 
@@ -159,7 +153,7 @@ const Contact: React.FC = () => {
                 id="phone"
                 name="phone"
                 placeholder="(123) 456-7890"
-                className="w-full border border-gray-300 p-3 rounded-md"
+                className="w-full border border-gray-300 p-3 rounded-md text-white bg-black"
               />
             </div>
 
@@ -173,7 +167,7 @@ const Contact: React.FC = () => {
                 rows={5}
                 placeholder="How can we help you?"
                 required
-                className="w-full border border-gray-300 p-3 rounded-md"
+                className="w-full border border-gray-300 p-3 rounded-md text-white bg-black"
               ></textarea>
             </div>
 

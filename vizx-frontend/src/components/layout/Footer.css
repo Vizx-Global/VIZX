@@ -30,10 +30,11 @@
 .footer-section ul li {
   margin-bottom: 8px; /* Consistent spacing */
   font-size: 14px; /* Unified font size */
+
 }
 
 .footer-section ul li a {
-  color: white;
+  color: rgb(224, 224, 224);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -61,20 +62,20 @@
 }
 
 .footer-buttons .register-button {
-  background-color: orange;
+  background-color: #Ffa500;
   color: white;
 }
 
 .footer-buttons .login-button {
   background-color: transparent;
-  color: orange;
-  border: 2px solid orange;
+  color: #Ffa500;
+  border: 2px solid #Ffa500;
   padding: 8px 18px;
 }
 
 .footer-buttons .register-button:hover,
 .footer-buttons .login-button:hover {
-  background-color: darkorange;
+  background-color: #Ffa500;
 }
 
 .footer-bottom {
@@ -111,7 +112,7 @@
 }
 
 .social-media a:hover {
-  color: orange; /* Change icon color on hover */
+  color: #ffa500; /* Change icon color on hover */
 }
 
 /* Responsive Design */

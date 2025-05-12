@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <ul>
             <li><a href="solutions">Our Solutions</a></li>
             <li><a href="industries">Industries</a></li>
-            <li><a href="vizx-hi">Vizx HI</a></li>
+            <li><a href="vizx-ai">Vizx AI</a></li>
             <li><a href="why-kenya">Why Kenya</a></li>
           </ul>
         </div>
