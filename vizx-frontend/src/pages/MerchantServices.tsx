@@ -84,7 +84,7 @@ const MerchantServices: React.FC = () => {
       <section
         className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
         // Using a placeholder image for the hero section
-        style={{ backgroundImage: "url('https://placehold.co/1200x800/334155/FFFFFF?text=Secure+Payment+Processing')" }}
+        style={{ backgroundImage: "url('/images/merchant.jpg')" }} 
         data-aos="fade-in"
       >
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay for better text readability */}
