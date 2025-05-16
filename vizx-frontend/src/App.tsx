@@ -20,7 +20,7 @@ import EmployeeWelfare from './pages/EmployeeWelfare';
 import CommunityFund from './pages/CommunityFund';
 import VizxAI from './pages/VizxAI';
 import PrivacyandSecurity from './pages/PrivacyAndSecurity';
-
+import MerchantServices from './pages/MerchantServices';
 import IndustryRouter from './pages/IndustryRouter'; // Import the dynamic router
 
 
@@ -51,6 +51,7 @@ const App: React.FC = () => {
           <Route path="/rpo" element={<RPO />} />
           <Route path="/employee-welfare" element={<EmployeeWelfare />} />
           <Route path="/vizx-ai" element={<VizxAI />} />
+          <Route path="/merchant-services" element={<MerchantServices />} />
           <Route path="/privacy-and-security" element={<PrivacyandSecurity />} />
           {/* Dynamic route for industry pages */}
           <Route path="/industry/:slug" element={<IndustryRouter />} />

@@ -14,8 +14,7 @@ const WhyKenya: React.FC = () => {
 
   // Slideshow images for the "Silicon Savanna" section
   const siliconSavannaImages = [
-    '/images/IMG_0006.jpg', 
-    '/images/IMG_0008.jpg',
+
     '/images/IMG_0010.jpg',
   ];
 
@@ -88,30 +87,42 @@ const WhyKenya: React.FC = () => {
         </section>
 
         {/* REASONS SECTION */}
-        <section className="px-8" data-aos="fade-up">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-4xl font-bold text-orange-500 mb-6">
-              Here Are Some Reasons:
-            </h3>
-            <ul className="list-disc list-inside space-y-4 text-xl text-gray-200">
-              <li>It is the most stable democracy in East Africa</li>
-              <li>It is the gateway to the East African market of almost 500 million consumers</li>
-              <li>Kenya has a young, educated, English-speaking workforce</li>
-              <li>Its largest export market is the United States</li>
-              <li>Kenya is the regional logistics hub and leading regional financial hub</li>
-              <li>It is the leading destination for foreign direct investment and venture capital</li>
-              <li>Kenya generates over 90% of its energy from renewable sources</li>
-            </ul>
-            <div className="mt-6">
-              <a
-                href="#kenya-fact-files"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-        </section>
+<section className="px-8" data-aos="fade-up">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+    {/* TEXT COLUMN */}
+    <div className="md:w-1/2">
+      <h3 className="text-4xl font-bold text-orange-500 mb-6">
+        Here Are Some Reasons:
+      </h3>
+      <ul className="list-disc list-inside space-y-4 text-xl text-gray-200">
+        <li>It is the most stable democracy in East Africa</li>
+        <li>It is the gateway to the East African market of almost 500 million consumers</li>
+        <li>Kenya has a young, educated, English-speaking workforce</li>
+        <li>Its largest export market is the United States</li>
+        <li>Kenya is the regional logistics hub and leading regional financial hub</li>
+        <li>It is the leading destination for foreign direct investment and venture capital</li>
+        <li>Kenya generates over 90% of its energy from renewable sources</li>
+      </ul>
+      <div className="mt-6">
+        <a
+          href="#kenya-fact-files"
+          className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    {/* IMAGE COLUMN */}
+    <div className="md:w-1/2">
+      <img
+        src="/images/kenya-reasons.jpg" // Replace with your actual image path
+        alt="Map of Kenya"
+        className="rounded-lg shadow-lg w-full object-cover"
+      />
+    </div>
+  </div>
+</section>
 
         {/* KENYA FACT FILES */}
         <section id="kenya-fact-files" className="px-8" data-aos="fade-up">

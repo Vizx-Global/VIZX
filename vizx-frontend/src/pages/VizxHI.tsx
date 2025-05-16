@@ -38,7 +38,7 @@ const HI: React.FC = () => {
       <main className="px-8 py-16 space-y-24">
 
         {/* Hero */}
-        <section className="relative h-[60vh] flex items-center justify-center bg-cover bg-center rounded-lg overflow-hidden" style={{ backgroundImage: "url('/images/hi-hero.jpg')" }}>
+        <section className="relative h-[60vh] flex items-center justify-center bg-cover bg-center rounded-lg overflow-hidden" style={{ backgroundImage: "url('/images/vizx-hi.png')" }}>
           <div className="absolute inset-0 bg-black opacity-70"></div>
           <div className="relative text-center px-4" data-aos="zoom-in">
             <h1 className="text-6xl font-bold text-orange-500 mb-4">VIZX HI: Unleashing Human Intelligence</h1>
@@ -67,11 +67,11 @@ const HI: React.FC = () => {
 
         {/* AI vs HI: Comparison Table */}
         <section data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">AI vs. HI: The Best of Both Worlds</h2>
+          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">AI & HI: The Best of Both Worlds</h2>
           <div className="overflow-x-auto px-4">
             <table className="min-w-full bg-[#0d0d0d] rounded-lg shadow-lg">
               <thead>
-                <tr className="border-b border-gray-700">
+                <tr className="border-b border-orange-500">
                   <th className="px-6 py-4 text-left text-white">Aspect</th>
                   <th className="px-6 py-4 text-left text-white">Artificial Intelligence</th>
                   <th className="px-6 py-4 text-left text-white">Human Intelligence</th>
@@ -79,19 +79,19 @@ const HI: React.FC = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-800">
+                <tr className="border-b border-orange-500">
                   <td className="px-6 py-4">Availability</td>
                   <td className="px-6 py-4">24/7 automated support</td>
                   <td className="px-6 py-4">Scheduled human shifts</td>
                   <td className="px-6 py-4">Hybrid coverage models</td>
                 </tr>
-                <tr className="border-b border-gray-800">
+                <tr className="border-b border-orange-500">
                   <td className="px-6 py-4">Data Handling</td>
                   <td className="px-6 py-4">Processes large datasets instantly</td>
                   <td className="px-6 py-4">Interprets nuanced context</td>
                   <td className="px-6 py-4">Insight-driven guidance</td>
                 </tr>
-                <tr className="border-b border-gray-800">
+                <tr className="border-b border-orange-500">
                   <td className="px-6 py-4">Empathy</td>
                   <td className="px-6 py-4">Lacks emotional understanding</td>
                   <td className="px-6 py-4">Genuine human empathy</td>
@@ -122,24 +122,47 @@ const HI: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials Pyramid */}
-        <section data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">What Our Clients Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start max-w-4xl mx-auto">
-            <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg md:col-start-2 md:row-start-1">
-              <p className="italic text-gray-200">{testimonials[0].quote}</p>
-              <cite className="block mt-4 text-orange-500 font-semibold">{testimonials[0].author}</cite>
-            </blockquote>
-            <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg md:col-start-1 md:row-start-2">
-              <p className="italic text-gray-200">{testimonials[1].quote}</p>
-              <cite className="block mt-4 text-orange-500 font-semibold">{testimonials[1].author}</cite>
-            </blockquote>
-            <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg md:col-start-3 md:row-start-2">
-              <p className="italic text-gray-200">{testimonials[2].quote}</p>
-              <cite className="block mt-4 text-orange-500 font-semibold">{testimonials[2].author}</cite>
-            </blockquote>
-          </div>
-        </section>
+        {/* Testimonials Pyramid with Images */}
+<section data-aos="fade-up">
+  <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">What Our Clients Say</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start max-w-4xl mx-auto">
+
+    {/* Top Left Image */}
+    <div className="hidden md:block">
+      <img src="/images/hi-testimonial1.jpg" alt="Client 1" className="w-48 h-48 object-cover rounded-2xl mx-auto" />
+
+    </div>
+
+    {/* Top Center Testimonial */}
+    <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg">
+      <p className="italic text-gray-200">“Vizx’s human-first approach transformed our support experience—combining AI speed with genuine care.”</p>
+      <cite className="block mt-4 text-orange-500 font-semibold">Sarah L., VP Customer Success</cite>
+    </blockquote>
+
+    {/* Top Right Image */}
+    <div className="hidden md:block">
+      <img src="/images/hi-testimonial3.jpg" alt="Client 2" className="w-48 h-48 object-cover rounded-2xl mx-auto" />
+    </div>
+
+    {/* Bottom Left Testimonial */}
+    <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg md:col-start-1">
+      <p className="italic text-gray-200">“Our satisfaction scores jumped 35% when Vizx integrated human agents empowered by AI insights.”</p>
+      <cite className="block mt-4 text-orange-500 font-semibold">Mark T., Operations Director</cite>
+    </blockquote>
+
+    {/* Bottom Center Image */}
+    <div className="hidden md:block md:col-start-2">
+      <img src="/images/hi-testimonial2.jpg" alt="Client 3" className="w-48 h-48 object-cover rounded-2xl mx-auto" />
+    </div>
+
+    {/* Bottom Right Testimonial */}
+    <blockquote className="bg-[#0d0d0d] p-6 rounded-lg shadow-lg md:col-start-3">
+      <p className="italic text-gray-200">“The balance of cutting-edge AI and human empathy is what sets Vizx apart from any BPO we’ve tried.”</p>
+      <cite className="block mt-4 text-orange-500 font-semibold">Priya K., Global Program Manager</cite>
+    </blockquote>
+  </div>
+</section>
+
 
         {/* FAQs as Accordion */}
         <section data-aos="fade-up">
@@ -173,7 +196,7 @@ const HI: React.FC = () => {
 
         {/* CTA */}
         <section data-aos="fade-up" className="text-center py-12">
-          <h2 className="text-4xl font-bold text-orange-500 mb-4">Ready for the HI Advantage?</h2>
+          <h2 className="text-4xl font-bold text-orange-500 mb-4">Ready for the HI + AI Advantage?</h2>
           <p className="text-xl text-gray-200 leading-relaxed mb-6">Discover how Vizx HI can elevate your customer experiences—combining AI intelligence with the irreplaceable human touch.</p>
           <a href="/contact" className="inline-block px-10 py-4 bg-orange-500 text-black font-semibold rounded-full transition-colors hover:bg-gray-300">Connect with Our HI Team</a>
         </section>

@@ -105,7 +105,7 @@ const EmployeeWelfare: React.FC = () => {
         {/* Benefits Section */}
         <section className="px-8" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-semibold text-orange-500 mb-6">Exclusive Alumni Benefits</h2>
+            <h2 className="text-4xl font-semibold text-orange-500 mb-6 text-center">Exclusive Alumni Benefits</h2>
             <p className="text-lg text-gray-300 mb-6">
               Join thousands of Vizx alumni who continue to enjoy lifelong perks and support:
             </p>

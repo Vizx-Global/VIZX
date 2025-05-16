@@ -21,10 +21,7 @@ const RPO: React.FC = () => {
   return (
     <div className="bg-black text-white w-full min-h-screen font-sans">
       {/* Hero Section */}
-      <section
-        className="relative h-[60vh] flex items-center justify-start bg-cover bg-center px-8"
-        style={{ backgroundImage: "url('/images/rpo-hero.jpg')" }} // Update with your hero image path
-      >
+      <section className="relative h-[60vh] flex items-center justify-center bg-cover bg-center rounded-lg overflow-hidden" style={{ backgroundImage: "url('/images/hi-hero.jpg')" }}>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="relative z-10 text-left max-w-5xl">
           <motion.h1
@@ -39,7 +36,7 @@ const RPO: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-2xl md:text-3xl text-gray-200 mt-2"
+            className="text-2xl md:text-3xl text-gray-200 mt-2 "
           >
             Connecting Talent with Opportunity
           </motion.h2>
@@ -102,10 +99,10 @@ const RPO: React.FC = () => {
                 maintaining streamlined and efficient processes.
               </p>
             </div>
-            {/* Keen to Details */}
+            {/* Excellence */}
             <div className="bg-black p-6 rounded-lg">
               <h4 className="text-xl font-bold text-orange-500 mb-2">
-                Keen to Details
+                Excellence
               </h4>
               <p className="text-gray-200 leading-relaxed">
                 Our rigorous Quality Compliance process ensures that you
@@ -120,10 +117,10 @@ const RPO: React.FC = () => {
                 Updated Seamless Services
               </h4>
               <p className="text-gray-200 leading-relaxed">
-                Our experienced Payroll Team will ensure your staff receives
+                We ensure your staff receives
                 seamless Payroll services ensuring hours are well compensated as
                 per State and Federal Laws, benefits remittances and
-                compensations are performed. Also ensuring Tax returns and any
+                compensations are performed. Also ensuring returns and 
                 documents are handled electronically and timely.
               </p>
             </div>
@@ -133,9 +130,9 @@ const RPO: React.FC = () => {
                 Tailored Approach
               </h4>
               <p className="text-gray-200 leading-relaxed">
-                With years of experience, we can present a tailored approach
+                We present a tailored approach
                 that meets your specific recruitment needs, resulting in higher
-                productivity and a more productive and successful workforce.
+                productivity and a successful workforce.
               </p>
             </div>
           </div>
@@ -158,7 +155,7 @@ const RPO: React.FC = () => {
             Benefits You Gain From VizX
           </h3>
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-            Our RPO expertise in the healthcare industry extends your hiring
+            Our RPO expertise extends your hiring
             capacity and capabilities based on your business needs and cultures,
             ensuring attainable business goals and sustainable growth.
           </p>
@@ -180,7 +177,7 @@ const RPO: React.FC = () => {
                   VIZX RPO improves quality of hires
                 </h4>
                 <p className="text-gray-200 leading-relaxed">
-                  Our RPO expertise in the healthcare industry extends your
+                  Our RPO expertise extends your
                   hiring capacity and capabilities based on your business needs
                   and cultures, ensuring attainable business goals and
                   sustainable growth.

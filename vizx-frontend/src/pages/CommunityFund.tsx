@@ -5,9 +5,7 @@ import ContactForm from "../components/common/ContactForm";
 const CommunityFund: React.FC = () => {
   // Optional slideshow images for hero background
   const heroImages = [
-    "/images/community-fund-hero1.jpg",
-    "/images/community-fund-hero2.jpg",
-    "/images/community-fund-hero3.jpg",
+    "/images/rpo-improvement.jpg",//Rememeber to add pictures to the slideshow
   ];
   const [currentHero, setCurrentHero] = useState(0);
 

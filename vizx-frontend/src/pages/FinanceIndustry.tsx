@@ -2,6 +2,51 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+// --- Counter Component ---
+const AnimatedCounter: React.FC<{ target: number; suffix?: string; duration?: number }> = ({
+  target,
+  suffix = '',
+  duration = 2000,
+}) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = React.useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          let start = 0;
+          const increment = target / (duration / 16); // ~60fps
+          const handle = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+              setCount(target);
+              clearInterval(handle);
+            } else {
+              setCount(Math.ceil(start));
+            }
+          }, 16);
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.6 } // start animation when 60% of the element is in view
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [target, duration, hasAnimated]);
+
+  return <span ref={ref}>{count.toLocaleString() + suffix}</span>;
+};
+
 // Simple accordion component for FAQs
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -87,7 +132,7 @@ const FinanceIndustry: React.FC = () => {
               </p>
             </div>
             <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Tax Accounting</h3>
+              <h3 className="text-2xl text-orange-500 font-bold mb-2">Accounting</h3>
               <p className="text-gray-300 leading-relaxed">
                 Ensuring compliance with tax laws while maximizing deductions and reducing liabilities.
               </p>
@@ -186,12 +231,6 @@ const FinanceIndustry: React.FC = () => {
               </p>
             </div>
             <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">CFO Services</h3>
-              <p className="text-gray-300 text-sm">
-                Capital structure planning, investor relations
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
               <h3 className="text-lg text-orange-500 font-bold mb-2">Treasury Management</h3>
               <p className="text-gray-300 text-sm">
                 Cash management, risk management, investments
@@ -242,6 +281,41 @@ const FinanceIndustry: React.FC = () => {
                 alt="Outsourcing Finance Process"
                 className="w-full h-auto rounded-lg"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Numbers */}
+      <section className="py-16 px-8" data-aos="fade-up">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-orange-500 mb-6">
+            Our Numbers Set Us Apart
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-8">
+            <div>
+              <p className="text-4xl font-bold text-orange-500">
+                <AnimatedCounter target={23} />
+              </p>
+              <p className="text-gray-300 mt-2">Years in BPO & RPO</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-orange-500">
+                <AnimatedCounter target={7} />
+              </p>
+              <p className="text-gray-300 mt-2">Years in Healthcare Industry</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-orange-500">
+                <AnimatedCounter target={5000} suffix="+" />
+              </p>
+              <p className="text-gray-300 mt-2">Hires Placed Yearly</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-orange-500">
+                <AnimatedCounter target={55} suffix="+" />
+              </p>
+              <p className="text-gray-300 mt-2">Clients Served</p>
             </div>
           </div>
         </div>

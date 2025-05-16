@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ContactForm from "../components/common/ContactForm";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -44,13 +45,13 @@ const Industries: React.FC = () => {
       name: 'Finance',
       image: '/images/finance.png',
       description:
-        'Empowering financial institutions with robust technology and outsourcing services.',
+        'Empowering financial institutions with robust tech & outsourcing services.',
     },
     {
       name: 'Travel',
       image: '/images/travel.png',
       description:
-        'Revolutionizing travel experiences with innovative digital solutions.',
+        'Revolutionizing your travel experiences with innovative digital solutions.',
     },
     {
       name: 'Supply Chain',
@@ -59,13 +60,7 @@ const Industries: React.FC = () => {
         'Enhancing logistics and operations with integrated, efficient solutions.',
     },
     {
-      name: 'Creative',
-      image: '/images/creative.png',
-      description:
-        'Fostering creativity in media and design with innovative strategies.',
-    },
-    {
-      name: 'Human Resource',
+      name: 'Retail & E-Commerce',
       image: '/images/human-resource.png',
       description:
         'Transforming HR processes with strategic outsourcing and talent management.',
@@ -99,8 +94,8 @@ const Industries: React.FC = () => {
       {/* Industries Grid */}
       <section className="py-16 px-8" data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-orange-500 mb-12 text-center">Our Industries</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <h2 className="text-5xl font-bold text-orange-500 mb-12 text-center">Industries We Serve</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
             {industries.map((industry, index) => (
               <Link
                 key={index}
@@ -140,6 +135,7 @@ const Industries: React.FC = () => {
           </a>
         </div>
       </section>
+      <ContactForm />
     </div>
   );
 };

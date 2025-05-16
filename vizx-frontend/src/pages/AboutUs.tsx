@@ -23,74 +23,7 @@ interface TimelineEvent {
   description: string;
 }
 
-// Timeline data
 const timelineEvents: TimelineEvent[] = [
-  {
-    year: '2000',
-    title: 'VIZX and eGames Group',
-    description:
-      'Vision Execution or Vizx, incorporated with a vision of incubating world changing ideas—from idea to execution to mature and thriving enterprises. The founders, experienced entrepreneurs, desired to utilize the emerging internet space to create solutions in all areas of business and life. eGames Group was founded as an online game software creator with original games in multi-player tournaments.',
-  },
-  {
-    year: '2001',
-    title: 'eGames and eUniverse',
-    description:
-      'eGames group acquired by eUniverse (which later became MySpace) and eventually became Skilljam.',
-  },
-  {
-    year: '2004',
-    title: 'Global Nurses Online',
-    description:
-      'Acquired Global Nurses Online, a small international Registered Nurse recruitment firm.',
-  },
-  {
-    year: '2004',
-    title: 'American Idol',
-    description:
-      'Online media company founded and partnered with American Idol.',
-  },
-  {
-    year: '2005',
-    title: 'ATC Healthcare Services',
-    description:
-      'Global Nurses Online pivoted to USA-based temporary healthcare staffing and became a franchise of ATC Healthcare Services.',
-  },
-  {
-    year: '2007',
-    title: 'Liberty Media Group',
-    description:
-      'Sold media company to a group that later sold the entity to Liberty Media Group.',
-  },
-  {
-    year: '2008',
-    title: 'Healthcare Staffing Growth',
-    description:
-      'Built a healthcare staffing business, achieving over $20 million in annual revenue—becoming the fastest-growing and largest franchisee of ATC Healthcare Services.',
-  },
-  {
-    year: '2008',
-    title: 'Livewell Home Care',
-    description:
-      'Livewell Home Care was founded to focus on offering in-home care for elderly clients.',
-  },
-  {
-    year: '2009',
-    title: 'Livewell Assisted Living',
-    description:
-      'Livewell Assisted Living was founded in North Carolina, focusing on highly personalized memory care in a home environment for six or fewer residents.',
-  },
-  {
-    year: '2010',
-    title: 'BlackTV247.com',
-    description:
-      'BlackTV247.com was founded as an online media company aggregating African American–focused content on a streaming platform.',
-  },
-  {
-    year: '2010',
-    title: 'WellTech Partners',
-    description:
-      'WellTech Partners was founded to focus on providing human capital consulting.',
-  },
   {
     year: '2017',
     title: 'VIZX Global',
@@ -98,358 +31,229 @@ const timelineEvents: TimelineEvent[] = [
       'Created VIZX Global to focus on business process outsourcing (BPO) with offices in California and Nairobi, Kenya.',
   },
   {
-    year: '2017',
-    title: 'C2C Pro Group',
+    year: '2020',
+    title: 'Covid-19 Pandemic',
     description:
-      'Created a real estate investment company focused on opportunistic investments in real estate on the African continent and the USA, later renamed C2C Pro Group.',
-  },
-  {
-    year: '2017',
-    title: 'Livewell Ventures (LV)',
-    description:
-      'Livewell Ventures (LV) was created to invest in creators and innovators, with investments in a Hurricane Katrina–focused film production, Mandela The Musical, and Carbon Counts (a climate-change innovator).',
-  },
-  {
-    year: '2021',
-    title: 'AI Startup',
-    description:
-      'Strategically invested in an AI-enabled startup focused on relationship therapy for adults.',
+      'Despite the Covid-19 pandemic, VIZX thrived and grew in the healthcare staffing industry. The company diversifies in offering full scale BPO solutions, servicing different needs in different industries. Industries such as finance, real estate, tech, manufacturing, etc, were added to the portfolio.',
   },
   {
     year: '2022',
-    title: 'NewBlazr',
+    title: 'Our Upscale',
     description:
-      'Strategically invested in NewBlazr, a Los Angeles–based machine-learning-driven career management startup.',
+      'Located in one of Nairobis most iconic and secure office buildings, VIZX moved operations to Britam Towers. Not only a new workspace, but the company increased its seats to 400 with an ability to scale up to 600+ seats.',
   },
   {
-    year: '2023 & Beyond',
-    title: 'Beyond...',
+    year: '2025',
+    title: 'Look into the future',
     description:
-      'Vision Execution moves forward, building a global company to serve our clients and partners in healthcare, technology, real estate, and media. Let’s partner together—today!',
+      'With our diverse business portfolio, we currently service companies with combined annual revenues exceeding $1 Billion.',
   },
 ];
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'John Mamboleo',
-    role: 'CEO',
-    description: 'Drives our strategic vision with over 20 years of industry experience.',
-    image: '/images/john-mamboleo.jpg',
-  },
-  {
     name: 'Dorika Beckett',
     role: 'Group CEO',
-    description: 'Leads our global expansion and ensures sustainable growth.',
+    description: 'She is a dynamic Group CEO, entrepreneur, and investor who has built and led companies valued at over $2 billion for the past 25 years',
     image: '/images/dorika-beckett.jpg',
   },
   {
-    name: 'John Ngatia',
-    role: 'Head of HR',
-    description: 'Cultivates our diverse and engaging workplace culture.',
-    image: '/images/john-ngatia.jpg',
+    name: 'John Mamboleo',
+    role: 'VIZX CEO',
+    description: 'As CEO of Vizx Global, he drives innovation and efficiency in business process outsourcing on a global scale.',
+    image: '/images/john-mamboleo.jpg',
   },
-  // Add additional team members as needed
+  {
+    name: 'Nicole McClure',
+    role: 'Head of Operations',
+    description: 'She leverages her deep healthcare experience and business acumen to drive growth and excellence.',
+    image: '/images/nicole-mcclure.jpg',
+  },
+  {
+    name: 'Dana Feustel',
+    role: 'Global CPO',
+    description: 'She has leveraged her expertise to help our employees navigate U.S. markets, enhancing cross-cultural communication and business success',
+    image: '/images/dana-feustel.jpg',
+  },
 ];
 
 const highlights: Highlight[] = [
   {
     title: 'Innovative Technology',
     description:
-      'We leverage cutting-edge technology to deliver solutions that drive efficiency and growth.',
+      'We leverage cutting-edge technology to deliver solutions that drive efficiency, innovation, and measurable business outcomes. Our tech stack includes AI-driven analytics, automation platforms, cloud-based infrastructure, and custom software solutions tailored to each client’s needs. ',
     image: '/images/IMG_0002.jpg',
     reverse: false,
   },
   {
     title: 'Global Expertise',
-    description: 'Our team brings a wealth of global experience to solve complex challenges.',
+    description: 'With operations in the U.S. and Africa, and a leadership team that spans multiple continents, our perspective is truly global. We’ve worked with Fortune 500 companies, scaling startups, and public institutions to solve complex cross-border challenges. This global insight enables us to deliver culturally relevant, scalable, and adaptive solutions that resonate across markets.',
     image: '/images/IMG_6079.jpg',
     reverse: true,
   },
   {
     title: 'Customer Centric',
-    description: 'At the heart of our operations is a relentless focus on customer success.',
+    description: 'At the heart of our operations is a relentless focus on customer success. We don’t just deliver services — we build partnerships. By aligning with your strategic goals, we become an extension of your team. Our customer success framework ensures transparency, proactive communication, and continuous performance optimization — because your growth is our mission.',
     image: '/images/IMG_6310.jpg',
     reverse: false,
   },
 ];
 
 const AboutUs: React.FC = () => {
-  // Initialize AOS for scroll animations
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    AOS.init({ duration: 800, once: true });
   }, []);
 
   return (
     <div className="bg-black text-white w-full min-h-screen font-sans">
-      {/* Hero Section */}
-      <section
-        className="relative h-[60vh] flex items-center justify-start bg-cover bg-center px-8"
-        style={{ backgroundImage: "url('/images/about-hero.jpg')" }}
-      >
+      <section className="relative h-[60vh] flex items-center justify-start bg-cover bg-center px-8" style={{ backgroundImage: "url('/images/about-hero.jpg')" }}>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="relative z-10 text-left">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-7xl md:text-8xl font-bold text-orange-500 leading-tight mb-4"
-          >
-            We help fulfill your <br className="hidden md:block" />
-            business purpose.
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }} className="text-7xl md:text-8xl font-bold text-orange-500 leading-tight mb-4">
+            We help fulfill your <br className="hidden md:block" /> business purpose.
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-2xl md:text-3xl text-gray-200 mt-8 max-w-4xl leading-relaxed"
-          >
-            With VIZX Global as your partner, you can rest assured that your
-            business will benefit from our comprehensive suite of solutions.
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.4 }} className="text-2xl md:text-3xl text-gray-200 mt-8 max-w-4xl leading-relaxed">
+            With VIZX Global as your partner, you can rest assured that your business will benefit from our comprehensive suite of solutions.
           </motion.p>
         </div>
       </section>
 
-      {/* 
-        MAIN CONTENT & TIMELINE:
-        We use a grid layout with two columns on medium screens:
-        Left Column => main content from Our Story onward
-        Right Column => sticky timeline
-      */}
       <div className="px-8">
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_30rem] gap-8 relative">
-          {/* LEFT COLUMN: All the about content below the hero */}
           <div className="space-y-32">
-            {/* Our Story */}
             <section data-aos="fade-up">
               <div className="max-w-5xl">
-                <h3 className="text-6xl font-bold text-orange-500 mb-6 leading-tight">
-                  Our Story
-                </h3>
+                <h3 className="text-6xl font-bold text-orange-500 mb-6 leading-tight">Our Story</h3>
                 <p className="text-xl text-gray-200 leading-relaxed">
-                  Our journey began with a simple yet powerful idea: to connect
-                  businesses worldwide with top-tier talent and innovative solutions.
-                  Starting as a small team with a passion for driving efficiency, we’ve
-                  evolved into a global force, empowering companies to meet their
-                  objectives and grow sustainably.
+                  VIZX Global Solutions was founded with a bold ambition—to redefine how businesses connect with the best talent across the world. We began our journey with a focus on Business Process Outsourcing (BPO) and have since evolved into a strategic growth partner across industries like healthcare, technology, real estate, and media. With a foundation in integrity, innovation, and customer-centricity, VIZX thrives on delivering outcomes that matter.
                 </p>
               </div>
             </section>
 
-            {/* Our Journey */}
+           
             <section data-aos="fade-up">
-              <div className="max-w-5xl">
-                <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">
-                  Our Journey
-                </h3>
-                <ul className="list-none space-y-4 text-xl text-gray-200">
-                  <li>
-                    <span className="text-orange-500 font-semibold">25+ years</span> in
-                    business — with 7 of them in the BPO industry.
-                  </li>
-                  <li>
-                    <span className="text-orange-500 font-semibold">5 years</span> of
-                    software outsourcing experience.
-                  </li>
-                  <li>Deep specialization in migrating Finance, DevOps, and more.</li>
-                  <li>
-                    A focus on <span className="font-semibold">long-term contracts</span>{' '}
-                    and building enduring client relationships.
-                  </li>
-                </ul>
-              </div>
-            </section>
+  <div className="max-w-5xl space-y-6">
+    <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">What We Do</h3>
+    <p className="text-xl text-gray-200 leading-relaxed">
+      VIZX Global Solutions is a full-service Business Process Outsourcing (BPO) firm offering customized, scalable, and efficient solutions across key business verticals. We support organizations by managing complex operations, enabling them to focus on their core business goals while we drive productivity, cost savings, and customer satisfaction.
+    </p>
+    <p className="text-xl text-gray-200 leading-relaxed">
+      Our services are delivered by highly skilled professionals and supported by advanced technology infrastructure, making us a reliable partner in today's fast-evolving digital economy. With a proven track record in high-performance outcomes and global partnerships, we deliver real results, real fast.
+    </p>
+    <ul className="list-disc pl-6 text-xl text-gray-200 space-y-2">
+      <li><strong>Customer Experience (CX) & Contact Center Services:</strong> We provide multilingual, omnichannel support that enhances customer engagement and retention through personalized and responsive care.</li>
+      <li><strong>Back Office Support:</strong> From data entry and document management to compliance and quality assurance, we streamline your internal operations to reduce workload and improve performance.</li>
+      <li><strong>Technical Outsourcing:</strong> Our 24/7 tech support ensures your digital operations run smoothly. From helpdesk services to IT infrastructure support, we’re always connected so you can be too.</li>
+      <li><strong>Recruitment Process Outsourcing (RPO):</strong> We enable faster hiring, better candidate quality, and lower cost-per-hire with strategic, end-to-end recruitment solutions tailored to your growth.</li>
+    </ul>
+  </div>
+</section>
 
-            {/* Mission, Vision & Objective */}
-            <section data-aos="fade-up">
-              <div className="max-w-5xl space-y-16">
-                <div>
-                  <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">
-                    Our Mission
-                  </h3>
-                  <p className="text-xl text-gray-200 leading-relaxed">
-                    To deliver innovative workforce solutions by connecting local and
-                    global enterprises with mission-critical talent—fostering economic
-                    growth and operational efficiency.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">
-                    Our Vision
-                  </h3>
-                  <p className="text-xl text-gray-200 leading-relaxed">
-                    To support the growth and efficiency of local and global enterprises
-                    by harnessing African human capital, creating a bridge between
-                    opportunity and talent.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">
-                    Our Objective
-                  </h3>
-                  <p className="text-xl text-gray-200 leading-relaxed">
-                    We aim to become an extension of your team—the company you call upon
-                    whenever you need it, knowing we’ll respond swiftly and effectively.
-                  </p>
-                </div>
-              </div>
-            </section>
 
-            {/* Highlights */}
+           <section data-aos="fade-up">
+  <div className="max-w-5xl space-y-6">
+    <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">Our Core Values</h3>
+    <p className="text-xl text-gray-200 leading-relaxed">
+      At VIZX Global Solutions, our values aren't just statements — they’re the foundation of how we operate, deliver, and grow. Every interaction, process, and service is guided by principles that ensure excellence, inclusion, and innovation.
+    </p>
+    <ul className="list-disc pl-6 text-xl text-gray-200 space-y-2">
+      <li><strong>Integrity:</strong> We are accountable, transparent, and honest in every partnership. We keep our promises and stand by our commitments.</li>
+      <li><strong>Innovation:</strong> We push boundaries, adopt emerging technologies, and find smarter ways to solve real-world business challenges.</li>
+      <li><strong>Excellence:</strong> We don’t just meet expectations — we exceed them. Our teams aim for operational brilliance and sustained quality in every task.</li>
+      <li><strong>Collaboration:</strong> Success is a shared journey. We work hand-in-hand with clients, leveraging collective intelligence to achieve outstanding results.</li>
+      <li><strong>Inclusivity:</strong> Rooted in Africa, we believe in the power of diverse teams. We foster equity and opportunity for all, building communities and uplifting people through impactful work.</li>
+    </ul>
+  </div>
+</section>
+
+
+ <section data-aos="fade-up">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start">
+    {/* Text content */}
+    <div className="md:w-2/3 space-y-6">
+      <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">Our Global Presence</h3>
+      <p className="text-xl text-gray-200 leading-relaxed">
+        VIZX Global Solutions operates at the intersection of innovation and international reach. With headquarters in California and a major operations hub in Nairobi, Kenya, we are strategically positioned to serve businesses around the world with exceptional efficiency and cultural fluency.
+      </p>
+      <p className="text-xl text-gray-200 leading-relaxed">
+        Our presence in the United States enables us to stay closely connected with our clients and industry trends in North America, ensuring every solution is aligned with the expectations of Western markets. Meanwhile, our Nairobi office — located in the iconic Britam Tower — provides access to a highly educated, multilingual workforce and a rapidly growing innovation ecosystem. With over 400 seats and the ability to scale up to 600+, this facility is a powerhouse for global delivery excellence.
+      </p>
+     
+      
+    </div>
+
+    {/* Image */}
+    <div className="md:w-3/5 h-full" data-aos="zoom-in">
+      <img
+        src="/images/global-presence.png" // Update this path to your actual image file
+        alt="VIZX Global Offices"
+        className="w-full h-full rounded-lg shadow-lg"
+      />
+    </div>
+  </div>
+</section>
+
+
+
+
             <section data-aos="fade-up">
               <div className="max-w-5xl space-y-16">
                 {highlights.map((item, index) => (
-                  <div
-                    key={index}
-                    className={`flex flex-col md:flex-row items-center ${
-                      item.reverse ? 'md:flex-row-reverse' : ''
-                    } gap-8`}
-                  >
-                    {/* Image */}
+                  <div key={index} className={`flex flex-col md:flex-row items-center ${item.reverse ? 'md:flex-row-reverse' : ''} gap-8`}>
                     <div className="md:w-1/2" data-aos="zoom-in">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full rounded-lg"
-                      />
+                      <img src={item.image} alt={item.title} className="w-full rounded-lg" />
                     </div>
-                    {/* Text */}
                     <div className="md:w-1/2">
-                      <h3 className="text-5xl font-bold text-orange-500 mb-4 leading-tight">
-                        {item.title}
-                      </h3>
-                      <p className="text-xl text-gray-200 leading-relaxed">
-                        {item.description}
-                      </p>
+                      <h3 className="text-5xl font-bold text-orange-500 mb-4 leading-tight">{item.title}</h3>
+                      <p className="text-xl text-gray-200 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* CSR */}
             <section data-aos="fade-up">
               <div className="max-w-5xl">
-                <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">
-                  Corporate Social Responsibility
-                </h3>
-                <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                  At VizX Global Solutions, CSR is woven into our organization’s fabric.
-                  We believe our success goes hand-in-hand with the well-being of the
-                  communities we serve.
-                </p>
-                <ul className="list-none space-y-4 text-xl text-gray-200 leading-relaxed">
-                  <li>
-                    <span className="text-orange-500 font-semibold">
-                      Empowering Youth Through Education:
-                    </span>{' '}
-                    Partnering with local schools for technology workshops and career
-                    development sessions.
-                  </li>
-                  <li>
-                    <span className="text-orange-500 font-semibold">
-                      Supporting Local Businesses & Entrepreneurs:
-                    </span>{' '}
-                    Providing mentorship and training to help small businesses thrive.
-                  </li>
-                  <li>
-                    <span className="text-orange-500 font-semibold">
-                      Volunteer Outreach & Community Engagement:
-                    </span>{' '}
-                    Actively participating in charitable events and community services.
-                  </li>
-                  <li>
-                    <span className="text-orange-500 font-semibold">
-                      Sustainability Initiatives:
-                    </span>{' '}
-                    Promoting eco-friendly practices and resource conservation.
-                  </li>
-                  <li>
-                    <span className="text-orange-500 font-semibold">
-                      Employee-Led Projects:
-                    </span>{' '}
-                    Empowering our staff to drive initiatives that create a positive
-                    social impact.
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            {/* Meet Our Team */}
-            <section data-aos="fade-up">
-              <div className="max-w-5xl">
-                <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">
-                  Meet Our Team
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">Meet Our Team</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
                   {teamMembers.map((member) => (
-                    <div
-                      key={member.name}
-                      className="flex flex-col items-center space-y-2"
-                    >
-                      {/* Circular Image Frame */}
-                      <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border-2 border-orange-500 flex items-center justify-center">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover"
-                        />
+                    <div key={member.name} className="flex flex-col items-center space-y-2">
+                      <div className="w-21 h-21 mx-auto mb-4 rounded-full overflow-hidden border-2 border-orange-500 flex items-center justify-center">
+                        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                       </div>
                       <h4 className="text-2xl font-semibold text-white">
                         {member.name}{' '}
-                        <span className="text-orange-500 font-normal">
-                          , {member.role}
-                        </span>
+                        <span className="text-orange-500 font-normal">, {member.role}</span>
                       </h4>
-                      <p className="text-xl text-gray-200 text-center">
-                        {member.description}
-                      </p>
+                      <p className="text-xl text-gray-200 text-center">{member.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
 
-            {/* Contact / CTA */}
             <section data-aos="fade-up" className="pb-24">
               <div className="max-w-5xl">
-                <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">
-                  Get in Touch
-                </h3>
+                <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">Get in Touch</h3>
                 <p className="text-xl text-gray-200 leading-relaxed mb-6">
-                  Ready to learn more about how we can help you fulfill your business
-                  purpose?
+                  Ready to learn more about how we can help you fulfill your business purpose?
                 </p>
-                <a
-                  href="/contact"
-                  className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
-                >
+                <a href="/contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors">
                   Contact Us
                 </a>
               </div>
             </section>
           </div>
 
-          {/* RIGHT COLUMN: Sticky Timeline (wider: 30rem) */}
           <aside className="hidden md:block sticky top-0 h-screen overflow-y-auto border-l border-gray-700 pl-0 w-[30rem]">
             <h3 className="text-4xl font-bold text-orange-500 mb-4 mt-24">Timeline</h3>
             <ul className="border-l border-gray-600 ml-4">
               {timelineEvents.map((event, index) => (
                 <li key={index} className="mb-8 ml-4 relative">
-                  {/* Circle */}
                   <span className="absolute -left-3 flex items-center justify-center w-3 h-3 rounded-full bg-orange-500 ring-2 ring-black" />
-                  {/* Year */}
-                  <time className="block mb-1 text-sm font-normal leading-none text-gray-400">
-                    {event.year}
-                  </time>
-                  {/* Title */}
+                  <time className="block mb-1 text-sm font-normal leading-none text-gray-400">{event.year}</time>
                   <h4 className="text-lg font-semibold text-white">{event.title}</h4>
-                  {/* Description */}
-                  <p className="text-base font-normal text-gray-300">
-                    {event.description}
-                  </p>
+                  <p className="text-base font-normal text-gray-300">{event.description}</p>
                 </li>
               ))}
             </ul>
@@ -457,11 +261,8 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <footer className="bg-black px-8 py-6 border-t border-gray-800">
-        <p className="text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} VizX Global Solutions. All rights reserved.
-        </p>
+        <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} VizX Global Solutions. All rights reserved.</p>
       </footer>
     </div>
   );

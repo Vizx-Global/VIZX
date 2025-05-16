@@ -2,6 +2,52 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+// --- Counter Component ---
+const AnimatedCounter: React.FC<{ target: number; suffix?: string; duration?: number }> = ({
+  target,
+  suffix = '',
+  duration = 2000,
+}) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = React.useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          let start = 0;
+          const increment = target / (duration / 16); // ~60fps
+          const handle = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+              setCount(target);
+              clearInterval(handle);
+            } else {
+              setCount(Math.ceil(start));
+            }
+          }, 16);
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.6 } // start animation when 60% of the element is in view
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [target, duration, hasAnimated]);
+
+  return <span ref={ref}>{count.toLocaleString() + suffix}</span>;
+};
+
+
 // Simple accordion component for FAQs
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +84,7 @@ const LogisticsSupplyChainIndustry: React.FC = () => {
             Logistics & Supply Chain
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-            WellTech Partners boosts top-notch technology, expert team and global network to revolutionize your logistics processes—ensuring efficiency and cost savings.
+            VIZX boosts top-notch technology, expert team and global network to revolutionize your logistics processes—ensuring efficiency and cost savings.
           </p>
           <div className="mt-8 flex justify-center space-x-4">
             <a
@@ -201,19 +247,27 @@ const LogisticsSupplyChainIndustry: React.FC = () => {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-8">
             <div>
-              <p className="text-4xl font-bold text-orange-500">23</p>
+              <p className="text-4xl font-bold text-orange-500">
+                <AnimatedCounter target={23} />
+              </p>
               <p className="text-gray-300 mt-2">Years in BPO & RPO</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-orange-500">7</p>
-              <p className="text-gray-300 mt-2">Years in Healthcare</p>
+              <p className="text-4xl font-bold text-orange-500">
+                <AnimatedCounter target={7} />
+              </p>
+              <p className="text-gray-300 mt-2">Years in Healthcare Industry</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-orange-500">5,000+</p>
+              <p className="text-4xl font-bold text-orange-500">
+                <AnimatedCounter target={5000} suffix="+" />
+              </p>
               <p className="text-gray-300 mt-2">Hires Placed Yearly</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-orange-500">55+</p>
+              <p className="text-4xl font-bold text-orange-500">
+                <AnimatedCounter target={55} suffix="+" />
+              </p>
               <p className="text-gray-300 mt-2">Clients Served</p>
             </div>
           </div>

@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                 absolute 
                 left-0 
                 top-full 
-                mt-2 
+                mt-0 
                 w-44 
                 bg-black 
                 rounded 
@@ -54,26 +54,26 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/data-entry"
-                  className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
-                >
-                  CCaaS
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/contact-center"
                   className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
                 >
-                  Real Estate Management
+                  CX Solutions
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/real-estate"
+                  to="/industry/real-estate"
                   className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
                 >
-                  Back Office Support
+                  Real Estate Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industry/merchant-services"
+                  className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
+                >
+                  Merchant Solutions
                 </Link>
               </li>
               <li>
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
                   to="/back-office"
                   className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
                 >
-                  Back Office
+                  Back Office Solutions
                 </Link>
               </li>
             </ul>
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
                 absolute 
                 left-0 
                 top-full 
-                mt-2 
+                mt-0
                 w-44 
                 bg-black 
                 rounded 
@@ -155,13 +155,38 @@ const Header: React.FC = () => {
                   Real Estate
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/industry/manufacturing"
+                  className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
+                >
+                  Manufacturing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industry/supply-chain"
+                  className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
+                >
+                  Logistics & Supply Chain
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industry/retail"
+                  className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
+                >
+                  Retail & E-Commerce
+                </Link>
+              </li>
             </ul>
           </li>
+
 
           {/* Normal links */}
           <li>
             <Link to="/vizx-hi" className="text-gray-300 hover:text-orange-500 transition">
-              Vizx HI
+              Vizx HI + AI
             </Link>
           </li>
           <li>
@@ -174,10 +199,52 @@ const Header: React.FC = () => {
               Our Impact
             </Link>
           </li>
-          <li>
+
+           {/* ABOUT US DROPDOWN */}
+          <li className="relative group">
             <Link to="/about" className="text-gray-300 hover:text-orange-500 transition">
               About Us
+              <svg
+                className="w-4 h-4 ml-1 inline-block text-gray-400 group-hover:text-orange-500 transition"
+                viewBox="0 0 20 20"
+              >
+                <path d="M5.516 7.548a.75.75 0 0 1 1.06 0L10 10.97l3.425-3.424a.75.75 0 1 1 1.06 1.06l-3.954 3.954a.75.75 0 0 1-1.06 0L5.516 8.609a.75.75 0 0 1 0-1.06z" />
+              </svg>
             </Link>
+            {/* Dropdown Menu */}
+            <ul
+              className="
+                absolute 
+                left-0 
+                top-full 
+                mt-1 
+                w-44 
+                bg-black 
+                rounded 
+                shadow-lg 
+                hidden 
+                group-hover:flex 
+                flex-col 
+                z-50
+              "
+            >
+              <li>
+                <Link
+                  to="/employee-welfare"
+                  className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
+                >
+                  Employee welfare
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/community-fund"
+                  className="px-4 py-2 hover:bg-gray-800 hover:text-orange-500 transition"
+                >
+                  VizX Community Fund
+                </Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link

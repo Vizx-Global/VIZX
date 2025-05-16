@@ -4,6 +4,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
+
 
 const Contact: React.FC = () => {
   useEffect(() => {
@@ -81,7 +83,7 @@ const Contact: React.FC = () => {
         <span>
           Britam Tower, Hospital Rd, Upperhill
           <br />
-          Suite #2500 &amp; #1500, Nairobi, Kenya
+          25th &amp; 15th Floor, Nairobi, Kenya
         </span>
       </div>
     </div>
@@ -178,6 +180,24 @@ const Contact: React.FC = () => {
               Send Message
             </button>
           </motion.form>
+          <div className="mt-8 text-center">
+  <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+  <div className="flex justify-center space-x-6">
+    <a href="https://www.facebook.com/VIZXInternational/" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-white transition-colors text-2xl">
+      <FaFacebookF />
+    </a>
+    <a href="https://ke.linkedin.com/company/vizx-international" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-white transition-colors text-2xl">
+      <FaLinkedinIn />
+    </a>
+    <a href="https://twitter.com/VIZXKe/" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-white transition-colors text-2xl">
+      <FaTwitter />
+    </a>
+    <a href="https://www.instagram.com/vizxinternational/?hl=en" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-white transition-colors text-2xl">
+      <FaInstagram />
+    </a>
+  </div>
+</div>
+
         </div>
       </section>
     </div>

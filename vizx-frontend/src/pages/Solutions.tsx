@@ -10,8 +10,9 @@ const Solutions: React.FC = () => {
   const images = [
     "/images/solutions-bg1.jpg",
     "/images/IMG_6049.jpg",
-    "/images/IMG_6027.jpg",
+    "/images/solutions-bg2.jpg",
     "/images/IMG_6030.jpg",
+    "/images/solutions-bg3.jpg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -61,19 +62,9 @@ const Solutions: React.FC = () => {
 
       {/* Solutions Content */}
       <section>
-        <div className="solution dark-bg" data-aos="fade-up">
-          <Link to="/rpo">
-            <h2>Recruitment Process Outsourcing (RPO)</h2>
-          </Link>
-          <p>
-            Comprehensive recruitment, quality control, and payroll services ensuring access to the best talent in the industry.
-            We connect top-tier professionals with the right organizations, ensuring a seamless hiring process for businesses looking to expand their workforce efficiently.
-          </p>
-        </div>
-
-        <div className="solution bg-orange-500" data-aos="fade-up">
+        <div className="solution dark-bg mb-5" data-aos="fade-up">
           <Link to="/contact-center">
-            <h2>Contact Center as a Service (CCaaS)</h2>
+            <h2 className="text-xl text-orange-500 hover: text-orange-500">CX Solutions </h2>
           </Link>
           <p>
             Empower your business with our state-of-the-art contact center solutions, designed to enhance customer experiences while driving operational efficiency.
@@ -81,9 +72,19 @@ const Solutions: React.FC = () => {
           </p>
         </div>
 
-        <div className="solution dark-bg" data-aos="fade-up">
+        <div className="solution dark-bg text-black bg-orange-500 mb-5" data-aos="fade-up">
+          <Link to="/merchant-services">
+            <h2 className="text-xl text-white hover: text-orange-500"> 
+              Merchant Services</h2>
+          </Link>
+          <p>
+            We understand that in today's fast-paced environment, a seamless transaction experience is crucial for customer satisfaction and business growth. That's why we offer comprehensive solutions that support a wide spectrum of payment methods, ensuring you can cater to your customers' preferences with ease. 
+          </p>
+        </div>
+
+         <div className="solution dark-bg mb-5" data-aos="fade-up">
           <Link to="/industry/real-estate">
-            <h2>Real Estate Management</h2>
+            <h2 className="text-xl text-orange-500 hover: text-orange-500">Real Estate Management</h2>
           </Link>
           <p>
             We offer a full suite of real estate management solutions to ensure properties are well-maintained and supported by experienced professionals.
@@ -91,9 +92,22 @@ const Solutions: React.FC = () => {
           </p>
         </div>
 
-        <div className="solution bg-orange-500" data-aos="fade-up">
+
+        <div className="solution dark-bg text-black bg-orange-500 mb-5" data-aos="fade-up">
           <Link to="/rpo">
-            <h2>Back Office Support</h2>
+            <h2 className="text-xl text-white hover: text-orange-500"> 
+              Recruitment Process Outsourcing (RPO)</h2>
+          </Link>
+          <p>
+            Comprehensive recruitment, quality control, and payroll services ensuring access to the best talent in the industry.
+            We connect top-tier professionals with the right organizations, ensuring a seamless hiring process for businesses looking to expand their workforce efficiently.
+          </p>
+        </div>
+
+
+        <div className="solution dark-bg mb-5" data-aos="fade-up">
+          <Link to="/rpo">
+            <h2 className="text-xl text-orange-500 hover: text-orange-500">Back Office Support</h2>
           </Link>
           <p>
             Streamline your operations with our specialized back-office support services, including payroll processing, data management, and administrative support.

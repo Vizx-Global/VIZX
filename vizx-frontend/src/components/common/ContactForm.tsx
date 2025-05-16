@@ -44,7 +44,7 @@ const ContactForm = () => {
 
                     {/* RPO Service Selection */}
                     <div>
-                        <label className="block font-semibold text-white">Which RPO service are you interested in?</label>
+                        <label className="block font-semibold text-white">Which service are you interested in?</label>
                         <div className="flex flex-col space-y-2 text-gray-400">
                             <label><input type="checkbox" className="mr-2" /> Recruitment</label>
                             <label><input type="checkbox" className="mr-2" /> Quality Control / Compliance</label>
@@ -72,7 +72,7 @@ const ContactForm = () => {
 
                     {/* Submit Button */}
                     <div className="text-center">
-                        <button className="bg-orange-400 text-white px-6 py-3 rounded-md w-full hover:bg-black transition">
+                        <button className="bg-orange-500 text-white px-6 py-3 rounded-md w-full hover:bg-black transition">
                             SUBMIT
                         </button>
                     </div>

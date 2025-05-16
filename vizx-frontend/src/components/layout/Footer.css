@@ -20,6 +20,7 @@
 .footer-section h3 {
   margin-bottom: 8px; /* Reduced margin for compact look */
   font-size: 16px; /* Slightly smaller font */
+  color: #FB8C00;
 }
 
 .footer-section ul {
@@ -61,21 +62,21 @@
   transition: background-color 0.3s;
 }
 
-.footer-buttons .register-button {
-  background-color: #Ffa500;
-  color: white;
+.footer-buttons .contact-button {
+  background-color: #e37d00;
+  color: rgb(255, 255, 255);
 }
 
 .footer-buttons .login-button {
   background-color: transparent;
   color: #Ffa500;
-  border: 2px solid #Ffa500;
+  border: 2px solid #e37d00;
   padding: 8px 18px;
 }
 
 .footer-buttons .register-button:hover,
 .footer-buttons .login-button:hover {
-  background-color: #Ffa500;
+  background-color: #FB8C00;
 }
 
 .footer-bottom {
@@ -112,7 +113,7 @@
 }
 
 .social-media a:hover {
-  color: #ffa500; /* Change icon color on hover */
+  color: #e37d00; /* Change icon color on hover */
 }
 
 /* Responsive Design */

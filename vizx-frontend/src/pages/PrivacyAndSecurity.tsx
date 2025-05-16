@@ -80,7 +80,7 @@ const PrivacyAndSecurity: React.FC = () => {
         </section>
 
         <section data-aos="fade-up" className="max-w-5xl mx-auto">
-  <h2 className="text-5xl font-bold text-orange-500 mb-6">View Our Data Processor Certification</h2>
+  <h2 className="text-2xl font-bold text-orange-500 mb-6">View Our Data Processor Certification</h2>
   <a
     href="/docs/privacy-policy.pdf"
     target="_blank"
