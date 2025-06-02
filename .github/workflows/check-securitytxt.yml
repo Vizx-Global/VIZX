@@ -2,14 +2,15 @@ name: Check security.txt
 
 on:
   schedule:
-    - cron: '0 */12 * * *'  # Every 12 hours
-  workflow_dispatch:        # Allow manual runs
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
 
 jobs:
   check-securitytxt:
     runs-on: ubuntu-latest
     steps:
-      - name: Check https://vizxglobal.com/.well-known/security.txt
+      - name: Check security.txt health
+        id: check
         run: |
           URL="https://vizxglobal.com/.well-known/security.txt"
           echo "Checking $URL..."
@@ -18,13 +19,15 @@ jobs:
           echo "HTTP Status: $RESPONSE"
 
           if [ "$RESPONSE" != "200" ]; then
-            echo "❌ Error: security.txt not reachable (HTTP $RESPONSE)"
+            echo "::set-output name=reason::security.txt not reachable (HTTP $RESPONSE)"
+            echo "fail=true" >> $GITHUB_OUTPUT
             exit 1
           fi
 
           CONTACT_LINES=$(grep -c "^Contact:" security.txt || true)
           if [ "$CONTACT_LINES" -eq 0 ]; then
-            echo "❌ Error: No Contact line found"
+            echo "::set-output name=reason::Missing Contact line"
+            echo "fail=true" >> $GITHUB_OUTPUT
             exit 1
           fi
 
@@ -34,14 +37,33 @@ jobs:
               NOW=$(date +%s)
               EXP_TS=$(date --date="$EXPIRES" +%s)
               if [ "$EXP_TS" -le "$NOW" ]; then
-                echo "❌ Error: Expires date has passed"
+                echo "::set-output name=reason::Expired Expires field"
+                echo "fail=true" >> $GITHUB_OUTPUT
                 exit 1
               fi
             else
-              echo "⚠️ Could not parse Expires field"
+              echo "::set-output name=reason::Unparsable Expires field"
+              echo "fail=true" >> $GITHUB_OUTPUT
+              exit 1
             fi
-          else
-            echo "⚠️ No Expires field found"
           fi
 
-          echo "✅ security.txt is valid and reachable."
+          echo "::set-output name=reason::OK"
+          echo "fail=false" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Issue on failure
+        if: failure()
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: "🚨 Broken security.txt detected"
+          content-file: ./security.txt-issue.md
+          labels: bug, security
+
+      - name: Generate issue content
+        if: failure()
+        run: |
+          echo "A problem was detected with the public security.txt file at https://vizxglobal.com/.well-known/security.txt" > security.txt-issue.md
+          echo "" >> security.txt-issue.md
+          echo "**Reason:** ${{ steps.check.outputs.reason }}" >> security.txt-issue.md
+          echo "" >> security.txt-issue.md
+          echo "This check failed automatically via GitHub Actions." >> security.txt-issue.md
