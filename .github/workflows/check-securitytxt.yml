@@ -1,0 +1,47 @@
+name: Check security.txt
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'  # Every 12 hours
+  workflow_dispatch:        # Allow manual runs
+
+jobs:
+  check-securitytxt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check https://vizxglobal.com/.well-known/security.txt
+        run: |
+          URL="https://vizxglobal.com/.well-known/security.txt"
+          echo "Checking $URL..."
+
+          RESPONSE=$(curl -s -w "%{http_code}" -o security.txt "$URL")
+          echo "HTTP Status: $RESPONSE"
+
+          if [ "$RESPONSE" != "200" ]; then
+            echo "❌ Error: security.txt not reachable (HTTP $RESPONSE)"
+            exit 1
+          fi
+
+          CONTACT_LINES=$(grep -c "^Contact:" security.txt || true)
+          if [ "$CONTACT_LINES" -eq 0 ]; then
+            echo "❌ Error: No Contact line found"
+            exit 1
+          fi
+
+          EXPIRES=$(grep "^Expires:" security.txt | cut -d' ' -f2)
+          if [ -n "$EXPIRES" ]; then
+            if date --date="$EXPIRES" +%s >/dev/null 2>&1; then
+              NOW=$(date +%s)
+              EXP_TS=$(date --date="$EXPIRES" +%s)
+              if [ "$EXP_TS" -le "$NOW" ]; then
+                echo "❌ Error: Expires date has passed"
+                exit 1
+              fi
+            else
+              echo "⚠️ Could not parse Expires field"
+            fi
+          else
+            echo "⚠️ No Expires field found"
+          fi
+
+          echo "✅ security.txt is valid and reachable."
