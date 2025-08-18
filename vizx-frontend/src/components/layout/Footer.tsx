@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css'; // Make sure you have the Footer CSS file
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -33,10 +34,15 @@ const Footer: React.FC = () => {
 
           </ul>
         </div>
-        <div className="footer-section footer-buttons">
-          <button className="contact-button">Contact Us</button>
-          <button className="login-button">Login</button>
-        </div>
+       <div className="footer-section footer-buttons">
+        <Link
+              to="/contact"
+              className="bg-orange-500 text-black hover:bg-orange-600 px-6 py-2 rounded-md transition"
+            >
+              Contact Us
+            </Link>
+  
+</div>
       </div>
       <div className="footer-bottom">
         <p>© 2025 VIZX Global. All rights reserved.</p>

@@ -2,7 +2,7 @@
   "name": "vizx",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/Mwaumba/VIZX#readme",
+  "homepage": "/",
   "bugs": {
     "url": "https://github.com/Mwaumba/VIZX/issues"
   },
@@ -15,6 +15,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postcss:build": "postcss src/App.css -o src/output.css",
     "start": "react-scripts start",
@@ -22,8 +24,14 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
+    "nodemailer": "^7.0.3",
+    "react-google-recaptcha": "^3.1.0",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

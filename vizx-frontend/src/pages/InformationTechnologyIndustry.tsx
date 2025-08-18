@@ -74,36 +74,59 @@ const InformationTechnologyIndustry: React.FC = () => {
     <div className="bg-black text-white font-sans">
 
       
-      {/* Hero Section */}
-      <section
-        className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/technology-hero.jpg')" }}
-        data-aos="fade-in"
-      >
-        <div className="absolute inset-0 bg-black opacity-70"></div>
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold text-orange-500 mb-4">
-            Information Technology
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-            Driving Growth & Efficiency Across the IT Industry
-          </p>
-          <div className="mt-8 flex justify-center space-x-4">
-            <a
-              href="/contact"
-              className="bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
-            >
-              Start Now
-            </a>
-            <a
-              href="/contact"
-              className="bg-transparent border border-orange-500 hover:bg-orange-600 hover:text-black text-orange-500 font-semibold py-3 px-6 rounded-md transition-colors"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </section>
+{/* Hero Section */}
+<section
+    className="relative h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden"
+    data-aos="fade-in"
+  >
+    {/* mobile fallback image */}
+    <div
+      className="absolute inset-0 bg-cover bg-center sm:hidden"
+      style={{ backgroundImage: "url('/images/technology-hero.jpg')" }}
+    ></div>
+
+    {/* video only on sm+ */}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      poster="/images/technology-hero.jpg"
+      className="absolute inset-0 w-full h-full object-cover hidden sm:block z-0"
+    >
+      <source src="/images/technology-hero.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    {/* dark overlay */}
+    <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
+
+    {/* content */}
+    <div className="relative z-20 text-center px-4">
+      <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-orange-500 mb-4">
+        Information Technology
+      </h1>
+      <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+        Driving Growth & Efficiency Across the IT Industry
+      </p>
+      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <a
+          href="/contact"
+          className="bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
+        >
+          Start Now
+        </a>
+        <a
+          href="/contact"
+          className="bg-transparent border border-orange-500 hover:bg-orange-600 hover:text-black text-orange-500 font-semibold py-3 px-6 rounded-md transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+
 
       {/* Intro Section */}
       <section className="py-16 px-8" data-aos="fade-up">
@@ -114,102 +137,6 @@ const InformationTechnologyIndustry: React.FC = () => {
             Information Technology sector. At VIZX Global, we leverage our insights and 
             technological prowess to empower businesses with 21<sup>st</sup>-century IT solutions.
           </p>
-        </div>
-      </section>
-
-      {/* Core IT Solutions */}
-      <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
-            Core IT Solutions We Outsource
-          </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-10 text-center">
-            We provide a broad range of specialized IT services that meet the evolving needs of modern businesses.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* 1 */}
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Software Development</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Custom software, web/mobile app development, and digital solutions to optimize your operations.
-              </p>
-            </div>
-            {/* 2 */}
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Managed IT Services</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Ongoing management of your IT infrastructure to ensure reliability, security, and performance.
-              </p>
-            </div>
-            {/* 3 */}
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">IT Consulting</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Strategic guidance and advisory services to navigate complex IT challenges and modernize your environment.
-              </p>
-            </div>
-            {/* 4 */}
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Cybersecurity</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Robust security measures to safeguard your digital assets and protect against cyber threats.
-              </p>
-            </div>
-           
-          </div>
-          <div className="text-center mt-8">
-            <a
-              href="/contact"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
-            >
-              Get Started Today
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose VIZX IT Outsourcing */}
-      <section className="py-16 px-8" data-aos="fade-up">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
-            Why Choose VIZX Information Technology Outsourcing
-          </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-10 text-center">
-            We have successfully navigated the complexities of the IT landscape, 
-            ensuring seamless integration and unparalleled service delivery.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Expertise & Reliability</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Our team comprises seasoned IT professionals with proven track records in delivering high-quality BPO services.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Customized Solutions</h3>
-              <p className="text-gray-300 leading-relaxed">
-                We understand that every business is unique. We tailor our IT solutions to align with your specific requirements and objectives.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Global Reach</h3>
-              <p className="text-gray-300 leading-relaxed">
-                With a global presence and diverse client portfolio, we possess the capability to support businesses of all sizes across different geographies.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Scalability</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Whether you're a startup or an enterprise, our scalable solutions adapt to your evolving needs.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Proven Track Record</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Our reputation in the industry brands us as your trusted and reliable IT outsourcing partner.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -282,6 +209,54 @@ const InformationTechnologyIndustry: React.FC = () => {
           </div>
         </div>
       </section>
+
+      
+      {/* Why Choose VIZX IT Outsourcing */}
+      <section className="py-16 px-8" data-aos="fade-up">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
+            Why Choose VIZX Information Technology Outsourcing
+          </h2>
+          <p className="text-xl text-gray-300 leading-relaxed mb-10 text-center">
+            We have successfully navigated the complexities of the IT landscape, 
+            ensuring seamless integration and unparalleled service delivery.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div className="bg-gray-900 p-6 rounded-lg">
+              <h3 className="text-2xl text-orange-500 font-bold mb-2">Expertise & Reliability</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Our team comprises seasoned IT professionals with proven track records in delivering high-quality BPO services.
+              </p>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-lg">
+              <h3 className="text-2xl text-orange-500 font-bold mb-2">Customized Solutions</h3>
+              <p className="text-gray-300 leading-relaxed">
+                We understand that every business is unique. We tailor our IT solutions to align with your specific requirements and objectives.
+              </p>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-lg">
+              <h3 className="text-2xl text-orange-500 font-bold mb-2">Global Reach</h3>
+              <p className="text-gray-300 leading-relaxed">
+                With a global presence and diverse client portfolio, we possess the capability to support businesses of all sizes across different geographies.
+              </p>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-lg">
+              <h3 className="text-2xl text-orange-500 font-bold mb-2">Scalability</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Whether you're a startup or an enterprise, our scalable solutions adapt to your evolving needs.
+              </p>
+            </div>
+            <div className="bg-gray-900 p-6 rounded-lg">
+              <h3 className="text-2xl text-orange-500 font-bold mb-2">Proven Track Record</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Our reputation in the industry brands us as your trusted and reliable IT outsourcing partner.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
 
      {/* Our Numbers */}
       <section className="py-16 px-8" data-aos="fade-up">

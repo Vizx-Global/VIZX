@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+     import { motion } from "framer-motion";
 
 const CCaaS: React.FC = () => {
   useEffect(() => {
@@ -64,20 +65,62 @@ const CCaaS: React.FC = () => {
   return (
     <div className="bg-black text-white w-full min-h-screen font-sans">
       {/* HERO SECTION */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/images/ccas-hero.jpg')" }} data-aos="fade-in">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-orange-500">CX SOLUTIONS</h1>
-          <h2 className="text-xl md:text-2xl font-semibold mb-6">Revolutionize Your Customer Experience with VIZX</h2>
-          <p className="text-lg md:text-xl leading-relaxed text-black">
-            In the digital era, the power of CX through our expert BPO solutions empowers you to thrive in the new age, delivering exceptional customer experiences while ensuring operational efficiency and profitability.
-          </p>
-          <div className="mt-8">
-            <a href="/contact" className="inline-block bg-black text-white hover:text-white hover:bg-gray-800 font-semibold py-3 px-6 rounded-md transition-colors">
-              Transform your Customer Experience
-            </a>
-          </div>
-        </div>
-      </section>
+<section className="relative min-h-[60vh] md:min-h-[70vh] w-full overflow-hidden text-white">
+  {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+  >
+    <source src="/images/contact-center-hero.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-70 z-10" />
+
+  {/* Animated Content */}
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    className="relative z-20 flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] px-4 text-center"
+  >
+    <motion.h1
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+      className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
+    >
+      <span className="text-orange-500">CX</span> Solutions
+    </motion.h1>
+
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5 }}
+      className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-6"
+    >
+      Delivering exceptional customer experiences with scalable, efficient, and human-driven contact center services.
+    </motion.p>
+
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() =>
+        document
+          .getElementById("vizx-cx")
+          ?.scrollIntoView({ behavior: "smooth" })
+      }
+      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md text-sm sm:text-base transition"
+    >
+      Learn More
+    </motion.button>
+  </motion.div>
+</section>
+
 
       {/* KEY BENEFITS */}
       <section className="px-8 py-16 bg-gray-900" data-aos="fade-up">
@@ -105,9 +148,9 @@ const CCaaS: React.FC = () => {
       {/* WHAT IS CX */}
       <section className="px-8 py-16" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-bold text-orange-500 mb-6">What is VIZ-CX?</h3>
+          <h3 id="vizx-cx" className="text-3xl md:text-4xl font-bold text-orange-500 mb-6">What is VIZ-CX?</h3>
           <p className="text-xl text-gray-200 leading-relaxed">
-            CCaaS is a cloud-based customer engagement solution that revolutionizes how businesses interact with their customers. By leveraging our BPO expertise, we offer a flexible, scalable, and cost-effective way to manage customer interactions across all channels.
+            VIZ-CX is a customer engagement solution that revolutionizes how businesses interact with their customers. By leveraging our BPO expertise, we offer a flexible, scalable, and cost-effective way to manage customer interactions across all channels.
           </p>
         </div>
       </section>
@@ -117,7 +160,7 @@ const CCaaS: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <h3 className="text-3xl md:text-4xl font-bold text-orange-500 mb-6">Which industries are best suited for CX?</h3>
           <p className="text-xl text-gray-300 leading-relaxed mb-8">
-            CCaaS (Contact Center as a Service) can benefit a wide range of industries, but some sectors find it particularly valuable due to their specific customer service needs and challenges. Different industries have different issues—this is how CCaaS addresses their challenges.
+            CX can benefit a wide range of industries, but some sectors find it particularly valuable due to their specific customer service needs and challenges. Different industries have different issues—this is how CX addresses their challenges.
           </p>
 
           <div className="space-y-4">

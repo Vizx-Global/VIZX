@@ -102,41 +102,41 @@ const FinanceIndustry: React.FC = () => {
         </div>
       </section>
 
-      {/* Core Solutions We Outsource */}
+      {/* Finance Solutions We Outsource */}
       <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
-            Core Solutions We Outsource
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-orange-500 mb-6">
+            Core Finance Solutions We Outsource
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-10 text-center">
-            Integrating technology into your business lowers operational costs and enhances overall efficiency.
-            As such, many businesses opt to outsource financial services for greater benefits—and we’re ready to collaborate with you.
+          <p className="text-xl text-gray-300 leading-relaxed mb-8">
+            We Deliver.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Bookkeeping</h3>
-              <p className="text-gray-300 leading-relaxed">
-                We offer expert bookkeeping services for accurate recording and management of all your financial transactions.
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="bg-black p-4 rounded-lg border border-gray-700">
+              <h3 className="text-lg text-orange-500 font-bold mb-2">Bookkeeping</h3>
+              <p className="text-gray-300 text-sm">
+                Recording transactions, bank reconciliations
               </p>
             </div>
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Accounts Payable/Receivable</h3>
-              <p className="text-gray-300 leading-relaxed">
-                For a healthy cash flow, we handle your invoices and process payments to ensure timely transactions.
+            <div className="bg-black p-4 rounded-lg border border-gray-700">
+              <h3 className="text-lg text-orange-500 font-bold mb-2">Accounts Payable/Receivable</h3>
+              <p className="text-gray-300 text-sm">
+                Invoice processing, payment management, collections
               </p>
             </div>
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Payroll Services</h3>
-              <p className="text-gray-300 leading-relaxed">
-                We provide timely and accurate payroll calculations, deductions, and tax filings so you can focus on your core operations.
+            <div className="bg-black p-4 rounded-lg border border-gray-700">
+              <h3 className="text-lg text-orange-500 font-bold mb-2">Payroll Processing</h3>
+              <p className="text-gray-300 text-sm">
+                Salary calculations, direct deposits, W2s
               </p>
             </div>
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Accounting</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Ensuring compliance with tax laws while maximizing deductions and reducing liabilities.
+            <div className="bg-black p-4 rounded-lg border border-gray-700">
+              <h3 className="text-lg text-orange-500 font-bold mb-2">Financial Reporting</h3>
+              <p className="text-gray-300 text-sm">
+                Management reports, budgeting, forecasting
               </p>
             </div>
+           
           </div>
           <div className="text-center mt-8">
             <a
@@ -149,6 +149,7 @@ const FinanceIndustry: React.FC = () => {
         </div>
       </section>
 
+      
       {/* Why Choose VIZX */}
       <section className="py-16 px-8" data-aos="fade-up">
         <div className="max-w-6xl mx-auto">
@@ -184,69 +185,7 @@ const FinanceIndustry: React.FC = () => {
         </div>
       </section>
 
-      {/* More Finance Solutions We Outsource */}
-      <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6">
-            More Finance Solutions We Outsource
-          </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8">
-            We Deliver.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Bookkeeping</h3>
-              <p className="text-gray-300 text-sm">
-                Recording transactions, bank reconciliations
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Accounts Payable/Receivable</h3>
-              <p className="text-gray-300 text-sm">
-                Invoice processing, payment management, collections
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Payroll Processing</h3>
-              <p className="text-gray-300 text-sm">
-                Salary calculations, direct deposits, W2s
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Financial Reporting</h3>
-              <p className="text-gray-300 text-sm">
-                Management reports, budgeting, forecasting
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Tax Preparation & Planning</h3>
-              <p className="text-gray-300 text-sm">
-                Corporate tax returns, compliance, strategic tax planning
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Financial Analysis</h3>
-              <p className="text-gray-300 text-sm">
-                Profitability analysis, cash flow management
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Treasury Management</h3>
-              <p className="text-gray-300 text-sm">
-                Cash management, risk management, investments
-              </p>
-            </div>
-          </div>
-          <div className="text-center mt-8">
-            <a
-              href="/contact"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
-            >
-              Get Started Today
-            </a>
-          </div>
-        </div>
-      </section>
+      
 
       {/* The Process of Outsourcing Finance Solutions */}
       <section className="py-16 px-8" data-aos="fade-up">

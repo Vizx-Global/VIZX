@@ -47,8 +47,8 @@ const RealEstateIndustry: React.FC = () => {
       <section className="py-16 px-8" data-aos="fade-up">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-xl text-gray-300 leading-relaxed mb-8">
-            VIZX Global is a world leader in commercial real estate services and investments. 
-            Whether you're buying, selling, or investing, our team of experts is dedicated to 
+            VIZX Global is a world leader in commercial real estate support services. 
+            Whether you're buying, selling, or facing pre-foreclosure, our team of experts is dedicated to 
             delivering exceptional results that meet your unique needs.
           </p>
         </div>
@@ -122,11 +122,7 @@ const RealEstateIndustry: React.FC = () => {
               <p className="text-gray-300 leading-relaxed mb-4">
                 Expertise in foreclosure assistance helps homeowners navigate financial challenges.
               </p>
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Our Tools & Technologies</h3>
-              <ul className="list-disc list-inside text-gray-300">
-                <li>FreedomCRM for effective property tracking</li>
-                <li>My Plus Leads for generating quality leads</li>
-              </ul>
+              
             </div>
             <div className="flex items-center justify-center">
               <img

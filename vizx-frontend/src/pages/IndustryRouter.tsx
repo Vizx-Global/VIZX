@@ -7,7 +7,8 @@ import InformationTechnologyIndustry from './InformationTechnologyIndustry';
 import ManufacturingIndustry from './ManufacturingIndustry';
 import FinanceIndustry from './FinanceIndustry';
 import LogisticsSupplyChainIndustry from './LogisticsSupplyChainIndustry';
-import CreativeAndMarketingIndustry from './CreativeAndMarketingIndustry';
+import TravelIndustry from './TravelIndustry';
+import RetailIndustry from './RetailIndustry';
 // Import additional industry components as needed
 
 // Create a mapping object where keys are the slugs and values are the respective components.
@@ -18,7 +19,9 @@ const industryComponents: Record<string, React.FC> = {
   'manufacturing': ManufacturingIndustry,
   'finance': FinanceIndustry,
   'supply-chain': LogisticsSupplyChainIndustry,
-  'creative': CreativeAndMarketingIndustry,
+  'travel': TravelIndustry,
+  'retail': RetailIndustry,
+
 
   // Add more mappings here as you create more industry pages.
 };

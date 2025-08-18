@@ -197,37 +197,7 @@ const HealthcareStaffingIndustry: React.FC = () => {
         </div>
       </section>
 
-      {/* Tools & Technologies */}
-      <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
-            Tools & Technologies We Use
-          </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8 text-center">
-            From cutting-edge Vendor Management Systems to leading job boards and social media platforms, we stay ahead with the best in technology.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl font-bold text-orange-500 mb-2">VMS</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Tools like Wand, Cintq, AYA, Einstein, and more.
-              </p>
-            </div>
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl font-bold text-orange-500 mb-2">Job Boards</h3>
-              <p className="text-gray-300 leading-relaxed">
-                ZipRecruiter, Glassdoor, CareerBuilder, JobRapido.
-              </p>
-            </div>
-            <div className="bg-black p-6 rounded-lg border border-gray-700">
-              <h3 className="text-2xl font-bold text-orange-500 mb-2">Social Media</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Facebook, LinkedIn, X, Instagram, TikTok.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Our Numbers */}
       <section className="py-16 px-8" data-aos="fade-up">

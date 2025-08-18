@@ -90,7 +90,7 @@ const MerchantServices: React.FC = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay for better text readability */}
         <div className="relative max-w-5xl mx-auto text-center z-10 p-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-orange-500">MERCHANT SOLUTIONS</h1>
-          <h2 className="text-xl md:text-2xl font-semibold mb-6">Streamline Your Payments with OurPlatform Solutions</h2>
+          <h2 className="text-xl md:text-2xl font-semibold mb-6">Streamline Your Payments with Our Platform Support Solutions</h2>
           <p className="text-lg md:text-xl leading-relaxed text-gray-200">
             Empower your business with our cutting-edge merchant services. We provide secure, reliable, and efficient payment processing solutions designed to enhance customer experience and boost your bottom line.
           </p>
@@ -144,7 +144,7 @@ const MerchantServices: React.FC = () => {
         <div className="max-w-5xl mx-auto text-center">
           <h3 className="text-3xl md:text-4xl font-bold text-orange-500 mb-6">What are Merchant Services?</h3>
           <p className="text-xl text-gray-200 leading-relaxed">
-            Merchant services encompass a range of solutions that enable businesses to accept and process electronic payments, such as credit cards, debit cards, and digital payments. OurPlatform provides a comprehensive suite of tools including payment processing, payment gateways, point-of-sale (POS) systems, and robust security features to ensure every transaction is smooth, secure, and efficient. We help you manage payments effectively, reduce risk, and enhance your customers' purchasing experience.
+            Merchant services encompass a range of solutions that enable businesses to accept and process electronic payments, such as credit cards, debit cards, and digital payments. Our support platforms that provide a comprehensive suite of tools including payment processing, payment gateways, point-of-sale (POS) systems, and robust security features to ensure every transaction is smooth, secure, and efficient. We help you manage payments effectively, reduce risk, and enhance your customers' purchasing experience.
           </p>
         </div>
       </section>
@@ -175,7 +175,7 @@ const MerchantServices: React.FC = () => {
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
-                    <p className="font-semibold text-white mt-4">How OurPlatform Helps:</p>
+                    <p className="font-semibold text-white mt-4">We support platforms that help:</p>
                     <ul className="list-disc list-inside ml-4 space-y-1">
                       {industry.solutions.map((item, i) => (
                         <li key={i}>{item}</li>
@@ -224,7 +224,7 @@ const MerchantServices: React.FC = () => {
           </div>
           <div className="flex items-center justify-center">
             {/* Using a placeholder image */}
-            <img src="https://placehold.co/600x450/475569/FFFFFF?text=Merchant+Solutions+Dashboard" alt="Merchant Services Dashboard" className="rounded-md shadow-lg max-w-full h-auto" />
+            <img src="/images/merchant-dashboard.png" alt="Merchant Services Dashboard" className="rounded-md shadow-lg max-w-full h-auto" />
           </div>
         </div>
       </section>
@@ -256,7 +256,7 @@ const MerchantServices: React.FC = () => {
           </ul>
           <div className="mt-10 text-center md:text-left">
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
             >
               Solve Your Payment Hurdles

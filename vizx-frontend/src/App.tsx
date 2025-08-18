@@ -1,4 +1,5 @@
 import React from 'react';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
@@ -15,6 +16,7 @@ import Solutions from './pages/Solutions';
 import VizxHI from './pages/VizxHI';
 import RPO from './pages/RPO';
 import CCaaS from './pages/CCaaS';
+import BackOffice from './pages/BackOffice';
 import WhyKenya from './pages/WhyKenya';
 import EmployeeWelfare from './pages/EmployeeWelfare';
 import CommunityFund from './pages/CommunityFund';
@@ -47,6 +49,7 @@ const App: React.FC = () => {
           <Route path="/vizx-hi" element={<VizxHI />} />
           <Route path="/contact-center" element={<CCaaS />} />
           <Route path="/why-kenya" element={<WhyKenya />} />
+          <Route path="/back-office" element={<BackOffice />} />
           <Route path="/community-fund" element={<CommunityFund />} />
           <Route path="/rpo" element={<RPO />} />
           <Route path="/employee-welfare" element={<EmployeeWelfare />} />

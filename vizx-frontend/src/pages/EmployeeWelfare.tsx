@@ -36,7 +36,7 @@ const vizxStories: Story[] = [
     quote: '“Vizx welcomed me back with open arms and provided the training I needed to excel in my new role.”',
     description:
       'Emma took a sabbatical to raise her children and returned through our alumni rehire program. Today she leads a cross-functional team driving operational excellence.',
-    image: '/images/stories/emma.jpg',
+    image: '/images/emma.png',
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const vizxStories: Story[] = [
     quote: '“From support rep to data analyst—Vizx invested in my growth every step of the way.”',
     description:
       'Michael shifted careers internally via structured upskilling workshops. His insights now save clients thousands of dollars annually.',
-    image: '/images/stories/michael.jpg',
+    image: '/images/michael.png',
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ const vizxStories: Story[] = [
     quote: '“The mentorship I received gave me the confidence to launch my own venture.”',
     description:
       'After leaving Vizx to start her company, Aisha continues to collaborate with our innovation lab on strategic projects.',
-    image: '/images/stories/aisha.jpg',
+    image: '/images/aisha.png',
   },
   {
     id: 4,
@@ -60,7 +60,7 @@ const vizxStories: Story[] = [
     quote: '“Connecting with peers worldwide expanded my network beyond imagine.”',
     description:
       'Through our global events, David relocated from Nairobi to San Francisco and leads a multi-national support center.',
-    image: '/images/stories/david.jpg',
+    image: '/images/david.jpg',
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const vizxStories: Story[] = [
     quote: '“The Vizx workshops helped me earn my PMP certification and accelerate my career.”',
     description:
       'Sophia leveraged our career resources to achieve project management certification within six months of departure.',
-    image: '/images/stories/sophia.jpg',
+    image: '/images/sophia.jpg',
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ const vizxStories: Story[] = [
     quote: '“I gave back through mentorship and helped new grads land their first role.”',
     description:
       'As a mentor, Carlos trains recent alumni, fostering both professional growth and community connection.',
-    image: '/images/stories/carlos.jpg',
+    image: '/images/carlos.jpg',
   },
 ];
 
@@ -154,7 +154,7 @@ const EmployeeWelfare: React.FC = () => {
                   <img
                     src={story.image}
                     alt={story.title}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-96 md:h-[30rem] object-contain"
                   />
                   <div className="p-6 space-y-4">
                     <h3 className="text-2xl font-semibold text-orange-500">{story.title}</h3>

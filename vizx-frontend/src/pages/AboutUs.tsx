@@ -177,9 +177,7 @@ const AboutUs: React.FC = () => {
       </p>
       <p className="text-xl text-gray-200 leading-relaxed">
         Our presence in the United States enables us to stay closely connected with our clients and industry trends in North America, ensuring every solution is aligned with the expectations of Western markets. Meanwhile, our Nairobi office — located in the iconic Britam Tower — provides access to a highly educated, multilingual workforce and a rapidly growing innovation ecosystem. With over 400 seats and the ability to scale up to 600+, this facility is a powerhouse for global delivery excellence.
-      </p>
-     
-      
+      </p> 
     </div>
 
     {/* Image */}
@@ -214,7 +212,7 @@ const AboutUs: React.FC = () => {
 
             <section data-aos="fade-up">
               <div className="max-w-5xl">
-                <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">Meet Our Team</h3>
+                <h3 className="text-5xl font-bold text-orange-500 mb-6 leading-tight">Meet Our Leadership</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
                   {teamMembers.map((member) => (
                     <div key={member.name} className="flex flex-col items-center space-y-2">
