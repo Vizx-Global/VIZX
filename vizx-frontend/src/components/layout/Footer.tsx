@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           <ul>
             <li><a href="about">About us</a></li>
             <li><a href="contact">Contact us</a></li>
-            <li><a href="resources">Resources</a></li>
+            <li><a href="https://blogs.vizxglobal.com/">Resources</a></li>
             <li><a href="privacy-and-security">Privacy and Security</a></li>
 
           </ul>

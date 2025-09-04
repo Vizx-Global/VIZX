@@ -16,25 +16,34 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const app = express();
 
 /* ───────────────────────────── Middleware ───────────────────────────── */
+
+// Allow prod + local dev + (optional) preview frontends
+const allowedOrigins = new Set<string>([
+  'https://vizxglobal.com',
+  'https://www.vizxglobal.com',
+  'http://localhost:3000',
+  // add preview/staging frontends if you use them:
+  'https://vizx-backend.vercel.app/'
+]);
+
+// helpful for caches/proxies when Origin varies
+app.use((_, res, next) => { res.setHeader('Vary', 'Origin'); next(); });
+
 app.use(cors({
-  origin: 'https://vizxglobal.com',
+  origin: (origin, cb) => {
+    if (!origin || allowedOrigins.has(origin)) return cb(null, true);
+    return cb(new Error(`CORS not allowed for origin: ${origin}`));
+  },
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
 
-app.use(express.json());
-app.use(helmet());
+// Make sure preflight OPTIONS requests are answered
+app.options('*', cors());
 
-// NOTE: CSP affects BROWSER requests, not server-to-server (Axios) calls.
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'none'"],
-      connectSrc: ["'self'"],
-      upgradeInsecureRequests: []
-    }
-  })
-);
+
 
 /* ─────────────────────── Environment Check (debug) ──────────────────── */
 console.log('Environment check:');

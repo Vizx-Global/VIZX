@@ -1,6 +1,113 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+/* --------------------------------- Data --------------------------------- */
+type MenuItem = { label: string; to: string; blurb: string; external?: boolean };
+
+const SOLUTIONS: MenuItem[] = [
+  {
+    label: "Recruitment Process Outsourcing",
+    to: "/rpo",
+    blurb:
+      "End-to-end talent acquisition—from sourcing to onboarding—delivered at speed and scale.",
+  },
+  {
+    label: "CX Solutions",
+    to: "/contact-center",
+    blurb:
+      "Omnichannel customer support that improves CSAT, reduces AHT, and protects your brand.",
+  },
+  {
+    label: "Real Estate Solutions",
+    to: "/industry/real-estate",
+    blurb:
+      "Leasing support, lead qualifying, appointment setting, and back-office help for property teams.",
+  },
+  {
+    label: "Merchant Solutions",
+    to: "/merchant-services",
+    blurb:
+      "Payments support across onboarding, KYC, chargeback handling, and merchant care.",
+  },
+  {
+    label: "Back Office Solutions",
+    to: "/back-office",
+    blurb:
+      "Data processing, finance ops, content moderation, and admin tasks—accurate and reliable.",
+  },
+];
+
+const INDUSTRIES: MenuItem[] = [
+  {
+    label: "Healthcare",
+    to: "/industry/healthcare",
+    blurb:
+      "Member support, claims processing, and care coordination with compliance top of mind.",
+  },
+  {
+    label: "Technology",
+    to: "/industry/technology",
+    blurb:
+      "Product support, trust & safety, and scalable ops for SaaS, fintech, and marketplaces.",
+  },
+  {
+    label: "Finance",
+    to: "/industry/finance",
+    blurb:
+      "Customer care, KYC/KYB, collections, and risk ops for banks and fintechs.",
+  },
+  {
+    label: "Travel",
+    to: "/industry/travel",
+    blurb:
+      "24/7 bookings, changes, and itinerary support that keeps travelers moving.",
+  },
+  {
+    label: "Real Estate",
+    to: "/industry/real-estate",
+    blurb:
+      "Inside sales, leasing coordination, listings, and property management support.",
+  },
+  {
+    label: "Manufacturing",
+    to: "/industry/manufacturing",
+    blurb:
+      "Order management, production support, supplier coordination, and quality ops.",
+  },
+  {
+    label: "Logistics & Supply Chain",
+    to: "/industry/supply-chain",
+    blurb:
+      "Shipment tracking, exception handling, and back-office ops for smooth deliveries.",
+  },
+  {
+    label: "Retail & E-Commerce",
+    to: "/industry/retail",
+    blurb:
+      "Pre/​post-purchase support, returns processing, and marketplace operations.",
+  },
+];
+
+const ABOUT: MenuItem[] = [
+  {
+    label: "Employee Welfare",
+    to: "/employee-welfare",
+    blurb: "How we support, upskill, and grow our people.",
+  },
+  {
+    label: "Vizx Community Fund",
+    to: "/community-fund",
+    blurb: "Investing in education, access, and opportunity in our communities.",
+  },
+  {
+    label: "Blogs",
+    to: "https://blogs.vizxglobal.com/",
+    blurb: "Insights, stories, and case studies from the Vizx team.",
+    external: true,
+  },
+];
+
+/* ------------------------------- Component ------------------------------ */
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const toggleMobile = () => setMobileOpen((prev) => !prev);
@@ -9,11 +116,6 @@ const Header: React.FC = () => {
   // shared styles
   const linkBase =
     "px-2 py-2 text-gray-300 hover:text-orange-500 transition whitespace-nowrap text-sm";
-  const dropParent = "relative group";
-  const dropMenu =
-    "absolute left-0 top-full mt-0 w-44 bg-black rounded shadow-lg hidden group-hover:flex flex-col z-50";
-  const dropItem =
-    "block w-full px-4 py-2 text-left text-sm hover:bg-gray-800 hover:text-orange-500 transition";
 
   return (
     <header
@@ -26,104 +128,29 @@ const Header: React.FC = () => {
     >
       {/* Logo */}
       <Link to="/" className="flex-shrink-0">
-        <img
-          src="/images/vizx.png"
-          alt="Vizx Global"
-          className="h-8 w-auto"
-        />
+        <img src="/images/vizx.png" alt="Vizx Global" className="h-8 w-auto" />
       </Link>
 
       {/* Desktop Nav + CTA */}
       <div className="hidden lg:flex items-center space-x-6 ml-auto">
         <nav>
           <ul className="flex items-center space-x-6">
-            {/* Solutions */}
-            <li className={dropParent}>
-              <Link to="/solutions" className={linkBase}>
-                Solutions{" "}
-                <span className="ml-1 inline-block transform group-hover:rotate-180 transition">
-                  ▼
-                </span>
-              </Link>
-              <ul className={dropMenu}>
-                <li>
-                  <Link to="/rpo" className={dropItem}>
-                    Recruitment Process Outsourcing
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact-center" className={dropItem}>
-                    CX Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industry/real-estate" className={dropItem}>
-                    Real Estate Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/merchant-services" className={dropItem}>
-                    Merchant Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/back-office" className={dropItem}>
-                    Back Office Solutions
-                  </Link>
-                </li>
-              </ul>
+            {/* Solutions (MEGA MENU) */}
+            <li className="relative">
+              <MegaMenu
+                label="Solutions"
+                items={SOLUTIONS}
+                viewAll={{ label: "View all Solutions", to: "/solutions" }}
+              />
             </li>
 
-            {/* Industries */}
-            <li className={dropParent}>
-              <Link to="/industries" className={linkBase}>
-                Industries{" "}
-                <span className="ml-1 inline-block transform group-hover:rotate-180 transition">
-                  ▼
-                </span>
-              </Link>
-              <ul className={dropMenu}>
-                <li>
-                  <Link to="/industry/healthcare" className={dropItem}>
-                    Healthcare
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industry/technology" className={dropItem}>
-                    Technology
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industry/finance" className={dropItem}>
-                    Finance
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industry/travel" className={dropItem}>
-                    Travel
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industry/real-estate" className={dropItem}>
-                    Real Estate
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industry/manufacturing" className={dropItem}>
-                    Manufacturing
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industry/supply-chain" className={dropItem}>
-                    Logistics & Supply Chain
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industry/retail" className={dropItem}>
-                    Retail & E-Commerce
-                  </Link>
-                </li>
-              </ul>
+            {/* Industries (MEGA MENU) */}
+            <li className="relative">
+              <MegaMenu
+                label="Industries"
+                items={INDUSTRIES}
+                viewAll={{ label: "View all Industries", to: "/industries" }}
+              />
             </li>
 
             {/* Single links */}
@@ -143,26 +170,14 @@ const Header: React.FC = () => {
               </Link>
             </li>
 
-            {/* About Us */}
-            <li className={dropParent}>
-              <Link to="/about" className={linkBase}>
-                About Us{" "}
-                <span className="ml-1 inline-block transform group-hover:rotate-180 transition">
-                  ▼
-                </span>
-              </Link>
-              <ul className={dropMenu}>
-                <li>
-                  <Link to="/employee-welfare" className={dropItem}>
-                    Employee Welfare
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/community-fund" className={dropItem}>
-                    Vizx Community Fund
-                  </Link>
-                </li>
-              </ul>
+            {/* About Us (MEGA MENU) */}
+            <li className="relative">
+              <MegaMenu
+                label="About Us"
+                items={ABOUT}
+                viewAll={{ label: "Learn more about VizX", to: "/about" }}
+                align="right"
+              />
             </li>
           </ul>
         </nav>
@@ -198,7 +213,7 @@ const Header: React.FC = () => {
         </svg>
       </button>
 
-      {/* Mobile slide-in panel */}
+      {/* Mobile slide-in panel (unchanged) */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 flex">
           {/* overlay */}
@@ -221,31 +236,20 @@ const Header: React.FC = () => {
                   <span className="transform group-open:rotate-180 transition">▼</span>
                 </summary>
                 <ul className="pl-4 mt-1 space-y-1">
-                  <li>
-                    <Link to="/rpo" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Recruitment Process Outsourcing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/contact-center" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      CX Solutions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/industry/real-estate" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Real Estate Solutions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/merchant-services" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Merchant Solutions
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/back-office" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Back Office Solutions
-                    </Link>
-                  </li>
+                  {SOLUTIONS.map((s) => (
+                    <li key={s.to}>
+                      <Link
+                        to={s.to}
+                        onClick={closeMobile}
+                        className="block text-gray-300 hover:text-orange-500"
+                      >
+                        <div className="font-medium">{s.label}</div>
+                        <div className="text-xs text-gray-400 mt-0.5">
+                          {s.blurb}
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </details>
 
@@ -255,56 +259,42 @@ const Header: React.FC = () => {
                   <span className="transform group-open:rotate-180 transition">▼</span>
                 </summary>
                 <ul className="pl-4 mt-1 space-y-1">
-                  <li>
-                    <Link to="/industry/healthcare" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Healthcare
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/industry/technology" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Technology
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/industry/finance" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Finance
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/industry/travel" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Travel
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/industry/real-estate" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Real Estate
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/industry/manufacturing" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Manufacturing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/industry/supply-chain" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Logistics & Supply Chain
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/industry/retail" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
-                      Retail & E-Commerce
-                    </Link>
-                  </li>
+                  {INDUSTRIES.map((i) => (
+                    <li key={i.to}>
+                      <Link
+                        to={i.to}
+                        onClick={closeMobile}
+                        className="block text-gray-300 hover:text-orange-500"
+                      >
+                        <div className="font-medium">{i.label}</div>
+                        <div className="text-xs text-gray-400 mt-0.5">
+                          {i.blurb}
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </details>
 
-              <Link to="/vizx-hi" onClick={closeMobile} className="block px-2 py-2 text-gray-300 hover:text-orange-500">
+              <Link
+                to="/vizx-hi"
+                onClick={closeMobile}
+                className="block px-2 py-2 text-gray-300 hover:text-orange-500"
+              >
                 Vizx HI + AI
               </Link>
-              <Link to="/why-kenya" onClick={closeMobile} className="block px-2 py-2 text-gray-300 hover:text-orange-500">
+              <Link
+                to="/why-kenya"
+                onClick={closeMobile}
+                className="block px-2 py-2 text-gray-300 hover:text-orange-500"
+              >
                 Why Kenya
               </Link>
-              <Link to="/our-impact" onClick={closeMobile} className="block px-2 py-2 text-gray-300 hover:text-orange-500">
+              <Link
+                to="/our-impact"
+                onClick={closeMobile}
+                className="block px-2 py-2 text-gray-300 hover:text-orange-500"
+              >
                 Our Impact
               </Link>
 
@@ -315,14 +305,34 @@ const Header: React.FC = () => {
                 </summary>
                 <ul className="pl-4 mt-1 space-y-1">
                   <li>
-                    <Link to="/employee-welfare" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
+                    <Link
+                      to="/employee-welfare"
+                      onClick={closeMobile}
+                      className="block text-gray-300 hover:text-orange-500"
+                    >
                       Employee Welfare
                     </Link>
                   </li>
                   <li>
-                    <Link to="/community-fund" onClick={closeMobile} className="block text-gray-300 hover:text-orange-500">
+                    <Link
+                      to="/community-fund"
+                      onClick={closeMobile}
+                      className="block text-gray-300 hover:text-orange-500"
+                    >
                       Vizx Community Fund
                     </Link>
+                  </li>
+                  {/* Optional: show Blogs in mobile too */}
+                  <li>
+                    <a
+                      href="https://blogs.vizxglobal.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-gray-300 hover:text-orange-500"
+                      onClick={closeMobile}
+                    >
+                      Blogs
+                    </a>
                   </li>
                 </ul>
               </details>
@@ -343,3 +353,106 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
+/* ---------------------------- MegaMenu UI ---------------------------- */
+function MegaMenu({
+  label,
+  items,
+  viewAll,
+  align = "left",
+}: {
+  label: string;
+  items: MenuItem[];
+  viewAll?: { label: string; to: string };
+  align?: "left" | "right";
+}) {
+  const [open, setOpen] = useState(false);
+  const [hovered, setHovered] = useState(0);
+  const isRight = align === "right";
+
+  return (
+    <div
+      className="group relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      {/* Trigger acts as a button; prevent nav so menu can open */}
+      <Link
+        to="/"
+        onClick={(e) => e.preventDefault()}
+        className="px-2 py-2 text-gray-300 hover:text-orange-500 transition whitespace-nowrap text-sm inline-flex items-center"
+        aria-haspopup="true"
+        aria-expanded={open}
+      >
+        {label}
+        <span className="ml-1 inline-block transform group-hover:rotate-180 transition">
+          ▼
+        </span>
+      </Link>
+
+      {/* Panel (right-aligned when align='right') */}
+      <div
+        className={`absolute ${isRight ? "right-0 origin-top-right" : "left-0 origin-top-left"} top-full pt-2
+                    opacity-0 translate-y-1 pointer-events-none
+                    group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition`}
+      >
+        <div className="w-[720px] max-w-[90vw] overflow-hidden rounded-2xl ring-1 ring-white/10 bg-neutral-900/95 shadow-2xl backdrop-blur-sm">
+          <div className={isRight ? "flex flex-row-reverse" : "flex"}>
+            {/* Items grid */}
+            <ul className="grid grid-cols-2 gap-1 p-2 flex-1 min-w-0">
+              {items.map((it, i) => {
+                const Inner = (it as any).external ? "a" : Link;
+                const innerProps = (it as any).external
+                  ? { href: it.to, target: "_blank", rel: "noopener noreferrer" }
+                  : { to: it.to };
+
+                return (
+                  <li key={it.to}>
+                    <Inner
+                      {...(innerProps as any)}
+                      className="group/item block rounded-xl px-4 py-3 text-sm text-gray-200 hover:bg-white/5 focus:bg-white/5 focus:outline-none"
+                      onMouseEnter={() => setHovered(i)}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <span className="font-medium leading-5">{it.label}</span>
+                        <span className="opacity-0 group-hover/item:opacity-100 transition" aria-hidden="true">
+                          →
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs text-gray-400 hidden md:block">
+                        {it.blurb}
+                      </p>
+                    </Inner>
+                  </li>
+                );
+              })}
+              {viewAll && (
+                <li className="col-span-2">
+                  <Link
+                    to={viewAll.to}
+                    className="mt-1 block rounded-xl border border-white/10 px-4 py-2.5 text-center text-sm text-gray-200 hover:bg-white/5"
+                  >
+                    {viewAll.label}
+                  </Link>
+                </li>
+              )}
+            </ul>
+
+            {/* Hover preview (on the inside edge) */}
+            <div
+              className={
+                "hidden md:block w-64 p-4 " +
+                (isRight ? "border-r border-white/10" : "border-l border-white/10")
+              }
+            >
+              <div className="text-xs uppercase tracking-wide text-gray-400">{label}</div>
+              <div className="mt-2 text-sm text-gray-200 font-medium leading-5">
+                {items[hovered]?.blurb}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

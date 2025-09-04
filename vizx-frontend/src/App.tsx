@@ -24,6 +24,7 @@ import VizxAI from './pages/VizxAI';
 import PrivacyandSecurity from './pages/PrivacyAndSecurity';
 import MerchantServices from './pages/MerchantServices';
 import IndustryRouter from './pages/IndustryRouter'; // Import the dynamic router
+import ChatWidget from './components/chat/ChatWidget';
 
 
 import MainLayout from './components/layout/MainLayout';
@@ -59,6 +60,7 @@ const App: React.FC = () => {
           {/* Dynamic route for industry pages */}
           <Route path="/industry/:slug" element={<IndustryRouter />} />
         </Routes>
+        <ChatWidget />
       </MainLayout>
     </Router>
   );
