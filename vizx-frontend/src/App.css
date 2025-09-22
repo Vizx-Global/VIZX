@@ -6,6 +6,76 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .ember-bar {
+    position: relative;
+    overflow: visible;
+    --ember-color: 249 115 22; /* orange-500 */
+    --ember-alpha: 0.45;       /* main glow strength */
+    --ember-edge: 0.25;        /* tiny opposite-edge glow strength factor */
+    --ember-inset: 6%;
+    --ember-height: 22%;
+  }
+
+  .ember-bar::before,
+  .ember-bar::after {
+    content: "";
+    position: absolute;
+    left: var(--ember-inset);
+    right: var(--ember-inset);
+    height: var(--ember-height);
+    border-radius: 9999px;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 0;
+  }
+
+  /* TOP band: still bright on the RIGHT, plus a faint LEFT kiss */
+  .ember-bar::before {
+    top: 0;
+    background: linear-gradient(
+      90deg,
+      /* subtle glow at very left */
+      rgb(var(--ember-color) / calc(var(--ember-alpha) * var(--ember-edge))) 6%,
+      rgb(var(--ember-color) / 0) 18%,
+
+      /* mid fade */
+      rgb(var(--ember-color) / 0.08) 55%,
+
+      /* main hot zone on the right */
+      rgb(var(--ember-color) / calc(var(--ember-alpha) * 0.85)) 78%,
+      rgb(var(--ember-color) / var(--ember-alpha)) 92%,
+      rgb(var(--ember-color) / 0) 100%
+    );
+  }
+
+  /* BOTTOM band: still bright on the LEFT, plus a faint RIGHT tail */
+  .ember-bar::after {
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      /* main hot zone on the left */
+      rgb(var(--ember-color) / var(--ember-alpha)) 8%,
+      rgb(var(--ember-color) / calc(var(--ember-alpha) * 0.85)) 22%,
+
+      /* mid fade */
+      rgb(var(--ember-color) / 0.08) 45%,
+      rgb(var(--ember-color) / 0) 82%,
+
+      /* subtle glow at far right */
+      rgb(var(--ember-color) / calc(var(--ember-alpha) * var(--ember-edge))) 94%,
+      rgb(var(--ember-color) / 0) 100%
+    );
+  }
+
+  .ember-bar > * { position: relative; z-index: 1; }
+}
+
+
+
+
+
+
 
 /* General Styling */
 body {

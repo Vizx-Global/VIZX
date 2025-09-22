@@ -1,288 +1,273 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const WhyKenya: React.FC = () => {
-  // Initialize AOS for scroll animations
+  // Init AOS
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    AOS.init({ duration: 800, once: true });
   }, []);
 
-  // Slideshow images for the "Silicon Savanna" section
-  const siliconSavannaImages = [
+  // Backgrounds for Silicon Savanna (add more images if you want rotation)
+  const siliconSavannaImages = ["/images/IMG_0010.jpg"];
 
-    '/images/IMG_0010.jpg',
-  ];
-
-  // State and effect for rotating background images
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
+    if (siliconSavannaImages.length <= 1) return; // no-op if only one image
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % siliconSavannaImages.length);
-    }, 8000); // Change images every 5 seconds
+      setCurrentImageIndex((prev) => (prev + 1) % siliconSavannaImages.length);
+    }, 8000);
     return () => clearInterval(interval);
   }, [siliconSavannaImages.length]);
 
   return (
     <div className="bg-black text-white w-full min-h-screen font-sans">
-      <main className="flex flex-col space-y-20">
-        {/* HERO SECTION */}
+      <main className="flex flex-col gap-16 sm:gap-20">
+        {/* HERO */}
         <section
-          className="relative h-[60vh] flex items-center justify-center bg-cover bg-center px-8"
+          className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center bg-cover bg-center"
           style={{ backgroundImage: "url('/images/IMG_0011.jpg')" }}
         >
-          <div className="absolute inset-0 bg-black opacity-60"></div>
-          <div className="relative z-10 text-center">
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="relative z-10 text-center px-4 sm:px-6">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-7xl md:text-8xl font-bold text-orange-500 leading-tight mb-4"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-orange-500 leading-tight tracking-tight mb-2 break-words"
             >
               WHY KENYA?
             </motion.h1>
+
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="text-3xl md:text-4xl text-gray-200 font-light"
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-xl sm:text-2xl md:text-3xl text-gray-200 font-light leading-snug"
             >
-              Kenya <span className="italic">"The Silicon Savanna"</span>
+              Kenya <span className="italic">“The Silicon Savanna”</span>
             </motion.h2>
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto"
+              transition={{ duration: 1, delay: 0.5 }}
+              className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-gray-300 mx-auto max-w-3xl leading-relaxed break-words hyphens-auto"
             >
-              “And as I’ve told many, when President Biden mentioned the Silicon Savannah
-              and Kenya’s economic growth potential, I did not need convincing…”
+              “And as I’ve told many, when President Biden mentioned the Silicon
+              Savannah and Kenya’s economic growth potential, I did not need
+              convincing…”
               <br />
               <span className="italic">
-                — Meg Whitman, Former US Ambassador to Kenya and Former CEO of eBay
+                — Meg Whitman, Former US Ambassador to Kenya and Former CEO of
+                eBay
               </span>
             </motion.p>
           </div>
         </section>
 
-        {/* AMBASSADOR WHITMAN SECTION */}
-        <section className="px-8" data-aos="fade-up">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-5xl font-bold text-orange-500 mb-4">
-            Former Ambassador Meg Whitman’s Take on <span className="italic">Why Kenya</span>
+        {/* AMBASSADOR WHITMAN */}
+        <section className="px-4 sm:px-6" data-aos="fade-up">
+          <div className="container mx-auto max-w-5xl">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-orange-500 mb-3 sm:mb-4 leading-tight">
+              Former Ambassador Meg Whitman’s Take on{" "}
+              <span className="italic">Why Kenya</span>
             </h2>
-            <p className="text-xl text-gray-200 leading-relaxed">
-              Remarks made by the former US Ambassador to Kenya Meg Whitman and former CEO of eBay
-              during the Kenya Business Roadshow by the US Embassy highlight why Kenya should be on your radar.
-              As she put it, “Why did you not want to move to Ambassador to Kenya?”
-              And as I’ve told many, when President Biden mentioned the Silicon Savannah and Kenya’s
-              economic growth potential, I did not need convincing.
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed break-words hyphens-auto">
+              Remarks made by the former US Ambassador to Kenya Meg Whitman and
+              former CEO of eBay during the Kenya Business Roadshow by the US
+              Embassy highlight why Kenya should be on your radar. As she put
+              it, “Why did you not want to move to Ambassador to Kenya?” And as
+              I’ve told many, when President Biden mentioned the Silicon
+              Savannah and Kenya’s economic growth potential, I did not need
+              convincing.
             </p>
           </div>
         </section>
 
-        {/* REASONS SECTION */}
-<section className="px-8" data-aos="fade-up">
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
-    {/* TEXT COLUMN */}
-    <div className="md:w-1/2">
-      <h3 className="text-4xl font-bold text-orange-500 mb-6">
-        Here Are Some Reasons:
-      </h3>
-      <ul className="list-disc list-inside space-y-4 text-xl text-gray-200">
-        <li>It is the most stable democracy in East Africa</li>
-        <li>It is the gateway to the East African market of almost 500 million consumers</li>
-        <li>Kenya has a young, educated, English-speaking workforce</li>
-        <li>Its largest export market is the United States</li>
-        <li>Kenya is the regional logistics hub and leading regional financial hub</li>
-        <li>It is the leading destination for foreign direct investment and venture capital</li>
-        <li>Kenya generates over 90% of its energy from renewable sources</li>
-      </ul>
-      <div className="mt-6">
-        <a
-          href="#kenya-fact-files"
-          className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
-        >
-          Learn More
-        </a>
-      </div>
-    </div>
+        {/* REASONS — INLINE (TEXT + IMAGE) */}
+        <section className="px-4 sm:px-6" data-aos="fade-up">
+          <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-start md:items-center gap-8">
+            {/* Left: Text */}
+            <div className="md:w-1/2">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-4 sm:mb-6 leading-tight">
+                Here Are Some Reasons:
+              </h3>
+              <ul className="list-disc list-inside space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed break-words hyphens-auto">
+                <li>It is the most stable democracy in East Africa</li>
+                <li>
+                  It is the gateway to the East African market of almost 500
+                  million consumers
+                </li>
+                <li>Kenya has a young, educated, English-speaking workforce</li>
+                <li>Its largest export market is the United States</li>
+                <li>
+                  Kenya is the regional logistics hub and leading regional
+                  financial hub
+                </li>
+                <li>
+                  It is the leading destination for foreign direct investment
+                  and venture capital
+                </li>
+                <li>Kenya generates over 90% of its energy from renewable sources</li>
+              </ul>
+              <div className="mt-5 sm:mt-6">
+                <a
+                  href="#kenya-fact-files"
+                  className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-2.5 px-5 rounded-md transition-colors text-sm sm:text-base"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
 
-    {/* IMAGE COLUMN */}
-    <div className="md:w-1/2">
-      <img
-        src="/images/kenya-reasons.jpg" // Replace with your actual image path
-        alt="Map of Kenya"
-        className="rounded-lg shadow-lg w-full object-cover"
-      />
-    </div>
-  </div>
-</section>
-
-        {/* KENYA FACT FILES */}
-        <section id="kenya-fact-files" className="px-8" data-aos="fade-up">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-5xl font-bold text-orange-500 mb-6">Kenya Fact Files</h2>
-            <div className="grid md:grid-cols-5 gap-6 text-center text-xl text-gray-200">
-              <div>
-                <h4 className="font-semibold text-orange-400">Flights</h4>
-                <p className="mt-2">Direct Flights from New York (JFK) to Nairobi (JKIA)</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-orange-400">Infrastructure</h4>
-                <p className="mt-2">High broadband speed & reliable internet – 5G and Starlink Satellite</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-orange-400">Language</h4>
-                <p className="mt-2">2nd Best English-Speaking Country in Africa</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-orange-400">Workforce</h4>
-                <p className="mt-2">70% of population of youth are college graduates</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-orange-400">Timezone</h4>
-                <p className="mt-2">Our timezone adapts easily to the US timezone</p>
-              </div>
+            {/* Right: Image */}
+            <div className="md:w-1/2 w-full">
+              <img
+                src="/images/kenya-reasons.jpg"
+                alt="Kenya map"
+                className="rounded-lg shadow-lg w-full object-cover aspect-video"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
 
-        {/* MORE REASONS SECTION */}
-        <section className="px-8" data-aos="fade-up">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-5xl font-bold text-orange-500 mb-6">
-              More Reasons Why Kenya Stands Out
+        {/* FACT FILES */}
+        <section id="kenya-fact-files" className="px-4 sm:px-6" data-aos="fade-up">
+          <div className="container mx-auto max-w-5xl">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-orange-500 mb-4 sm:mb-6 leading-tight">
+              Kenya Fact Files
             </h2>
-            <ul className="list-none space-y-4 text-xl text-gray-200">
-              <li>
-                <span className="text-orange-400 font-semibold">Skilled Workforce:</span> 
-                &nbsp;Robust talent pool across multiple sectors.
-              </li>
-              <li>
-                <span className="text-orange-400 font-semibold">English Proficiency:</span> 
-                &nbsp;High standard of English usage fosters global collaboration.
-              </li>
-              <li>
-                <span className="text-orange-400 font-semibold">Cost-effectiveness:</span> 
-                &nbsp;Competitive labor costs relative to other emerging markets.
-              </li>
-              <li>
-                <span className="text-orange-400 font-semibold">Data Protection:</span> 
-                &nbsp;Evolving regulatory frameworks ensuring secure transactions.
-              </li>
-              <li>
-                <span className="text-orange-400 font-semibold">Infrastructure:</span> 
-                &nbsp;Growing tech ecosystem with reliable power, fiber, and transport.
-              </li>
-              <li>
-                <span className="text-orange-400 font-semibold">Strategic Location:</span> 
-                &nbsp;Ideal gateway to the African continent and beyond.
-              </li>
-              <li>
-                <span className="text-orange-400 font-semibold">Innovation & Entrepreneurship:</span> 
-                &nbsp;Thriving startup culture and tech-savvy youth driving new solutions.
-              </li>
-              <li>
-                <span className="text-orange-400 font-semibold">International Travel:</span> 
-                &nbsp;Major airlines connect Kenya to global destinations.
-              </li>
-            </ul>
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+              {[
+                {
+                  title: "Flights",
+                  copy:
+                    "Direct flights from New York (JFK) to Nairobi (JKIA)",
+                },
+                {
+                  title: "Infrastructure",
+                  copy:
+                    "High broadband speed & reliable internet – 5G and Starlink Satellite",
+                },
+                {
+                  title: "Language",
+                  copy: "2nd Best English-Speaking Country in Africa",
+                },
+                {
+                  title: "Workforce",
+                  copy: "70% of youth are college graduates",
+                },
+                {
+                  title: "Timezone",
+                  copy: "Easily aligns with US time zones",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="p-4 rounded-lg bg-zinc-900/60 border border-zinc-800 text-center"
+                >
+                  <h4 className="font-semibold text-orange-400 text-base sm:text-lg">
+                    {item.title}
+                  </h4>
+                  <p className="mt-2 text-sm sm:text-base text-gray-200 leading-relaxed break-words hyphens-auto">
+                    {item.copy}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* DYNAMIC SILICON SAVANNA SECTION (SLIDESHOW BACKGROUND) */}
+        {/* SILICON SAVANNA — FEATURE SECTION */}
         <section
-          className="relative h-[80vh] flex items-center justify-center text-white"
+          className="relative min-h-[420px] sm:min-h-[520px] md:min-h-[640px] flex items-center justify-center"
           data-aos="fade-up"
           style={{
             backgroundImage: `url(${siliconSavannaImages[currentImageIndex]})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
           }}
         >
-          {/* Dark overlay for better text contrast */}
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-
-          {/* Content Overlay */}
-          <div className="relative z-10 max-w-5xl px-8">
-            <h2 className="text-5xl font-bold text-orange-500 mb-6">
-              Kenya <span className="italic">"The Silicon Savanna"</span>
+          <div className="absolute inset-0 bg-black/75" />
+          <div className="relative z-10 max-w-5xl w-full px-4 sm:px-6">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-orange-500 mb-4 sm:mb-6 leading-tight">
+              Kenya <span className="italic">“The Silicon Savanna”</span>
             </h2>
-            <p className="text-xl text-gray-200 leading-relaxed mb-4">
-              Kenya’s emergence as the “Silicon Savanna” stems from its conducive environment 
-              for tech innovation, fueled by robust internet connectivity, a growing pool of 
-              local developers, and progressive government policies. Several major American 
-              companies have recognized this potential and established offices in Kenya, 
-              including IBM, Microsoft, Google, Oracle, and Cisco, drawn by the country’s 
-              strategic location, burgeoning tech scene, and opportunities for market 
-              expansion in Africa. Standard Chartered, one of the leading global financial 
-              institutions, has been here since setting up in 1911.
+            <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed mb-4 sm:mb-6 break-words hyphens-auto">
+              Kenya’s emergence as the “Silicon Savanna” stems from its
+              conducive environment for tech innovation, fueled by robust
+              internet connectivity, a growing pool of local developers, and
+              progressive government policies. Several major American companies
+              have recognized this potential and established offices in Kenya,
+              including IBM, Microsoft, Google, Oracle, and Cisco.
             </p>
-            <blockquote className="border-l-4 border-orange-500 pl-4 text-gray-300 italic mb-6">
-              “The future of Africa is the young entrepreneurs, like those in the Nairobi tech scene, 
-              who are developing solutions for the continent’s challenges and opportunities.”
+            <blockquote className="border-l-4 border-orange-500 pl-3 sm:pl-4 text-gray-300 italic mb-4 sm:mb-6 text-sm sm:text-base md:text-lg break-words hyphens-auto">
+              “The future of Africa is the young entrepreneurs, like those in
+              the Nairobi tech scene, who are developing solutions for the
+              continent’s challenges and opportunities.”
               <br />
-              <span className="font-semibold">— Bill Gates, Co-founder of Microsoft</span>
+              <span className="font-semibold not-italic">
+                — Bill Gates, Co-founder of Microsoft
+              </span>
             </blockquote>
-            <p className="text-xl text-gray-200 leading-relaxed">
-              With infrastructure such as Tatu City opening its doors in 2014, its ultra-modern 
-              setup and amenities offer a diverse platform for companies of different sectors to 
-              invest in: Tech, Manufacturing, Finance & Logistics. With infrastructure spanning 
-              an independent power supply & high-speed fiber, dedicated access roads for heavy 
-              haulers & assorted warehousing options, it offers incentives such as corporate 
-              taxes of up to 18% against standard 30%, zero-rated VAT against standard 16%, 
-              and many more. This is a testament to why we are one step above the rest.
+            <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed break-words hyphens-auto">
+              With infrastructure such as Tatu City (opened 2014), companies in
+              Tech, Manufacturing, Finance & Logistics benefit from independent
+              power, high-speed fiber, dedicated road access, warehousing, and
+              incentives (e.g., corporate tax relief and zero-rated VAT).
             </p>
           </div>
         </section>
 
-        {/* OBAMA QUOTE SECTION */}
-        <section className="px-8" data-aos="fade-up">
-          <div className="max-w-5xl mx-auto">
-            <blockquote className="border-l-4 border-orange-500 pl-4 text-gray-300 italic">
-              “Today, Kenya is the largest economy in East Africa. High-speed broadband and 
-              mobile connectivity are on the rise, unleashing the entrepreneurial spirit 
-              I’ve always known from Kenya’s.”
+        {/* OBAMA QUOTE */}
+        <section className="px-4 sm:px-6" data-aos="fade-up">
+          <div className="container mx-auto max-w-5xl">
+            <blockquote className="border-l-4 border-orange-500 pl-3 sm:pl-4 text-gray-300 italic text-sm sm:text-base md:text-lg leading-relaxed break-words hyphens-auto">
+              “Today, Kenya is the largest economy in East Africa. High-speed
+              broadband and mobile connectivity are on the rise, unleashing the
+              entrepreneurial spirit I’ve always known from Kenya’s.”
               <br />
-              <span className="font-semibold">
+              <span className="font-semibold not-italic">
                 — Barack Obama, 44th President of the United States (2009–2017)
               </span>
             </blockquote>
           </div>
         </section>
 
-        {/* CONTACT SECTION */}
-        <section className="px-8" data-aos="fade-up">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-5xl font-bold text-orange-500 mb-6">Contact Us</h2>
-            <p className="text-xl text-gray-200 leading-relaxed mb-6">
-              Ready to explore how Kenya can be your next big move? We’re here to help you navigate
-              every opportunity. Let’s discuss your goals and how we can support your vision.
+        {/* CONTACT */}
+        <section className="px-4 sm:px-6" data-aos="fade-up">
+          <div className="container mx-auto max-w-5xl text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-orange-500 mb-4 sm:mb-6 leading-tight">
+              Contact Us
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed mb-5 sm:mb-6 break-words hyphens-auto">
+              Ready to explore how Kenya can be your next big move? We’re here
+              to help you navigate every opportunity. Let’s discuss your goals
+              and how we can support your vision.
             </p>
             <a
               href="/contact"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-2.5 px-6 rounded-md transition-colors text-sm sm:text-base"
             >
               Get in Touch
             </a>
           </div>
         </section>
-
-       
       </main>
 
-      {/* BASIC FOOTER (Remove if using a shared/global Footer) */}
-      <footer className="bg-black px-8 py-6 border-t border-gray-800 mt-8">
-        <p className="text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} VIZX Global Solutions. All rights reserved.
-        </p>
+      {/* FOOTER */}
+      <footer className="bg-black px-4 sm:px-6 py-6 border-t border-gray-800 mt-10">
+        <div className="container mx-auto max-w-5xl">
+          <p className="text-xs sm:text-sm text-gray-400">
+            &copy; {new Date().getFullYear()} VIZX Global Solutions. All rights
+            reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );

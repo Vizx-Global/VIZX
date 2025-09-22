@@ -30,24 +30,19 @@ const AnimatedCounter: React.FC<{ target: number; suffix?: string; duration?: nu
           setHasAnimated(true);
         }
       },
-      { threshold: 0.6 } // start animation when 60% of the element is in view
+      { threshold: 0.6 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      if (ref.current) observer.unobserve(ref.current);
     };
   }, [target, duration, hasAnimated]);
 
   return <span ref={ref}>{count.toLocaleString() + suffix}</span>;
 };
 
-// A simple accordion component for FAQs
+// --- FAQ Item ---
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -56,10 +51,10 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left flex justify-between items-center focus:outline-none"
       >
-        <span className="text-xl font-semibold text-white">{question}</span>
-        <span className="text-orange-500 text-xl">{isOpen ? '-' : '+'}</span>
+        <span className="text-base sm:text-lg font-semibold text-white">{question}</span>
+        <span className="text-orange-500 text-base sm:text-lg">{isOpen ? '-' : '+'}</span>
       </button>
-      {isOpen && <p className="mt-2 text-gray-300 leading-relaxed">{answer}</p>}
+      {isOpen && <p className="mt-2 text-base text-gray-300 leading-relaxed">{answer}</p>}
     </div>
   );
 };
@@ -73,28 +68,28 @@ const ManufacturingIndustry: React.FC = () => {
     <div className="bg-black text-white font-sans">
       {/* Hero Section */}
       <section
-        className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
+        className="relative h-[60vh] sm:h-[70vh] flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: "url('/images/manufacturing-hero.jpg')" }}
         data-aos="fade-in"
       >
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold text-orange-500 mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange-500 mb-3 leading-tight">
             Manufacturing Industry
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
             We offer Manufacturing BPO services to cut costs and improve your business’s overall operational efficiency.
           </p>
-          <div className="mt-8 flex justify-center space-x-4">
+          <div className="mt-8 flex justify-center gap-4">
             <a
               href="/contact"
-              className="bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
+              className="bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors text-sm sm:text-base"
             >
               Start Now
             </a>
             <a
               href="/contact"
-              className="bg-transparent border border-orange-500 hover:bg-orange-600 hover:text-black text-orange-500 font-semibold py-3 px-6 rounded-md transition-colors"
+              className="bg-transparent border border-orange-500 hover:bg-orange-600 hover:text-black text-orange-500 font-semibold py-3 px-6 rounded-md transition-colors text-sm sm:text-base"
             >
               Contact Us
             </a>
@@ -103,24 +98,24 @@ const ManufacturingIndustry: React.FC = () => {
       </section>
 
       {/* We Outsource Manufacturing Back Office Services */}
-      <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8 bg-gray-800" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6 text-center">
             We Outsource Manufacturing Back Office Services
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-10 text-center">
-            The manufacturing sector forms a large part of the global economy and hence revenue.
-            With increasing competition, manufacturers invest in serving their market better through
-            dynamic infrastructure, a streamlined supply chain, and innovative technology.
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 text-center">
+            The manufacturing sector forms a large part of the global economy and hence revenue. With increasing
+            competition, manufacturers invest in serving their market better through dynamic infrastructure, a
+            streamlined supply chain, and innovative technology.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ul className="list-disc list-inside text-gray-300 space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <ul className="list-disc list-inside text-gray-300 space-y-2 text-base sm:text-lg">
               <li>Accounting Services</li>
               <li>Data Management</li>
               <li>Sales Analysis</li>
               <li>Logistics and Shipping</li>
             </ul>
-            <ul className="list-disc list-inside text-gray-300 space-y-2">
+            <ul className="list-disc list-inside text-gray-300 space-y-2 text-base sm:text-lg">
               <li>Analytics Solutions</li>
               <li>Technical Services</li>
               <li>Legal Support</li>
@@ -129,7 +124,7 @@ const ManufacturingIndustry: React.FC = () => {
           <div className="text-center mt-8">
             <a
               href="/contact"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors text-sm sm:text-base"
             >
               Learn More
             </a>
@@ -138,43 +133,35 @@ const ManufacturingIndustry: React.FC = () => {
       </section>
 
       {/* What You Stand to Gain with VIZX */}
-      <section className="py-16 px-8" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8" data-aos="fade-up">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6 text-center">
             What You Stand to Gain with VIZX
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8 text-center">
-            From accounting to data management, we’ll adeptly manage your back-office activities and help you with 
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 text-center">
+            From accounting to data management, we’ll adeptly manage your back-office activities and help you with
             insight-led business decisions that will increase your operational efficiency and profits.
           </p>
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 text-gray-300 space-y-3">
+            <div className="md:w-1/2 text-gray-300 space-y-3 text-base sm:text-lg">
               <ul className="list-none">
-                <li className="flex items-center mb-2">
-                  <span className="text-orange-500 mr-2">➤</span> Reduced overall costs
-                </li>
-                <li className="flex items-center mb-2">
-                  <span className="text-orange-500 mr-2">➤</span> Increased efficiency and accuracy
-                </li>
-                <li className="flex items-center mb-2">
-                  <span className="text-orange-500 mr-2">➤</span> Quick turnaround
-                </li>
-                <li className="flex items-center mb-2">
-                  <span className="text-orange-500 mr-2">➤</span> Access to global talent
-                </li>
-                <li className="flex items-center mb-2">
-                  <span className="text-orange-500 mr-2">➤</span> Improved production quality
-                </li>
-                <li className="flex items-center mb-2">
-                  <span className="text-orange-500 mr-2">➤</span> Improved supply chain management
-                </li>
-                <li className="flex items-center mb-2">
-                  <span className="text-orange-500 mr-2">➤</span> Better inventory control
-                </li>
+                {[
+                  'Reduced overall costs',
+                  'Increased efficiency and accuracy',
+                  'Quick turnaround',
+                  'Access to global talent',
+                  'Improved production quality',
+                  'Improved supply chain management',
+                  'Better inventory control',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center mb-1.5">
+                    <span className="text-orange-500 mr-2">➤</span> {item}
+                  </li>
+                ))}
               </ul>
               <a
                 href="/contact"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors mt-4"
+                className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors mt-4 text-sm sm:text-base"
               >
                 Learn More
               </a>
@@ -183,7 +170,7 @@ const ManufacturingIndustry: React.FC = () => {
               <img
                 src="/images/manufacturing-plant.jpg"
                 alt="Manufacturing Plant"
-                className="rounded-lg w-full h-auto"
+                className="rounded-lg w-full h-auto object-cover"
               />
             </div>
           </div>
@@ -191,68 +178,35 @@ const ManufacturingIndustry: React.FC = () => {
       </section>
 
       {/* Common Back-Office Operations Outsourced */}
-      <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8 bg-gray-800" data-aos="fade-up">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6">
             Common Back-Office Operations Outsourced
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8">
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-8">
             You need it, we will deliver it.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Accounting and Finance</h3>
-              <p className="text-gray-300 text-sm">
-                Bookkeeping, payroll, financial analysis, reporting, and planning
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Human Resources</h3>
-              <p className="text-gray-300 text-sm">
-                Benefits administration, employee training, talent acquisition
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">IT Support</h3>
-              <p className="text-gray-300 text-sm">
-                Network management, helpdesk, cybersecurity, data backup & recovery
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Supply Chain Management</h3>
-              <p className="text-gray-300 text-sm">
-                Procurement support, vendor management, inventory tracking
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Software Development</h3>
-              <p className="text-gray-300 text-sm">
-                Web, mobile app dev, custom software solutions
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Data Entry and Management</h3>
-              <p className="text-gray-300 text-sm">
-                Production data entry, quality control, data processing
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Research and Analysis</h3>
-              <p className="text-gray-300 text-sm">
-                Market research, competitor analysis
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">IT Consulting</h3>
-              <p className="text-gray-300 text-sm">
-                Technology roadmap, digital transformation consulting
-              </p>
-            </div>
+            {[
+              { title: 'Accounting and Finance', text: 'Bookkeeping, payroll, financial analysis, reporting, and planning' },
+              { title: 'Human Resources', text: 'Benefits administration, employee training, talent acquisition' },
+              { title: 'IT Support', text: 'Network management, helpdesk, cybersecurity, data backup & recovery' },
+              { title: 'Supply Chain Management', text: 'Procurement support, vendor management, inventory tracking' },
+              { title: 'Software Development', text: 'Web, mobile app dev, custom software solutions' },
+              { title: 'Data Entry and Management', text: 'Production data entry, quality control, data processing' },
+              { title: 'Research and Analysis', text: 'Market research, competitor analysis' },
+              { title: 'IT Consulting', text: 'Technology roadmap, digital transformation consulting' },
+            ].map((card, i) => (
+              <div key={i} className="bg-black p-5 sm:p-6 rounded-lg border border-gray-700 text-left">
+                <h3 className="text-lg sm:text-xl text-orange-500 font-bold mb-2">{card.title}</h3>
+                <p className="text-base text-gray-300 leading-relaxed">{card.text}</p>
+              </div>
+            ))}
           </div>
           <div className="text-center mt-8">
             <a
               href="/contact"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors text-sm sm:text-base"
             >
               Start Today
             </a>
@@ -261,46 +215,34 @@ const ManufacturingIndustry: React.FC = () => {
       </section>
 
       {/* Our Numbers */}
-      <section className="py-16 px-8" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8" data-aos="fade-up">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6">
             Our Numbers Set Us Apart
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-8">
-            <div>
-              <p className="text-4xl font-bold text-orange-500">
-                <AnimatedCounter target={23} />
-              </p>
-              <p className="text-gray-300 mt-2">Years in BPO & RPO</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-orange-500">
-                <AnimatedCounter target={7} />
-              </p>
-              <p className="text-gray-300 mt-2">Years in Healthcare Industry</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-orange-500">
-                <AnimatedCounter target={5000} suffix="+" />
-              </p>
-              <p className="text-gray-300 mt-2">Hires Placed Yearly</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-orange-500">
-                <AnimatedCounter target={55} suffix="+" />
-              </p>
-              <p className="text-gray-300 mt-2">Clients Served</p>
-            </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-6">
+            {[
+              { value: <AnimatedCounter target={23} />, label: 'Years in BPO & RPO' },
+              { value: <AnimatedCounter target={7} />, label: 'Years in Healthcare Industry' },
+              { value: <AnimatedCounter target={5000} suffix="+" />, label: 'Hires Placed Yearly' },
+              { value: <AnimatedCounter target={55} suffix="+" />, label: 'Clients Served' },
+            ].map((item, i) => (
+              <div key={i}>
+                <p className="text-3xl sm:text-4xl font-bold text-orange-500">{item.value}</p>
+                <p className="text-base sm:text-lg text-gray-300 mt-2">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
       {/* FAQ Section */}
-      <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8 bg-gray-800" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6 text-center">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8 text-center">
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 text-center">
             We understand you may have questions about back-office operations in manufacturing. We’re here to help.
           </p>
           <FAQItem

@@ -89,7 +89,7 @@ const Home: React.FC = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-90 object-cover"
           src="/images/Globe1.mp4"
         />
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
             Africa’s leading BPO Powerhouse
           </h1>
           <Link to="/solutions">
-            <button className="mt-6 px-6 py-2 sm:px-8 sm:py-3 bg-orange-500 text-white rounded-md shadow-lg text-sm sm:text-base">
+            <button className="mt-6 px-6 py-2 sm:px-8 sm:py-3 bg-orange-500 text-white rounded-md shadow-lg text-sm sm:text-base hover:text-black">
               Get Started
             </button>
           </Link>
@@ -315,47 +315,6 @@ const Home: React.FC = () => {
           </div>
         ))}
       </Slider>
-    </div>
-  </div>
-</section>
-
-
-      {/* ============= CERTIFICATIONS SECTION ============= */}
-<section className="border-t border-gray-700 py-12 px-4 sm:px-8 lg:px-12 bg-black text-gray-400">
-  <div className="max-w-7xl mx-auto text-center">
-    {/* Section Title */}
-    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-      Certifications
-    </h2>
-
-    {/* Logos Row */}
-    <div className="flex justify-center items-center space-x-16">
-      {/* SOC 2 */}
-      <div className="flex flex-col items-center">
-        <img
-          src="/images/SOC2.png"
-          alt="SOC 2 Certification"
-          className="h-24 w-auto mb-2 opacity-70 hover:opacity-100 transition-opacity duration-300"
-        />
-        <span className="text-sm text-gray-300">SOC 2</span>
-      </div>
-
-      {/* ODPC (clickable PDF via PNG) */}
-      <div className="flex flex-col items-center">
-        <a
-          href="/docs/ODPC.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-        >
-          <img
-            src="/images/ODPC.png"
-            alt="ODPC Certification"
-            className="h-24 w-auto mb-2"
-          />
-        </a>
-        <span className="text-sm text-gray-300">ODPC</span>
-      </div>
     </div>
   </div>
 </section>

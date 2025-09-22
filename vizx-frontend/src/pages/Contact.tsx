@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
       <h2 className="text-2xl font-bold mb-4">US OFFICE</h2>
       <div className="flex items-center justify-center space-x-2">
         <FaPhone className="text-orange-500" />
-        <span>+1 310-694-3280</span>
+        <span>+1 310-424-7060</span>
       </div>
       <div className="flex items-center justify-center space-x-2">
         <FaEnvelope className="text-orange-500" />

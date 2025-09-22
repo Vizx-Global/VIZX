@@ -31,7 +31,6 @@
 .footer-section ul li {
   margin-bottom: 8px; /* Consistent spacing */
   font-size: 14px; /* Unified font size */
-
 }
 
 .footer-section ul li a {
@@ -44,6 +43,7 @@
   color: orange; /* Change text color on hover */
 }
 
+/* Buttons */
 .footer-buttons {
   display: flex;
   flex-direction: column;
@@ -51,34 +51,71 @@
   margin-top: 10px; /* Extra spacing from other sections */
 }
 
-.footer-buttons button {
-  width: 100%; /* Ensure buttons align with the container */
-  max-width: 200px; /* Prevent buttons from becoming too wide */
+.footer-buttons .contact-button {
+  display: inline-block;
+  width: 100%; /* Align with container */
+  max-width: 200px; /* Prevent too wide */
   padding: 10px 20px;
-  margin-bottom: 10px;
   cursor: pointer;
   border-radius: 5px;
   border: none;
-  transition: background-color 0.3s;
-}
-
-.footer-buttons .contact-button {
   background-color: #e37d00;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s ease;
 }
 
-.footer-buttons .login-button {
-  background-color: transparent;
-  color: #Ffa500;
-  border: 2px solid #e37d00;
-  padding: 8px 18px;
-}
-
-.footer-buttons .register-button:hover,
-.footer-buttons .login-button:hover {
+.footer-buttons .contact-button:hover {
   background-color: #FB8C00;
+  transform: translateY(-1px);
 }
 
+/* Certifications strip (compact & responsive) */
+.footer-certs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 8px 10px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  flex-wrap: wrap; /* makes it mobile-friendly */
+}
+
+.cert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #d1d1d1;
+  font-size: 11px;  /* reduced text size */
+  transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+  min-width: 60px; /* keeps spacing consistent */
+}
+
+.cert img {
+  height: 32px;   /* smaller logos */
+  width: auto;
+  margin-bottom: 4px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.cert:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.cert:hover {
+  transform: translateY(-2px);
+  color: orange;
+}
+
+/* Bottom bar */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -119,19 +156,48 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
-      flex-direction: column; /* Stack sections vertically */
-      text-align: center; /* Center-align text */
+    flex-direction: column; /* Stack sections vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  .footer-section {
+    margin: 8px 0;
   }
 
   .footer-buttons {
-      align-items: center; /* Center buttons */
+    align-items: center; /* Center buttons */
+  }
+
+  .footer-certs {
+    justify-content: center; /* center the trust badges */
+  }
+
+  .cert {
+    font-size: 10px; /* even smaller on small screens */
+    min-width: 54px;
   }
 
   .footer-bottom {
-      flex-direction: column; /* Stack items vertically */
+    flex-direction: column; /* Stack items vertically */
+    gap: 8px;
   }
 
   .social-media {
-      justify-content: center; /* Center-align social media links */
+    justify-content: center; /* Center-align social media links */
+  }
+}
+
+/* Ultra-small devices */
+@media (max-width: 420px) {
+  .footer-certs {
+    gap: 10px;
+    padding: 8px;
+  }
+  .cert img {
+    height: 28px;
+  }
+  .cert {
+    font-size: 9.5px;
+    min-width: 50px;
   }
 }

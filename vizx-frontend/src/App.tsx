@@ -21,6 +21,7 @@ import WhyKenya from './pages/WhyKenya';
 import EmployeeWelfare from './pages/EmployeeWelfare';
 import CommunityFund from './pages/CommunityFund';
 import VizxAI from './pages/VizxAI';
+import ComingSoon from './pages/ComingSoon';
 import PrivacyandSecurity from './pages/PrivacyAndSecurity';
 import MerchantServices from './pages/MerchantServices';
 import IndustryRouter from './pages/IndustryRouter'; // Import the dynamic router
@@ -51,14 +52,18 @@ const App: React.FC = () => {
           <Route path="/contact-center" element={<CCaaS />} />
           <Route path="/why-kenya" element={<WhyKenya />} />
           <Route path="/back-office" element={<BackOffice />} />
-          <Route path="/community-fund" element={<CommunityFund />} />
+          <Route path="/community-fund" element={<ComingSoon />} />
           <Route path="/rpo" element={<RPO />} />
-          <Route path="/employee-welfare" element={<EmployeeWelfare />} />
+          <Route path="/employee-welfare" element={<ComingSoon />} />
           <Route path="/vizx-ai" element={<VizxAI />} />
           <Route path="/merchant-services" element={<MerchantServices />} />
           <Route path="/privacy-and-security" element={<PrivacyandSecurity />} />
+          <Route path="/coming-soon" element={<ComingSoon />} />
           {/* Dynamic route for industry pages */}
           <Route path="/industry/:slug" element={<IndustryRouter />} />
+
+          
+            {/*Replacement Code/Coming soon */}
         </Routes>
         <ChatWidget />
       </MainLayout>

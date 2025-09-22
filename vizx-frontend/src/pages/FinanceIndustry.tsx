@@ -30,24 +30,19 @@ const AnimatedCounter: React.FC<{ target: number; suffix?: string; duration?: nu
           setHasAnimated(true);
         }
       },
-      { threshold: 0.6 } // start animation when 60% of the element is in view
+      { threshold: 0.6 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      if (ref.current) observer.unobserve(ref.current);
     };
   }, [target, duration, hasAnimated]);
 
   return <span ref={ref}>{count.toLocaleString() + suffix}</span>;
 };
 
-// Simple accordion component for FAQs
+// --- FAQ Component ---
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -56,10 +51,10 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left flex justify-between items-center focus:outline-none"
       >
-        <span className="text-xl font-semibold text-white">{question}</span>
-        <span className="text-orange-500 text-xl">{isOpen ? '-' : '+'}</span>
+        <span className="text-base sm:text-lg font-semibold text-white">{question}</span>
+        <span className="text-orange-500 text-base sm:text-lg">{isOpen ? '-' : '+'}</span>
       </button>
-      {isOpen && <p className="mt-2 text-gray-300 leading-relaxed">{answer}</p>}
+      {isOpen && <p className="mt-2 text-base text-gray-300 leading-relaxed">{answer}</p>}
     </div>
   );
 };
@@ -73,28 +68,29 @@ const FinanceIndustry: React.FC = () => {
     <div className="bg-black text-white font-sans">
       {/* Hero Section */}
       <section
-        className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
+        className="relative h-[60vh] sm:h-[70vh] flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: "url('/images/finance-hero.jpg')" }}
         data-aos="fade-in"
       >
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold text-orange-500 mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-orange-500 mb-3 leading-tight">
             Finance Industry
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-            Outsourcing financial services shifts responsibilities to expert workers at affordable rates—reducing costs and boosting efficiency.
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
+            Outsourcing financial services shifts responsibilities to expert workers at affordable
+            rates—reducing costs and boosting efficiency.
           </p>
-          <div className="mt-8 flex justify-center space-x-4">
+          <div className="mt-8 flex justify-center gap-4">
             <a
               href="/contact"
-              className="bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
+              className="bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors text-sm sm:text-base"
             >
               Start Now
             </a>
             <a
               href="/contact"
-              className="bg-transparent border border-orange-500 hover:bg-orange-600 hover:text-black text-orange-500 font-semibold py-3 px-6 rounded-md transition-colors"
+              className="bg-transparent border border-orange-500 hover:bg-orange-600 hover:text-black text-orange-500 font-semibold py-3 px-6 rounded-md transition-colors text-sm sm:text-base"
             >
               Contact Us
             </a>
@@ -103,45 +99,29 @@ const FinanceIndustry: React.FC = () => {
       </section>
 
       {/* Finance Solutions We Outsource */}
-      <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8 bg-gray-800" data-aos="fade-up">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-4">
             Core Finance Solutions We Outsource
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8">
-            We Deliver.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Bookkeeping</h3>
-              <p className="text-gray-300 text-sm">
-                Recording transactions, bank reconciliations
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Accounts Payable/Receivable</h3>
-              <p className="text-gray-300 text-sm">
-                Invoice processing, payment management, collections
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Payroll Processing</h3>
-              <p className="text-gray-300 text-sm">
-                Salary calculations, direct deposits, W2s
-              </p>
-            </div>
-            <div className="bg-black p-4 rounded-lg border border-gray-700">
-              <h3 className="text-lg text-orange-500 font-bold mb-2">Financial Reporting</h3>
-              <p className="text-gray-300 text-sm">
-                Management reports, budgeting, forecasting
-              </p>
-            </div>
-           
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-8">We Deliver.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-left">
+            {[
+              { title: 'Bookkeeping', text: 'Recording transactions, bank reconciliations' },
+              { title: 'Accounts Payable/Receivable', text: 'Invoice processing, payment management, collections' },
+              { title: 'Payroll Processing', text: 'Salary calculations, direct deposits, W2s' },
+              { title: 'Financial Reporting', text: 'Management reports, budgeting, forecasting' },
+            ].map((item, i) => (
+              <div key={i} className="bg-black p-5 sm:p-6 rounded-lg border border-gray-700">
+                <h3 className="text-lg sm:text-xl text-orange-500 font-bold mb-2">{item.title}</h3>
+                <p className="text-base text-gray-300">{item.text}</p>
+              </div>
+            ))}
           </div>
           <div className="text-center mt-8">
             <a
               href="/contact"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 px-6 rounded-md transition-colors text-sm sm:text-base"
             >
               Get Started Today
             </a>
@@ -149,52 +129,52 @@ const FinanceIndustry: React.FC = () => {
         </div>
       </section>
 
-      
       {/* Why Choose VIZX */}
-      <section className="py-16 px-8" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8" data-aos="fade-up">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6 text-center">
             Why Choose VIZX
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Access to Expertise</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Our team comprises skilled finance professionals with years of experience in accounting, bookkeeping, and payroll.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Focus on Core Business</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Outsourcing finance frees your internal team to concentrate on strategic initiatives, growing revenue, and serving customers.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Risk Management</h3>
-              <p className="text-gray-300 leading-relaxed">
-                We implement risk management practices including compliance with regulatory requirements, saving your business from financial pitfalls.
-              </p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-2xl text-orange-500 font-bold mb-2">Cost Saving</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Our efficient processes and economies of scale help you reduce overhead while maintaining high-quality standards.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mt-8">
+            {[
+              {
+                title: 'Access to Expertise',
+                text:
+                  'Our team comprises skilled finance professionals with years of experience in accounting, bookkeeping, and payroll.',
+              },
+              {
+                title: 'Focus on Core Business',
+                text:
+                  'Outsourcing finance frees your internal team to concentrate on strategic initiatives, growing revenue, and serving customers.',
+              },
+              {
+                title: 'Risk Management',
+                text:
+                  'We implement risk management practices including compliance with regulatory requirements, saving your business from financial pitfalls.',
+              },
+              {
+                title: 'Cost Saving',
+                text:
+                  'Our efficient processes and economies of scale help you reduce overhead while maintaining high-quality standards.',
+              },
+            ].map((card, i) => (
+              <div key={i} className="bg-gray-900 p-5 sm:p-6 rounded-lg">
+                <h3 className="text-xl sm:text-2xl text-orange-500 font-bold mb-2">{card.title}</h3>
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">{card.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      
-
       {/* The Process of Outsourcing Finance Solutions */}
-      <section className="py-16 px-8" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6 text-center">
             The Process of Outsourcing Finance Solutions
           </h2>
-          <div className="flex flex-col md:flex-row items-center mt-8">
-            <div className="md:w-1/2 text-gray-300 space-y-4">
+          <div className="flex flex-col md:flex-row items-center mt-6 sm:mt-8">
+            <div className="md:w-1/2 text-base sm:text-lg text-gray-300 space-y-3 sm:space-y-4">
               <p className="flex items-center">
                 <span className="text-orange-500 mr-2">➜</span> Assessing your current finance needs
               </p>
@@ -202,7 +182,7 @@ const FinanceIndustry: React.FC = () => {
                 <span className="text-orange-500 mr-2">➜</span> Identifying which functions to outsource
               </p>
               <p className="flex items-center">
-                <span className="text-orange-500 mr-2">➜</span> Selecting a service provider, defining scope & SLAs
+                <span className="text-orange-500 mr-2">➜</span> Selecting a service provider, defining scope &amp; SLAs
               </p>
               <p className="flex items-center">
                 <span className="text-orange-500 mr-2">➜</span> Implementing secure data transfer protocols
@@ -218,7 +198,7 @@ const FinanceIndustry: React.FC = () => {
               <img
                 src="/images/finance-process.jpg"
                 alt="Outsourcing Finance Process"
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg object-cover"
               />
             </div>
           </div>
@@ -226,47 +206,34 @@ const FinanceIndustry: React.FC = () => {
       </section>
 
       {/* Our Numbers */}
-      <section className="py-16 px-8" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8" data-aos="fade-up">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6">
             Our Numbers Set Us Apart
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-8">
-            <div>
-              <p className="text-4xl font-bold text-orange-500">
-                <AnimatedCounter target={23} />
-              </p>
-              <p className="text-gray-300 mt-2">Years in BPO & RPO</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-orange-500">
-                <AnimatedCounter target={7} />
-              </p>
-              <p className="text-gray-300 mt-2">Years in Healthcare Industry</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-orange-500">
-                <AnimatedCounter target={5000} suffix="+" />
-              </p>
-              <p className="text-gray-300 mt-2">Hires Placed Yearly</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-orange-500">
-                <AnimatedCounter target={55} suffix="+" />
-              </p>
-              <p className="text-gray-300 mt-2">Clients Served</p>
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-6">
+            {[
+              { value: <AnimatedCounter target={23} />, label: 'Years in BPO & RPO' },
+              { value: <AnimatedCounter target={7} />, label: 'Years in Healthcare Industry' },
+              { value: <AnimatedCounter target={5000} suffix="+" />, label: 'Hires Placed Yearly' },
+              { value: <AnimatedCounter target={55} suffix="+" />, label: 'Clients Served' },
+            ].map((item, i) => (
+              <div key={i}>
+                <p className="text-3xl sm:text-4xl font-bold text-orange-500">{item.value}</p>
+                <p className="text-base sm:text-lg text-gray-300 mt-2">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-8 bg-gray-800" data-aos="fade-up">
+      <section className="py-12 sm:py-16 px-4 sm:px-8 bg-gray-800" data-aos="fade-up">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-6 text-center">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8 text-center">
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-8 text-center">
             We understand that you might have some questions about outsourcing finance services. We’re here to help.
           </p>
           <FAQItem
