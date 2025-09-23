@@ -1,4 +1,3 @@
-// src/components/chat/ChatWidget.tsx (or wherever you keep it)
 import { useEffect } from "react";
 
 declare global {
@@ -7,36 +6,197 @@ declare global {
   }
 }
 
+const ZOHO_SCRIPT_ID = "zsiqscript";
+const HIDE_STYLE_ID = "zoho-salesiq-hide-style";
+const HIDE_STYLE_CONTENT = `
+  #zsiqwidget,
+  #zsiq_float,
+  .zsiq_floatmain {
+    display: none !important;
+  }
+`;
+
+let hideStyleElement: HTMLStyleElement | null = null;
+let closePollHandle: number | null = null;
+let zohoInitialized = false;
+let closeHandlerAttached = false;
+
+function ensureHideStyle() {
+  if (typeof document === "undefined") return;
+
+  if (!hideStyleElement) {
+    hideStyleElement = document.createElement("style");
+    hideStyleElement.id = HIDE_STYLE_ID;
+    hideStyleElement.textContent = HIDE_STYLE_CONTENT;
+  }
+
+  if (!document.head.contains(hideStyleElement)) {
+    document.head.appendChild(hideStyleElement);
+  }
+}
+
+function removeHideStyle() {
+  if (hideStyleElement?.parentNode) {
+    hideStyleElement.parentNode.removeChild(hideStyleElement);
+  }
+}
+
+function stopCloseWatcher() {
+  if (closePollHandle != null) {
+    window.clearInterval(closePollHandle);
+    closePollHandle = null;
+  }
+}
+
+function watchForZohoClose() {
+  if (typeof window === "undefined") return;
+
+  stopCloseWatcher();
+
+  let hasBeenVisible = false;
+
+  closePollHandle = window.setInterval(() => {
+    const floatWidget = document.querySelector<HTMLElement>(".zsiq_floatmain");
+
+    if (!floatWidget) {
+      if (hasBeenVisible) {
+        ensureHideStyle();
+        stopCloseWatcher();
+      }
+      return;
+    }
+
+    const computed = window.getComputedStyle(floatWidget);
+    const rect = floatWidget.getBoundingClientRect();
+    const isVisible =
+      computed.display !== "none" &&
+      computed.visibility !== "hidden" &&
+      computed.opacity !== "0" &&
+      rect.width > 0 &&
+      rect.height > 0;
+
+    if (isVisible) {
+      hasBeenVisible = true;
+      return;
+    }
+
+    if (hasBeenVisible) {
+      ensureHideStyle();
+      stopCloseWatcher();
+    }
+  }, 500);
+}
+
+function attachZohoCloseHandler() {
+  if (closeHandlerAttached) return;
+
+  const floatWindow = window.$zoho?.salesiq?.floatwindow;
+  if (!floatWindow) return;
+
+  const onClose = () => {
+    ensureHideStyle();
+    stopCloseWatcher();
+  };
+
+  let attached = false;
+
+  if (typeof floatWindow.on === "function") {
+    try {
+      floatWindow.on("close", onClose);
+      attached = true;
+    } catch (error) {
+      console.warn("[Zoho SalesIQ] Failed to register floatwindow.on close handler", error);
+    }
+  }
+
+  if (!attached && typeof floatWindow.onClose === "function") {
+    try {
+      floatWindow.onClose(onClose);
+      attached = true;
+    } catch (error) {
+      console.warn("[Zoho SalesIQ] Failed to register floatwindow.onClose handler", error);
+    }
+  }
+
+  if (!attached && typeof window.$zoho?.salesiq?.events?.on === "function") {
+    try {
+      window.$zoho.salesiq.events.on("floatwindow.close", onClose);
+      attached = true;
+    } catch (error) {
+      console.warn("[Zoho SalesIQ] Failed to register events.on close handler", error);
+    }
+  }
+
+  if (attached) {
+    closeHandlerAttached = true;
+  }
+}
+
+export function handoffToAgent() {
+  if (typeof window === "undefined") return;
+
+  removeHideStyle();
+  stopCloseWatcher();
+  window.$zoho?.salesiq?.floatwindow?.visible?.("show");
+  watchForZohoClose();
+}
+
+export function initZoho() {
+  if (typeof window === "undefined") return;
+
+  ensureHideStyle();
+
+  if (zohoInitialized) {
+    attachZohoCloseHandler();
+    return;
+  }
+
+  zohoInitialized = true;
+
+  window.$zoho = window.$zoho || {};
+  const salesiq = window.$zoho.salesiq || {};
+  const previousReady = typeof salesiq.ready === "function" ? salesiq.ready.bind(salesiq) : null;
+
+  salesiq.ready = (...args: unknown[]) => {
+    attachZohoCloseHandler();
+    ensureHideStyle();
+
+    if (previousReady) {
+      previousReady(...args);
+    }
+  };
+
+  window.$zoho.salesiq = salesiq;
+
+  if (document.getElementById(ZOHO_SCRIPT_ID)) {
+    return;
+  }
+
+  const s = document.createElement("script");
+  s.id = ZOHO_SCRIPT_ID;
+  s.src =
+    "https://salesiq.zohopublic.com/widget?wc=siq29f8e974d50eb742a4aa785f394fe049aa2dfaf8f0cb3822d2c7499850e56cea";
+  s.defer = true;
+  s.setAttribute("data-cfasync", "false");
+
+  s.onload = () => {
+    attachZohoCloseHandler();
+  };
+  s.onerror = () => {
+    console.error("[Zoho SalesIQ] failed to load widget script.");
+  };
+
+  document.body.appendChild(s);
+}
+
 export default function ChatWidget() {
   useEffect(() => {
-    // Avoid double-inserting (dev HMR / multiple mounts)
-    if (document.getElementById("zsiqscript")) return;
+    initZoho();
 
-    // Initialize Zoho SalesIQ before loading the script
-    window.$zoho = window.$zoho || {};
-    window.$zoho.salesiq = window.$zoho.salesiq || { ready() {} };
-
-    const s = document.createElement("script");
-    s.id = "zsiqscript";
-    s.src =
-      "https://salesiq.zohopublic.com/widget?wc=siq29f8e974d50eb742a4aa785f394fe049aa2dfaf8f0cb3822d2c7499850e56cea";
-    s.defer = true;
-
-    // ⬇️ Important: bypass Cloudflare Rocket Loader / script optimizers
-    s.setAttribute("data-cfasync", "false");
-
-    // (Optional) small health log
-    s.onload = () => {
-      // You can force-open if you like:
-      // window.$zoho?.salesiq?.floatwindow?.visible?.("show");
-      // console.info("[Zoho SalesIQ] widget loaded");
+    return () => {
+      stopCloseWatcher();
     };
-    s.onerror = () => {
-      console.error("[Zoho SalesIQ] failed to load widget script.");
-    };
-
-    document.body.appendChild(s);
   }, []);
 
-  return null; // nothing to render
+  return null;
 }
