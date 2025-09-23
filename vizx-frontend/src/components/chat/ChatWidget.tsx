@@ -20,6 +20,7 @@ let hideStyleElement: HTMLStyleElement | null = null;
 let closePollHandle: number | null = null;
 let zohoInitialized = false;
 let closeHandlerAttached = false;
+let shouldHideAfterClose = false;
 
 function ensureHideStyle() {
   if (typeof document === "undefined") return;
@@ -59,8 +60,9 @@ function watchForZohoClose() {
     const floatWidget = document.querySelector<HTMLElement>(".zsiq_floatmain");
 
     if (!floatWidget) {
-      if (hasBeenVisible) {
+      if (hasBeenVisible && shouldHideAfterClose) {
         ensureHideStyle();
+        shouldHideAfterClose = false;
         stopCloseWatcher();
       }
       return;
@@ -80,8 +82,9 @@ function watchForZohoClose() {
       return;
     }
 
-    if (hasBeenVisible) {
+    if (hasBeenVisible && shouldHideAfterClose) {
       ensureHideStyle();
+      shouldHideAfterClose = false;
       stopCloseWatcher();
     }
   }, 500);
@@ -94,7 +97,10 @@ function attachZohoCloseHandler() {
   if (!floatWindow) return;
 
   const onClose = () => {
-    ensureHideStyle();
+    if (shouldHideAfterClose) {
+      ensureHideStyle();
+      shouldHideAfterClose = false;
+    }
     stopCloseWatcher();
   };
 
@@ -135,6 +141,7 @@ function attachZohoCloseHandler() {
 export function handoffToAgent() {
   if (typeof window === "undefined") return;
 
+  shouldHideAfterClose = true;
   removeHideStyle();
   stopCloseWatcher();
   window.$zoho?.salesiq?.floatwindow?.visible?.("show");
@@ -143,8 +150,6 @@ export function handoffToAgent() {
 
 export function initZoho() {
   if (typeof window === "undefined") return;
-
-  ensureHideStyle();
 
   if (zohoInitialized) {
     attachZohoCloseHandler();
@@ -159,7 +164,6 @@ export function initZoho() {
 
   salesiq.ready = (...args: unknown[]) => {
     attachZohoCloseHandler();
-    ensureHideStyle();
 
     if (previousReady) {
       previousReady(...args);
