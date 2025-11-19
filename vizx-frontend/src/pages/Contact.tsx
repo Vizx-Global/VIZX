@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
       <section
         className="relative h-[65vh] flex items-center justify-center bg-cover bg-center"
         /* Update the image path below to match your file */
-        style={{ backgroundImage: "url('/images/IMG_0017.jpg')" }}
+        style={{ backgroundImage: "url('/images/IMG_0007.jpg')" }}
       >
         {/* Dark overlay on the background */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>

@@ -25,7 +25,7 @@ import ComingSoon from './pages/ComingSoon';
 import PrivacyandSecurity from './pages/PrivacyAndSecurity';
 import MerchantServices from './pages/MerchantServices';
 import IndustryRouter from './pages/IndustryRouter'; // Import the dynamic router
-import ChatWidget from './components/chat/ChatWidget';
+import chatWindowComponent from './components/chatWindowComponent';
 
 
 import MainLayout from './components/layout/MainLayout';
@@ -65,7 +65,7 @@ const App: React.FC = () => {
           
             {/*Replacement Code/Coming soon */}
         </Routes>
-        <ChatWidget />
+        
       </MainLayout>
     </Router>
   );

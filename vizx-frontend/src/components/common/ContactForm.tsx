@@ -202,10 +202,11 @@ const ContactForm = () => {
                     <div>
                         <label className="block font-semibold text-white">Which service are you interested in?</label>
                         <div className="flex flex-col space-y-2 text-gray-400 mt-2">
-                            <label className="flex items-center"><input type="checkbox" name="recruitment" checked={formData.services.recruitment} onChange={handleChange} className="mr-2 leading-tight" /> Recruitment</label>
-                            <label className="flex items-center"><input type="checkbox" name="qualityControl" checked={formData.services.qualityControl} onChange={handleChange} className="mr-2 leading-tight" /> Quality Control / Compliance</label>
-                            <label className="flex items-center"><input type="checkbox" name="staffing" checked={formData.services.staffing} onChange={handleChange} className="mr-2 leading-tight" /> Staffing</label>
-                            <label className="flex items-center"><input type="checkbox" name="payroll" checked={formData.services.payroll} onChange={handleChange} className="mr-2 leading-tight" /> Payroll</label>
+                            <label className="flex items-center"><input type="checkbox" name="contact-center" checked={formData.services.recruitment} onChange={handleChange} className="mr-2 leading-tight" /> CX Solutions</label>
+                            <label className="flex items-center"><input type="checkbox" name="merchant-services" checked={formData.services.qualityControl} onChange={handleChange} className="mr-2 leading-tight" /> Merchant Services</label>
+                            <label className="flex items-center"><input type="checkbox" name="rpo" checked={formData.services.staffing} onChange={handleChange} className="mr-2 leading-tight" /> RPO Solutions</label>
+                            <label className="flex items-center"><input type="checkbox" name="back-office" checked={formData.services.payroll} onChange={handleChange} className="mr-2 leading-tight" /> Back Office</label>
+                            <label className="flex items-center"><input type="checkbox" name="real-estate" checked={formData.services.payroll} onChange={handleChange} className="mr-2 leading-tight" /> Real Estate Solutions</label>
                         </div>
                     </div>
 

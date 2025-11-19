@@ -1,4 +1,3 @@
-// src/components/layout/Footer.tsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -19,17 +18,17 @@ const Footer: React.FC = () => {
     { to: "/privacy-and-security", label: "Privacy & Security" },
   ];
 
+  // Invisible sizing boxes (same footprint, no border/bg)
+  const sizeBox =
+    "w-28 h-16 md:w-32 md:h-20 xl:w-36 xl:h-24 flex items-center justify-center shrink-0";
+  const badgeImg =
+    "w-full h-full object-contain filter grayscale opacity-80 transition hover:grayscale-0 hover:opacity-100";
+
   return (
     <footer className="relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#0b1b2b]" />
-      <div
-        className="absolute inset-0 opacity-[0.08] pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(#fff 1px, transparent 1px)",
-          backgroundSize: "18px 18px",
-        }}
-      />
+      {/* Orange-on-black gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#1A120C] to-[#2A1D12]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60rem_40rem_at_20%_20%,rgba(255,140,64,0.08),transparent),radial-gradient(40rem_30rem_at_80%_0%,rgba(255,140,64,0.06),transparent)]" />
 
       <div className="relative mx-auto max-w-screen-2xl px-6 lg:px-10 py-14 md:py-3 text-white">
         {/* Top: 3-column layout */}
@@ -41,15 +40,33 @@ const Footer: React.FC = () => {
             </h3>
 
             <div className="space-y-5">
-              <div className="rounded-xl border border-white/10 bg-white/5 p-5 flex items-center justify-center">
-                <img
-                  src="/images/SOC2.png"
-                  alt="SOC 2 Certification"
-                  className="h-20 w-auto filter grayscale opacity-80 transition hover:grayscale-0 hover:opacity-100"
-                  loading="lazy"
-                />
+              {/* BIG CARD — two PNGs inside (no mini frames) */}
+              <div className="rounded-xl border border-white/10 bg-white/5 p-5 flex items-center justify-center gap-6 md:gap-1">
+                <div className={sizeBox}>
+                  <img
+                    src="/images/SOC2.png"
+                    alt="SOC 2 Certification"
+                    className={badgeImg}
+                    loading="lazy"
+                    decoding="async"
+                    width={144}
+                    height={96}
+                  />
+                </div>
+                <div className={sizeBox}>
+                  <img
+                    src="/images/iso.png"
+                    alt="ISO Certification"
+                    className={badgeImg}
+                    loading="lazy"
+                    decoding="async"
+                    width={144}
+                    height={96}
+                  />
+                </div>
               </div>
 
+              {/* BIG CARD — single PNG (ODPC) */}
               <a
                 href="/docs/ODPC.pdf"
                 target="_blank"
@@ -58,17 +75,24 @@ const Footer: React.FC = () => {
                 title="ODPC Certificate (PDF)"
                 aria-label="Open ODPC certificate PDF in a new tab"
               >
-                <img
-                  src="/images/ODPC.png"
-                  alt="ODPC Certification"
-                  className="mx-auto h-16 w-auto filter grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100"
-                  loading="lazy"
-                />
+                <div className="flex items-center justify-center">
+                  <div className={`${sizeBox} mx-auto`}>
+                    <img
+                      src="/images/ODPC.png"
+                      alt="ODPC Certification"
+                      className={`${badgeImg} group-hover:grayscale-0 group-hover:opacity-100`}
+                      loading="lazy"
+                      decoding="async"
+                      width={180}
+                      height={120}
+                    />
+                  </div>
+                </div>
               </a>
             </div>
           </div>
 
-          {/* MIDDLE: Inline, evenly spaced links */}
+          {/* MIDDLE: Links */}
           <div className="md:col-span-6">
             <h3 className="text-sm font-semibold tracking-wider text-orange-400 mb-5 text-center md:text-left">
               Have A Look Around
@@ -89,8 +113,6 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-
-
           </div>
 
           {/* RIGHT: CTA card */}
@@ -114,7 +136,7 @@ const Footer: React.FC = () => {
               </Link>
 
               <p className="mt-3 text-center text-xs text-neutral-400">
-               Quick discovery call.
+                Quick discovery call.
               </p>
             </div>
           </div>
@@ -123,15 +145,13 @@ const Footer: React.FC = () => {
         {/* Divider */}
         <div className="mt-12 border-t border-white/10" />
 
-        {/* Bottom row: level across (left/center/right) */}
+        {/* Bottom row */}
         <div className="pt-5">
           <div className="flex flex-col md:grid md:grid-cols-3 md:items-center gap-3">
-            {/* Left */}
             <p className="text-[13px] text-neutral-300 text-center md:text-left">
               © 2025 VIZX Global. All rights reserved.
             </p>
 
-            {/* Center (Follow us) */}
             <div className="flex items-center justify-center gap-4 text-[14px]">
               <span className="text-neutral-300">Follow us:</span>
               <a
@@ -164,7 +184,6 @@ const Footer: React.FC = () => {
               </a>
             </div>
 
-            {/* Right */}
             <div className="flex items-center justify-center md:justify-end gap-6 text-[13px] text-neutral-400">
               <Link to="/privacy-and-security" className="hover:text-orange-400">
                 Privacy &amp; Security
