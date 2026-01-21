@@ -20,7 +20,7 @@ const About: React.FC = () => {
             <div className="group relative rounded-3xl overflow-hidden border border-white/10 shadow-strong hover:border-orange-500/30 transition-smooth">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
               <img 
-                src="https://res.cloudinary.com/dvkt0lsqb/image/upload/v1768956853/IMG_8046_lwkg2j.jpg" 
+                src="/images/LDCPartnership.jpg" 
                 alt="Vizx Global & Langues des Champions Partnership"
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-smooth duration-700"
               />

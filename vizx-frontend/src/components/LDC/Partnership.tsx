@@ -60,7 +60,7 @@ const Partnership: React.FC = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-[60px] rounded-full" />
               
               <img 
-                src="https://res.cloudinary.com/dvkt0lsqb/image/upload/v1768954361/VIZX_LANGUES_DES_CHAMPIONS_LOGO_m1fltp.png" 
+                src="/images/VIZX LDC.png" 
                 alt="Vizx Global & Langues des Champions" 
                 className="h-16 w-auto mb-8 object-contain"
               />
