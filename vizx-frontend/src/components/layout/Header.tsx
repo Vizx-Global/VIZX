@@ -72,6 +72,7 @@ const Header: React.FC = () => {
                 <ul className="flex items-center justify-end gap-8 xl:gap-10 pr-0 md:pr-2">
                   <li><MegaMenu label="Solutions" items={SOLUTIONS} viewAll={{ label: "View all Solutions", to: "/solutions" }} align="left" /></li>
                   <li><MegaMenu label="Industries" items={INDUSTRIES} viewAll={{ label: "View all Industries", to: "/industries" }} align="right" /></li>
+                  <li><Link to="/vizx-ldc" className="py-2 text-gray-200 hover:text-orange-600 text-sm">Vizx LDC</Link></li>
                   <li><Link to="/vizx-hi" className="py-2 text-gray-200 hover:text-orange-600 text-sm">Vizx HI + AI</Link></li>
                   <li><Link to="/why-kenya" className="py-2 text-gray-200 hover:text-orange-600 text-sm">Why Kenya</Link></li>
                   <li><MegaMenu label="About Us" items={ABOUT} viewAll={{ label: "Learn more about VizX", to: "/about" }} align="right" /></li>
@@ -174,6 +175,12 @@ const Header: React.FC = () => {
                     ))}
                   </ul>
                 )}
+              </li>
+
+              <li>
+                <Link to="/vizx-ldc" onClick={closeMobile} className="block px-3 py-2 rounded hover:bg-white/10">
+                  Vizx LDC
+                </Link>
               </li>
 
               <li>

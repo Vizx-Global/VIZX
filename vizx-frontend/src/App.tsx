@@ -24,7 +24,8 @@ import VizxAI from './pages/VizxAI';
 import ComingSoon from './pages/ComingSoon';
 import PrivacyandSecurity from './pages/PrivacyAndSecurity';
 import MerchantServices from './pages/MerchantServices';
-import IndustryRouter from './pages/IndustryRouter'; // Import the dynamic router
+import IndustryRouter from './pages/IndustryRouter'; 
+import LDC from './pages/LDC';
 import chatWindowComponent from './components/chatWindowComponent';
 
 
@@ -42,6 +43,7 @@ const App: React.FC = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/vizx-ldc" element={<LDC />} />
           <Route path="/our-impact" element={<OurImpact />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
