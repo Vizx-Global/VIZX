@@ -29,10 +29,6 @@ const WhyChooseUs: React.FC = () => {
       description: "A collaboration grounded in inclusion, dignity, and social impact."
     },
     {
-      title: "NGO and non-profit expertise",
-      description: "We understand donor requirements, budget considerations, and complex operating environments."
-    },
-    {
       title: "Trusted quality",
       description: "Experienced linguists, subject-matter specialists, and strong quality assurance processes."
     },
@@ -44,10 +40,14 @@ const WhyChooseUs: React.FC = () => {
       title: "Ethical delivery",
       description: "People-first practices, fair compensation, and culturally responsible operations."
     }
+,     {
+      title: "Operates across diverse markets",
+      description:"Designed for companies and corporations operating across diverse markets, as well as non-profits, NGOs, and mission-led organizations"
+    },
   ];
 
   return (
-    <section className="w-full bg-black py-16 px-6 lg:py-24 lg:px-12 relative overflow-hidden">
+    <section className="w-full bg-black py-16 px-4 sm:px-6 lg:py-24 lg:px-12 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/5 blur-[150px] rounded-full pointer-events-none" />
 
@@ -66,10 +66,10 @@ const WhyChooseUs: React.FC = () => {
             </h2>
             <div className="w-10 h-[2px] bg-orange-500 shadow-glow" />
           </div>
-          <h2 className="text-4xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight uppercase">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight uppercase leading-none">
             Why <span className="text-orange-500">VizX LDC</span>
           </h2>
-          <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto italic">
+          <p className="text-lg sm:text-xl text-gray-400 font-light max-w-2xl mx-auto italic">
             "Facilitating better communication across languages and cultures."
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ const WhyChooseUs: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6"
         >
           {reasons.map((reason, index) => (
             <motion.div
@@ -88,12 +88,12 @@ const WhyChooseUs: React.FC = () => {
               className="group relative"
             >
               {/* Card Background with subtle hover effect */}
-              <div className="glass-card flex flex-col md:flex-row items-center gap-8 p-8 md:p-10 border-white/5 hover:border-orange-500/40 hover:bg-white/[0.03] transition-smooth cursor-default overflow-hidden">
+              <div className="glass-card flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 p-6 sm:p-8 md:p-10 border-white/5 hover:border-orange-500/40 hover:bg-white/[0.03] transition-smooth cursor-default overflow-hidden">
                 
                 {/* Number Badge */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-orange-500 rounded-2xl flex items-center justify-center shadow-glow transform group-hover:rotate-6 transition-smooth">
-                    <span className="text-2xl md:text-3xl font-black text-black">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-orange-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-glow transform group-hover:rotate-6 transition-smooth">
+                    <span className="text-xl sm:text-2xl md:text-3xl font-black text-black">
                       {(index + 1).toString().padStart(2, '0')}
                     </span>
                   </div>
@@ -102,17 +102,17 @@ const WhyChooseUs: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-orange-500 transition-smooth">
+                <div className="flex-1 text-center sm:text-left">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-orange-500 transition-smooth">
                     {reason.title}
                   </h3>
-                  <p className="text-lg text-gray-400 font-light leading-relaxed max-w-3xl">
+                  <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed max-w-3xl">
                     {reason.description}
                   </p>
                 </div>
 
                 {/* Corner Decoration */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-orange-500/5 rounded-full blur-2xl group-hover:bg-orange-500/10 transition-smooth" />
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 sm:w-24 sm:h-24 bg-orange-500/5 rounded-full blur-2xl group-hover:bg-orange-500/10 transition-smooth" />
               </div>
             </motion.div>
           ))}

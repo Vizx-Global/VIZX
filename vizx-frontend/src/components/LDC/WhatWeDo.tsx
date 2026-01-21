@@ -47,7 +47,7 @@ const WhatWeDo: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-black py-16 px-6 lg:py-24 lg:px-12 relative overflow-hidden">
+    <section className="w-full bg-black py-16 px-4 sm:px-6 lg:py-24 lg:px-12 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/5 blur-[100px] rounded-full pointer-events-none" />
       
@@ -65,10 +65,10 @@ const WhatWeDo: React.FC = () => {
               Our Expertise
             </h2>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-8 tracking-tight uppercase">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 sm:mb-8 tracking-tight uppercase leading-tight">
             What <span className="text-orange-500">We Do</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl leading-relaxed font-light">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl leading-relaxed font-light">
             VizX LDC provides professional, reliable, and culturally sensitive language services tailored to the realities of non-profit and humanitarian work.
           </p>
         </motion.div>
@@ -78,21 +78,21 @@ const WhatWeDo: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="glass-card border-white/5 p-8 hover:border-orange-500/30 transition-smooth group"
+              className="glass-card border-white/5 p-6 sm:p-8 hover:border-orange-500/30 transition-smooth group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:text-black transition-smooth">
-                <service.icon className="text-2xl text-orange-500 group-hover:text-black transition-smooth" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-5 sm:mb-6 group-hover:bg-orange-500 group-hover:text-black transition-smooth">
+                <service.icon className="text-xl sm:text-2xl text-orange-500 group-hover:text-black transition-smooth" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-orange-500 transition-smooth">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 group-hover:text-orange-500 transition-smooth">
                 {service.title}
               </h3>
-              <p className="text-gray-400 font-light leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-400 font-light leading-relaxed">
                 {service.description}
               </p>
             </motion.div>
