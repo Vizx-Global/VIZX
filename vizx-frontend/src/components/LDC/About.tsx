@@ -9,8 +9,8 @@ const About: React.FC = () => {
   const images = [
     "/images/AboutPartnership1.webp",
     "/images/AboutPartnership2.webp",
-    "/images/AboutPartnership3.webp",
-    "/images/AboutPartnership4.webp"
+    "/images/AboutPartnership3.jpg",
+    "/images/AboutPartnership4.jpg"
   ];
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const About: React.FC = () => {
                 </p>
                 
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 leading-relaxed sm:leading-relaxed md:leading-relaxed font-light border-l-2 border-zinc-800 pl-3 sm:pl-4 md:pl-6 lg:pl-8 italic">
-                  Designed specifically for non-profits, NGOs, and mission-led organizations, VizX LDC helps organizations communicate clearly, respectfully, and effectively with the communities they serve.
+                   Designed for companies and corporations operating across diverse markets, as well as non-profits, NGOs, and mission-led organizations
                 </p>
               </div>
 
